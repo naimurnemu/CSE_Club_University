@@ -1,0 +1,1 @@
+export { default as exampleExport } from "./example.png";
