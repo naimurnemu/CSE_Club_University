@@ -1,1 +1,3 @@
-export { default as exampleExport } from "./example.png";
+import { withSuspense } from "../../utils/withSuspense";
+
+export const exampleExport = withSuspense(() => import("./example.png"));
