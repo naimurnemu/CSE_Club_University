@@ -1,4 +1,3 @@
-import { lazy } from "react";
 import { withSuspense } from "../../utils/withSuspense";
 
-export const ExampleComp = withSuspense(lazy(() => import("./ExampleComp")));
+export const ExampleComp = withSuspense(() => import('./ExampleComp'));
