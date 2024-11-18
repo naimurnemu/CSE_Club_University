@@ -22,7 +22,7 @@ const Banner = () => {
           explore the latest advancements in computer science and technology.
         </p>
         <div className="space-x-3">
-          <button className="bg-[#C3E92D] font-semibold lg:py-3 lg:px-4 py-2 px-3 hover:bg-[#1F4864] text-black rounded-sm">
+          <button className="bg-[#C3E92D] font-semibold lg:py-3 lg:px-4 py-2 px-3 hover:bg-black hover:text-white text-black rounded-sm">
             Join The Club
           </button>
           <button className="text-[#127CC1] font-semibold  bg-white lg:py-3 lg:px-4 py-2 px-3 rounded-sm">

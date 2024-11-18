@@ -1,0 +1,27 @@
+[
+    {
+      "title": "Denpasar Marathon Event 2023",
+      "description": "Join us for the Denpasar Marathon, an exhilarating experience that combines sport and community. A perfect event for all levels of runners.",
+      "category": "Running Events",
+      "comments": 25,
+      "image": "event1.jpg",
+      "location": "710 1st St. Easton, PA 18042, Chester County",
+      "date": "Oct 20, 2023",
+      "startTime": "06:00 AM",
+      "ticketPrice": "$45",
+      "readMoreLink": "link-to-event-1"
+    },
+    {
+      "title": "Bali Ultra Challenge 2023",
+      "description": "Experience the challenge of a lifetime with the Bali Ultra, a multi-distance event that pushes your limits while offering breathtaking views.",
+      "category": "Ultra Marathon",
+      "comments": 40,
+      "image": "event2.jpg",
+      "location": "Jl. Raya Ubud, Bali, Indonesia",
+      "date": "Nov 15, 2023",
+      "startTime": "05:30 AM",
+      "ticketPrice": "$60",
+      "readMoreLink": "link-to-event-2"
+    }
+  ]
+  
