@@ -1,0 +1,27 @@
+[
+    {
+      "title": "Embracing The Journey: Unraveling The Life-Changing Benefits Of Running",
+      "description": "Explore the myriad health advantages that running offers, from enhancing cardiovascular fitness and strengthening...",
+      "category": "Running Tips",
+      "comments": 12,
+      "image": "path-to-image-1.jpg",
+      "readMoreLink": "link-to-article-1"
+    },
+    {
+      "title": "Empowerment Through Running: Discovering The Key To A Healthier And Happier Life",
+      "description": "Unleash the freedom of mind and body as you experience the joy and liberation of running. Discover how running...",
+      "category": "Training Programs",
+      "comments": 2,
+      "image": "path-to-image-2.jpg",
+      "readMoreLink": "link-to-article-2"
+    },
+    {
+      "title": "Running Towards Greatness: Unleash Your Inner Athlete And Embrace The Joy Of Fitness",
+      "description": "Embrace the camaraderie and support of the running community as you connect with like-minded individuals...",
+      "category": "Running Events",
+      "comments": 9,
+      "image": "path-to-image-3.jpg",
+      "readMoreLink": "link-to-article-3"
+    }
+  ]
+  
