@@ -1,0 +1,23 @@
+[
+    {
+      "img": "path-to-image-1.jpg",
+      "title": "Chris pad",
+      "status": "Founder"
+    },
+    {
+      "img": "path-to-image-2.jpg",
+      "title": "Maverick",
+      "status": "Co-Founder"
+    },
+    {
+      "img": "path-to-image-3.jpg",
+      "title": "Jessica nguyen",
+      "status": "Manager"
+    },
+    {
+      "img": "path-to-image-4.jpg",
+      "title": "jenifer nolan",
+      "status": "Coach"
+    }
+  ]
+  
