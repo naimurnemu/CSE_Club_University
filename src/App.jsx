@@ -1,6 +1,6 @@
 
 import './App.css'
-import { Banner, Benefits, Tutorial } from './components'
+import { Banner, Benefits, Events, Footer, Tutorial } from './components'
 
 
 function App() {
@@ -10,7 +10,9 @@ function App() {
     <div className='container mx-auto'>
      <Banner/>
      <Benefits/>
+     <Events/>
      <Tutorial/>
+     <Footer/>
     </div>
   )
 }

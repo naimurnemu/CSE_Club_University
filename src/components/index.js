@@ -3,3 +3,5 @@ export { Modal } from "./Modal";
 export {Banner} from "./Banner";
 export {Benefits} from "./Benefits"
 export {Tutorial} from "./Tutorial"
+export {Footer} from "./Footer"
+export {Events} from "./Events"
