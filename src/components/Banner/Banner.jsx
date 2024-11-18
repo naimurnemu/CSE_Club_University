@@ -1,5 +1,5 @@
 import banner from "../../assets/images/hero.jpg";
-import sidePhoto from "../../assets/images/banner.png";
+import sidePhoto from "../../assets/images/images.png";
 import { FaCalendar, FaMapMarkerAlt, FaStopwatch } from "react-icons/fa";
 
 const Banner = () => {
@@ -30,22 +30,25 @@ const Banner = () => {
           </button>
         </div>
       </div>
-      <div className="card bg-white/20 lg:w-96 shadow-xl">
-        <figure className="pt-12 relative">
+      <div className="card bg-white/20 lg:w-96 shadow-xl relative">
+        <div
+          style={{ borderRadius: "10px 10px 0px 0px" }}
+          className="absolute bg-[#C3E92D] top-4 left-8"
+        >
+          <h1 className="font-semibold text-black px-3 py-1">NEW EVENT</h1>
+        </div>
+        <figure className="pt-12">
           <img
+            className="w-full px-8"
             style={{ borderRadius: "0px 10px 10px 10px" }}
             src={sidePhoto}
             alt=""
           />
-          <div
-            style={{ borderRadius: "10px 10px 0px 0px" }}
-            className="absolute bg-[#C3E92D] top-4 left-9"
-          >
-            <h1 className="font-semibold text-black px-3 py-1">NEW EVENT</h1>
-          </div>
         </figure>
         <div className="text-white pl-8 space-y-2">
-          <h1 className="lg:text-2xl text-xl font-medium py-3">Computer Programming</h1>
+          <h1 className="lg:text-2xl text-xl font-medium py-3">
+            Computer Programming
+          </h1>
           <p className="flex items-center lg:font-medium gap-2">
             <FaCalendar className="text-[#C3E92D]"></FaCalendar> OCT 20, 2024
           </p>
