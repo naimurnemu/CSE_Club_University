@@ -1,6 +1,6 @@
 
 import './App.css'
-import { Banner, Benefits, Events, Footer, Team, Tutorial } from './components'
+import { Banner, Benefits, Blogs, Events, Footer, Team, Tutorial } from './components'
 
 
 function App() {
@@ -13,6 +13,7 @@ function App() {
      <Benefits/>
      <Events/>
      <Team/>
+     <Blogs/>
      <Footer/>
     </div>
   )

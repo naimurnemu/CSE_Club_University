@@ -1,6 +1,8 @@
 import { createBrowserRouter } from "react-router-dom";
 import App from "../App";
 import { ErrorPage, LandingPage, NotFoundPage } from "../pages";
+import { Register } from "../components";
+
 
 export const router = createBrowserRouter([
   {
@@ -20,6 +22,10 @@ export const router = createBrowserRouter([
         path: "*",  
         element: <NotFoundPage />,  
       },
+      {
+        path: "/Register",
+        element: <Register/>
+      }
     ],
   },
 ])
