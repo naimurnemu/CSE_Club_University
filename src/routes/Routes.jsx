@@ -1,10 +1,6 @@
 import { createBrowserRouter } from "react-router-dom";
 import App from "../App";
-<<<<<<< HEAD
 import { AboutUsPage, ContactUsPage, ErrorPage, LandingPage, Login, NotFoundPage, Register, Announcements, Alumni, ClubBlogs, Newsletter, Sponsorship } from "../pages";
-=======
-import { AboutUsPage, ContactUsPage, ErrorPage, LandingPage, Login, NotFoundPage, Register } from "../pages";
->>>>>>> 234a777 (register, login, contact us)
 
 export const router = createBrowserRouter([
   {
