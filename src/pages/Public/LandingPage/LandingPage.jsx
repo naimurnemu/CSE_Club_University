@@ -1,5 +1,5 @@
 import React from "react";
-import { ExampleComp } from "../../../components";
+import { Banner, Benefits, Blogs, Events, ExampleComp, Footer, Team, Tutorial } from "../../../components";
 
 const LandingPage = () => {
   return (
@@ -11,6 +11,7 @@ const LandingPage = () => {
       <Benefits />
       <Events />
       <Team />
+      <Blogs />
       <Footer />
     </div>
   );
