@@ -5,7 +5,7 @@ import { HiOutlineLocationMarker } from "react-icons/hi";
 const Footer = () => {
   return (
     <div className="bg-[#121212] text-white py-10 px-5">
-      <div className="container mx-auto grid grid-cols-1 lg:grid-cols-4 gap-10">
+      <div className="container mx-auto grid grid-cols-1 lg:grid-cols-4 gap-10 pb-10">
         {/* Column 1: Logo and Description */}
         <div>
           <h1 className="text-[#C3E92D] text-3xl font-bold mb-4">Zunzo</h1>
@@ -69,6 +69,16 @@ const Footer = () => {
               <FiSend size={20} className="text-white" />
             </button>
           </div>
+        </div>
+      </div>
+      <div style={{borderColor:"gray"}} className="border-t-[1px] flex justify-between pt-4 lg:flex-row flex-col text-sm space-y-4">
+        <div>
+        <p>©2023 <span className="hover:text-[#C3E92D]"><a href="#">Zunzo</a></span>. All Rights Reserved.</p>
+        </div>
+        <div className="flex items-center gap-3">
+          <a className="hover:text-[#C3E92D]" href="#">Terms Of Services</a>
+          <a className="hover:text-[#C3E92D]" href="#">Privacy Policy</a>
+          <a className="hover:text-[#C3E92D]" href="#">Cookie Policy</a>
         </div>
       </div>
     </div>

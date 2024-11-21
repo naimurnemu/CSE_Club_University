@@ -1,5 +1,5 @@
 import React from "react";
-import { Banner, Benefits, Blogs, Events, ExampleComp, Footer, Team, Tutorial } from "../../../components";
+import { Banner, Benefits, Blogs, Events, ExampleComp, Footer, JoinClub, Team, Tutorial } from "../../../components";
 
 const LandingPage = () => {
   return (
@@ -12,6 +12,7 @@ const LandingPage = () => {
       <Events />
       <Team />
       <Blogs />
+      <JoinClub />
       <Footer />
     </div>
   );
