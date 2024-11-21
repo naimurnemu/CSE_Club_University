@@ -14,14 +14,14 @@ const Events = () => {
 
   return (
     <section className="bg-gray-100 py-10">
-      <div className="max-w-7xl mx-auto px-4 space-y-6">
+      <div className="px-4 space-y-6">
         {/* Title */}
-        <h1 className="text-xl font-semibold text-[#C3E92D]">RUNNING EVENTs</h1>
-        <div className="flex justify-between">
-          <h2 className="text-3xl lg:text-4xl font-bold text-black mb-8">
+        <h1 className="lg:text-xl font-semibold text-[#C3E92D]">RUNNING EVENTS</h1>
+        <div className="flex justify-between items-center">
+          <h2 className="text-xl lg:text-4xl lg:font-bold font-semibold text-black mb-8">
             RUNNING EVENTS COMING UP INCLUDE
           </h2>
-          <button className="text-2xl font-semibold items-center hover:text-[#C3E92D] transition-colors duration-500 ease-in-out">
+          <button className="lg:text-2xl text-sm font-semibold items-center hover:text-[#C3E92D] transition-colors duration-500 ease-in-out">
             VIEW ALL
           </button>
         </div>
