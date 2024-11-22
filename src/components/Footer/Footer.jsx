@@ -71,11 +71,11 @@ const Footer = () => {
           </div>
         </div>
       </div>
-      <div style={{borderColor:"gray"}} className="border-t-[1px] flex justify-between pt-4 lg:flex-row flex-col text-sm space-y-4">
-        <div>
+      <div style={{borderColor:"gray"}} className="border-t-[1px] flex justify-between lg:flex-row flex-col text-sm">
+        <div className="mt-4">
         <p>©2023 <span className="hover:text-[#C3E92D]"><a href="#">Zunzo</a></span>. All Rights Reserved.</p>
         </div>
-        <div className="flex items-center gap-3">
+        <div className="flex items-center gap-3 mt-4">
           <a className="hover:text-[#C3E92D]" href="#">Terms Of Services</a>
           <a className="hover:text-[#C3E92D]" href="#">Privacy Policy</a>
           <a className="hover:text-[#C3E92D]" href="#">Cookie Policy</a>

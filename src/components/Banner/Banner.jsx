@@ -11,7 +11,7 @@ const Banner = () => {
         backgroundPosition: "center",
         backgroundRepeat: "no-repeat",
       }}
-      className="mx-auto flex flex-col pt-10 lg:pt-1 lg:flex-row-reverse items-center gap-6 space-y-4 p-6 lg:py-12"
+      className="mx-auto flex flex-col pt-10 lg:p-20 min-h-screen lg:flex-row-reverse items-center gap-6 space-y-4  lg:py-12 "
     >
         {/* New Event Card */}
         <div className="card bg-black/50 lg:w-96 shadow-xl relative">

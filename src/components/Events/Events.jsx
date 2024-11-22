@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from "react";
 import { FaMapMarkerAlt, FaCalendarAlt, FaClock } from "react-icons/fa";
 import event1 from "../../assets/images/event1.jpg";
+import blogImg from "../../assets/images/hero.jpg";
 
 const Events = () => {
   const [eventData, setEventData] = useState([]);
@@ -13,12 +14,12 @@ const Events = () => {
   }, []);
 
   return (
-    <section className="bg-gray-100 py-10">
+    <section style={{ backgroundImage: `url(${blogImg})` }} className="bg-gray-100 py-10 bg-fixed bg-center bg-cover">
       <div className="px-4 space-y-6">
         {/* Title */}
         <h1 className="lg:text-xl font-semibold text-[#C3E92D]">RUNNING EVENTS</h1>
         <div className="flex justify-between items-center">
-          <h2 className="text-xl lg:text-4xl lg:font-bold font-semibold text-black mb-8">
+          <h2 className="text-xl lg:text-4xl lg:font-bold font-semibold text-white mb-8">
             RUNNING EVENTS COMING UP INCLUDE
           </h2>
           <button className="lg:text-2xl text-sm font-semibold items-center hover:text-[#C3E92D] transition-colors duration-500 ease-in-out">
@@ -27,14 +28,15 @@ const Events = () => {
         </div>
 
         {/* Event Card */}
-        <div className="grid grid-cols-1 gap-6 py-10">
+        <div className="grid grid-cols-1 gap-6 lg:min-h-screen">
           {eventData.map((item, index) => (
             <div
               key={index}
-              className="bg-white overflow-hidden grid lg:grid-cols-3"
+              className="bg-white overflow-hidden grid lg:grid-cols-3 h-72"
             >
               {/* Event Info */}
-              <div className="p-6">
+             <div className="flex items-center">
+             <div className="p-6">
                 <h3 className="text-2xl font-bold text-gray-800 mb-4">
                   {item.title}
                 </h3>
@@ -53,6 +55,7 @@ const Events = () => {
                   </li>
                 </ul>
               </div>
+             </div>
 
               {/* Event Image */}
               <div className="relative group overflow-hidden">

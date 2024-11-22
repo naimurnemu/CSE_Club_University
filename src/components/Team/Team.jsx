@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from "react";
 import { FaTag, FaComments } from "react-icons/fa";
+import banner from "../../assets/images/joinClubImg.jpg";
 
 const Team = () => {
   const [teamData, setTeamData] = useState([]);
@@ -23,8 +24,8 @@ const Team = () => {
             <figure>
               <img
                 className="hover:scale-105 transition-transform duration-500 lg:h-[300px]"
-                src="https://img.daisyui.com/images/stock/photo-1606107557195-0e29a4b5b4aa.webp"
-                alt="Shoes"
+                src={banner}
+                alt="photos"
               />
             </figure>
 

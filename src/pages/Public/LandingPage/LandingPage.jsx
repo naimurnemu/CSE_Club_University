@@ -1,5 +1,5 @@
 import React from "react";
-import { Banner, Benefits, Blogs, Events, ExampleComp, Footer, JoinClub, Team, Tutorial } from "../../../components";
+import { Banner, Benefits, Blogs, Events, ExampleComp, Footer, JoinClub, RunningClub, RunningCommunity, Team, Tutorial } from "../../../components";
 
 const LandingPage = () => {
   return (
@@ -7,10 +7,12 @@ const LandingPage = () => {
       <h2>This is the main landing page</h2>
       <ExampleComp />
       <Banner />
+      <RunningCommunity />
       <Tutorial />
       <Benefits />
       <Events />
       <Team />
+      <RunningClub />
       <Blogs />
       <JoinClub />
       <Footer />

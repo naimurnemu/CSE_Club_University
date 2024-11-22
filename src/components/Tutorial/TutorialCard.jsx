@@ -1,4 +1,5 @@
 import { FaComments, FaTag } from "react-icons/fa";
+import img from "../../assets/images/fixedImg.jpg"
 
 const TutorialCard = ({ item }) => {
   const { title, description, comments, category } = item;
@@ -8,7 +9,7 @@ const TutorialCard = ({ item }) => {
       <figure>
         <img
           className="hover:scale-105 transition-transform duration-500"
-          src="https://img.daisyui.com/images/stock/photo-1606107557195-0e29a4b5b4aa.webp"
+          src={img}
           alt="Shoes"
         />
       </figure>

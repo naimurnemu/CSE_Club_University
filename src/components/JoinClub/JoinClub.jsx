@@ -1,16 +1,15 @@
 import React from "react";
 import { FaTwitter, FaDribbble, FaBehance, FaPinterest } from "react-icons/fa";
+import banner from "../../assets/images/joinClubImg.jpg";
 
 const JoinClub = () => {
   return (
-    <div className="flex flex-col md:flex-row">
+    <div className="flex flex-col md:flex-row w-full">
       {/* Left Side: Image Section */}
-      <div
-        className="w-full md:w-1/2 h-48 md:h-full bg-cover bg-center"
-        style={{
-          backgroundImage: `url('https://via.placeholder.com/800x600')`, // Replace with your image URL
-        }}
-      ></div>
+       
+      <div className="lg:w-1/2">
+      <img className="h-screen" src={banner} alt="" />
+      </div>
 
       {/* Right Side: Form Section */}
       <div className="w-full md:w-1/2 bg-[#C3E92D] text-black flex flex-col px-6 py-8 md:px-8 md:py-12">
