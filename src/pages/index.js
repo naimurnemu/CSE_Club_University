@@ -10,3 +10,6 @@ export { Alumni } from "./Public/Alumni";
 export { ClubBlogs } from "./Public/ClubBlogs";
 export { Newsletter } from "./Public/Newsletter";
 export { Sponsorship } from "./Public/Sponsorship";
+export { Chat } from "./User/Chat";
+export { Vote } from "./User/Vote";
+export { ExecutiveBody } from "./Public/ExecutiveBody";
