@@ -1,6 +1,22 @@
 import { createBrowserRouter } from "react-router-dom";
 import App from "../App";
-import { AboutUsPage, ContactUsPage, ErrorPage, LandingPage, Login, NotFoundPage, Register, Announcements, Alumni, ClubBlogs, Newsletter, Sponsorship } from "../pages";
+import {
+  AboutUsPage,
+  ContactUsPage,
+  ErrorPage,
+  LandingPage,
+  Login,
+  NotFoundPage,
+  Register,
+  Announcements,
+  Alumni,
+  ClubBlogs,
+  Newsletter,
+  Sponsorship,
+  Chat,
+  Vote,
+  ExecutiveBody,
+} from "../pages";
 
 export const router = createBrowserRouter([
   {
@@ -9,11 +25,11 @@ export const router = createBrowserRouter([
     errorElement: <ErrorPage />,
     children: [
       {
-        path: "/",  
-        element: <LandingPage />,  
+        path: "/",
+        element: <LandingPage />,
       },
       {
-        path: "/home",  
+        path: "/home",
         element: <LandingPage />,
       },
       {
@@ -49,9 +65,21 @@ export const router = createBrowserRouter([
         element: <Login />,
       },
       {
-        path: "*",  
-        element: <NotFoundPage />,  
+        path: "/chat",
+        element: <Chat />,
+      },
+      {
+        path: "/vote",
+        element: <Vote />,
+      },
+      {
+        path: "/executives",
+        element: <ExecutiveBody />,
+      },
+      {
+        path: "*",
+        element: <NotFoundPage />,
       },
     ],
   },
-])
+]);
