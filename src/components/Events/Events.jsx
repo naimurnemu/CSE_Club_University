@@ -14,10 +14,15 @@ const Events = () => {
   }, []);
 
   return (
-    <section style={{ backgroundImage: `url(${blogImg})` }} className="bg-gray-100 py-10 bg-fixed bg-center bg-cover">
+    <section
+      style={{ backgroundImage: `url(${blogImg})` }}
+      className="bg-gray-100 py-10 bg-fixed bg-center bg-cover"
+    >
       <div className="px-4 space-y-6">
         {/* Title */}
-        <h1 className="lg:text-xl font-semibold text-[#C3E92D]">RUNNING EVENTS</h1>
+        <h1 className="lg:text-xl font-semibold text-[#C3E92D]">
+          RUNNING EVENTS
+        </h1>
         <div className="flex justify-between items-center">
           <h2 className="text-xl lg:text-4xl lg:font-bold font-semibold text-white mb-8">
             RUNNING EVENTS COMING UP INCLUDE
@@ -35,27 +40,27 @@ const Events = () => {
               className="bg-white overflow-hidden grid lg:grid-cols-3 h-72"
             >
               {/* Event Info */}
-             <div className="flex items-center">
-             <div className="p-6">
-                <h3 className="text-2xl font-bold text-gray-800 mb-4">
-                  {item.title}
-                </h3>
-                <ul className="space-y-4">
-                  <li className="flex items-center text-gray-700">
-                    <FaMapMarkerAlt className="text-[#C3E92D] mr-3" />
-                    {item.location}
-                  </li>
-                  <li className="flex items-center text-gray-700">
-                    <FaCalendarAlt className="text-[#C3E92D] mr-3" />
-                    {item.date}
-                  </li>
-                  <li className="flex items-center text-gray-700">
-                    <FaClock className="text-[#C3E92D] mr-3" />
-                    Start {item.startTime} - Until Finish
-                  </li>
-                </ul>
+              <div className="flex items-center">
+                <div className="p-6">
+                  <h3 className="text-2xl font-bold text-gray-800 mb-4">
+                    {item.title}
+                  </h3>
+                  <ul className="space-y-4">
+                    <li className="flex items-center text-gray-700">
+                      <FaMapMarkerAlt className="text-[#C3E92D] mr-3" />
+                      {item.location}
+                    </li>
+                    <li className="flex items-center text-gray-700">
+                      <FaCalendarAlt className="text-[#C3E92D] mr-3" />
+                      {item.date}
+                    </li>
+                    <li className="flex items-center text-gray-700">
+                      <FaClock className="text-[#C3E92D] mr-3" />
+                      Start {item.startTime} - Until Finish
+                    </li>
+                  </ul>
+                </div>
               </div>
-             </div>
 
               {/* Event Image */}
               <div className="relative group overflow-hidden">

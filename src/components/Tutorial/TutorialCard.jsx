@@ -1,5 +1,5 @@
 import { FaComments, FaTag } from "react-icons/fa";
-import img from "../../assets/images/fixedImg.jpg"
+import img from "../../assets/images/fixedImg.jpg";
 
 const TutorialCard = ({ item }) => {
   const { title, description, comments, category } = item;

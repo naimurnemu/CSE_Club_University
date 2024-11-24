@@ -24,11 +24,9 @@ const RunningCommunity = () => {
 
       {/* Right Section - Text Content */}
       <div className="text-left space-y-4">
-        <h5 className="text-gray-500 font-bold">
-        WELCOME TO RUNCLUB!
-        </h5>
+        <h5 className="text-gray-500 font-bold">WELCOME TO RUNCLUB!</h5>
         <h2 className="text-2xl sm:text-3xl lg:text-5xl font-bold text-gray-900">
-        ZUNZO - YOUR ULTIMATE RUNNING COMMUNITY
+          ZUNZO - YOUR ULTIMATE RUNNING COMMUNITY
         </h2>
         <p className="text-gray-600 text-sm sm:text-base lg:text-lg">
           Welcome to our vibrant running community, where we organize exciting
