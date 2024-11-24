@@ -10,3 +10,4 @@ export {Blogs} from "./Blogs";
 export {JoinClub} from "./JoinClub";
 export {RunningCommunity} from "./RunningCommunity";
 export {RunningClub} from "./RunningClub";
+export {Header} from "./Header";

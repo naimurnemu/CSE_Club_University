@@ -2,7 +2,7 @@ import React, { useState } from "react";
 
 const Login = () => {
   const [formData, setFormData] = useState({
-    email: "",
+    username: "", // Changed from email to username
     password: "",
   });
 
@@ -15,10 +15,8 @@ const Login = () => {
 
   const validateForm = () => {
     const newErrors = {};
-    if (!formData.email.trim()) {
-      newErrors.email = "Email is required.";
-    } else if (!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(formData.email)) {
-      newErrors.email = "Invalid email address.";
+    if (!formData.username.trim()) { // Updated to check username
+      newErrors.username = "Username is required.";
     }
     if (!formData.password.trim()) {
       newErrors.password = "Password is required.";
@@ -28,14 +26,34 @@ const Login = () => {
     return newErrors;
   };
 
-  const handleSubmit = (e) => {
+  const handleSubmit = async (e) => {
     e.preventDefault();
     const validationErrors = validateForm();
     if (Object.keys(validationErrors).length > 0) {
       setErrors(validationErrors);
     } else {
-      alert("Login successful!");
-      console.log(formData);
+      // API call using fetch
+      try {
+        const response = await fetch('https://computer-club.onrender.com/users/login', {
+          method: 'POST',
+          headers: {
+            'Content-Type': 'application/json',
+          },
+          body: JSON.stringify({
+            username: formData.username, // Using username for login
+            password: formData.password,
+          }),
+        });
+        const data = await response.json();
+        if (response.ok) {
+          alert("Login successful!");
+          console.log(data); // Handle the response data as needed
+        } else {
+          throw new Error(data.message || "Failed to login");
+        }
+      } catch (error) {
+        alert(error.message);
+      }
     }
   };
 
@@ -57,7 +75,7 @@ const Login = () => {
           <h2 className="text-2xl font-bold">Welcome Back</h2>
           <form onSubmit={handleSubmit} className="space-y-4">
             {[
-              { label: "Email", name: "email", type: "email", placeholder: "Enter your email" },
+              { label: "Username", name: "username", type: "text", placeholder: "Enter your username" }, // Changed label and placeholder
               { label: "Password", name: "password", type: "password", placeholder: "Enter your password" },
             ].map(({ label, name, type, placeholder }) => (
               <div key={name} className="flex flex-col">
