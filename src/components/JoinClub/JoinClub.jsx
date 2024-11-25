@@ -8,7 +8,7 @@ const JoinClub = () => {
       {/* Left Side: Image Section */}
 
       <div className="lg:w-1/2">
-        <img className="h-screen" src={banner} alt="" />
+        <img className="lg:h-screen" src={banner} alt="" />
       </div>
 
       {/* Right Side: Form Section */}

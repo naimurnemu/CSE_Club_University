@@ -16,6 +16,7 @@ import {
   Chat,
   Vote,
   ExecutiveBody,
+  BlogDetails,
 } from "../pages";
 
 export const router = createBrowserRouter([
@@ -79,6 +80,10 @@ export const router = createBrowserRouter([
       {
         path: "*",
         element: <NotFoundPage />,
+      },
+      {
+        path: '/blogDetails/:id',
+        element: <BlogDetails />
       },
     ],
   },
