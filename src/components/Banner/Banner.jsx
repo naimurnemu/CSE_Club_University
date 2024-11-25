@@ -12,7 +12,7 @@ const Banner = () => {
           backgroundPosition: "center",
           backgroundRepeat: "no-repeat",
         }}
-        className="lg:max-w-screen-xl mx-auto flex flex-col pt-10 lg:p-20 min-h-screen lg:flex-row-reverse items-center gap-6 space-y-4  lg:py-12 "
+        className="max-w-screen-xl mx-auto flex flex-col pt-10 lg:p-20 min-h-screen lg:flex-row-reverse items-center gap-6 space-y-4  lg:py-12 "
       >
         {/* New Event Card */}
         <div className="card bg-black/50 lg:w-96 shadow-xl relative">

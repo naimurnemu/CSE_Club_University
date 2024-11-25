@@ -6,7 +6,7 @@ const Blogs = () => {
   const [blogsData, setBlogsData] = useState([]);
 
   useEffect(() => {
-    fetch("/blogs.json")
+    fetch("https://computer-club.onrender.com/post/posts/")
       .then((response) => response.json())
       .then((data) => setBlogsData(data))
       .catch((error) => console.error("Error fetching JSON:", error));
@@ -14,7 +14,7 @@ const Blogs = () => {
 
   return (
     <div className="w-full bg-white">
-      <div className="lg:max-w-screen-xl lg:py-10 py-6  px-6">
+      <div className="max-w-screen-xl lg:py-10 py-6  px-6">
         <div className="flex justify-between">
           <h2 className="text-2xl lg:text-5xl font-bold text-black mb-8">
             OUR BLOGS
@@ -59,7 +59,7 @@ const Blogs = () => {
                 {/* Image Section */}
                 <img
                   className="w-full sm:w-40 sm:h-24 lg:w-60 lg:h-36 object-cover"
-                  src={item.image}
+                  src={blogImg}
                   alt="Blog Thumbnail"
                 />
 

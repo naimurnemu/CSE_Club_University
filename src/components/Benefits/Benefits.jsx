@@ -3,7 +3,7 @@ import middlePhoto from "../../assets/images/cse-club.png";
 const Benefits = () => {
   return (
     <div className="w-full bg-[#121212]">
-      <div className="lg:max-w-screen-xl py-10 px-5">
+      <div className="max-w-screen-xl py-10 px-5">
         <div className="text-center space-y-4">
           <h1 className="text-[#C3E92D] text-xl font-semibold">
             PROGRAMMING BENEFITS

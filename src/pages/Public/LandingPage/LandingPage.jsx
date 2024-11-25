@@ -15,7 +15,6 @@ const LandingPage = () => {
       <RunningClub />
       <Blogs />
       <JoinClub />
-      <Footer />
     </div>
   );
 };

@@ -1,12 +1,13 @@
 import { Outlet } from "react-router-dom";
 import "./App.css";
-import { Header } from "./components";
+import { Footer, Header } from "./components";
 
 function App() {
   return (
     <div className="mx-auto">
       <Header />
       <Outlet />
+      <Footer />
     </div>
   );
 }
