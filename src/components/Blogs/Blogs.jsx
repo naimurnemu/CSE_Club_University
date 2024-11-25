@@ -6,7 +6,7 @@ const Blogs = () => {
   const [blogsData, setBlogsData] = useState([]);
 
   useEffect(() => {
-    fetch("https://computer-club.onrender.com/post/posts/")
+    fetch("/blogs.json")
       .then((response) => response.json())
       .then((data) => setBlogsData(data))
       .catch((error) => console.error("Error fetching JSON:", error));
