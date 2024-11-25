@@ -6,7 +6,7 @@ const Blogs = () => {
   const [blogsData, setBlogsData] = useState([]);
 
   useEffect(() => {
-    fetch("https://computer-club.onrender.com/post/posts")
+    fetch("/blogs.json")
       .then((response) => response.json())
       .then((data) => setBlogsData(data))
       .catch((error) => console.error("Error fetching JSON:", error));
@@ -41,7 +41,7 @@ const Blogs = () => {
                   Journey Right
                 </h2>
                 <p className="text-sm">by Tony Nguyen — Oct 12, 2023</p>
-                
+
                 <button className="text-white lg:font-semibold">
                   READ MORE
                 </button>
@@ -86,9 +86,6 @@ const Blogs = () => {
             ))}
           </div>
         </div>
-        <button className="text-black text-[14px] font-medium text-start">
-          READ MORE
-        </button>
       </div>
     </div>
   );
