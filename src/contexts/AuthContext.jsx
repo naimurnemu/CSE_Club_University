@@ -21,7 +21,7 @@ export const AuthProvider = ({ children }) => {
     return handleResponse(response);
   }
 
-  const login = async (username, password) => {
+  const login = async (username, password, navigate = () => {}) => {
     try {
       const response = await fetch("https://computer-club.onrender.com/users/login/", {
         method: "POST",
@@ -34,6 +34,11 @@ export const AuthProvider = ({ children }) => {
 
       const userData = await getUserDetails(data.token, data.user_id);
       setAuthState({ ...data, user: userData });
+
+
+      if (userData.username) {
+        navigate("/announcements");
+      } 
     } catch (error) {
       alert(error.message);
     }

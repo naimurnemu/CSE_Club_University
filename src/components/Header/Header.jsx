@@ -150,7 +150,7 @@ const Header = () => {
           </div>
 
           <>
-            <nav className="items-center gap-4 text-base hidden md:flex">
+            <nav className="items-center gap-6 text-base hidden md:flex">
               <Link
                 to="/about-us"
                 className="text-white font-medium hover:underline hover:transition-colors"

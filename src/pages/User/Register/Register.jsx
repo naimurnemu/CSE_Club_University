@@ -1,4 +1,6 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
+import { Link, useNavigate } from "react-router-dom";
+import { aboutImage } from "../../../assets/images";
 
 const Register = () => {
   const [formData, setFormData] = useState({
@@ -9,33 +11,31 @@ const Register = () => {
     batch: "",
     password: "",
     confirm_password: "",
-    // image: "",
     student_id: "",
   });
 
   const [errors, setErrors] = useState({});
+  const navigate = useNavigate();
 
-  const handleChange = (e) => {
-    const { name, type, value, files } = e.target;
-    if (type === "file") {
-      const file = files[0];
-      if (file) {
-        const reader = new FileReader();
-        reader.onloadend = () => {
-          setFormData((prevData) => ({ ...prevData, [name]: reader.result }));
-        };
-        reader.readAsDataURL(file);
-      }
-    } else {
-      setFormData((prevData) => ({ ...prevData, [name]: value }));
+  const handleChange = ({ target: { name, value } }) => {
+    setFormData((prevData) => ({ ...prevData, [name]: value }));
+    // Clear error when user reenters data
+    if (errors[name]) {
+      setErrors((prevErrors) => ({ ...prevErrors, [name]: undefined }));
     }
   };
+
+  useEffect(() => {
+    window.scrollTo(0, 0);
+  }, []);
 
   const validateForm = () => {
     const newErrors = {};
     if (!formData.username.trim()) newErrors.username = "Username is required.";
-    if (!formData.first_name.trim()) newErrors.first_name = "First name is required.";
-    if (!formData.last_name.trim()) newErrors.last_name = "Last name is required.";
+    if (!formData.first_name.trim())
+      newErrors.first_name = "First name is required.";
+    if (!formData.last_name.trim())
+      newErrors.last_name = "Last name is required.";
     if (!formData.email.trim()) {
       newErrors.email = "Email is required.";
     } else if (!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(formData.email)) {
@@ -50,12 +50,8 @@ const Register = () => {
     if (formData.password !== formData.confirm_password) {
       newErrors.confirm_password = "Passwords do not match.";
     }
-    if (!formData.student_id.trim()) newErrors.student_id = "Student ID is required.";
-    // if (!formData.image.trim()) {
-    //   newErrors.image = "Image URL is required.";
-    // } else if (!/^https?:\/\/.+\.(jpg|jpeg|png|gif)$/.test(formData.image)) {
-    //   newErrors.image = "Invalid image URL. Must be a valid URL to an image file (jpg, jpeg, png, gif).";
-    // }
+    if (!formData.student_id.trim())
+      newErrors.student_id = "Student ID is required.";
     return newErrors;
   };
 
@@ -65,95 +61,122 @@ const Register = () => {
     if (Object.keys(validationErrors).length > 0) {
       setErrors(validationErrors);
     } else {
-      const requestOptions = {
-        method: 'POST',
-        headers: { 'Content-Type': 'application/json' },
-        body: JSON.stringify(formData)
-      };
-
       try {
-        const response = await fetch('https://computer-club.onrender.com/users/register/', requestOptions);
+        const response = await fetch(
+          "https://computer-club.onrender.com/users/register/",
+          {
+            method: "POST",
+            headers: { "Content-Type": "application/json" },
+            body: JSON.stringify(formData),
+          }
+        );
         const data = await response.json();
         if (response.ok) {
-          // alert("Form submitted successfully!");
-          console.log(data);
+          navigate("/login", { state: { successRegister: true } });
         } else {
-          // alert("Failed to register. " + data.message);
           setErrors(data.errors || {});
         }
       } catch (error) {
-        console.error('Failed to submit form:', error);
-        // alert("An error occurred while submitting the form.");
+        console.error("Failed to submit form:", error);
       }
     }
   };
 
   return (
-    <div className="max-w-6xl mx-auto p-4">
-      <h1 className="text-3xl font-bold text-center mb-6">Register</h1>
-      <div className="grid grid-cols-1 md:grid-cols-2 gap-8 justify-between">
-        <div className="space-y-4 w-full">
-          <h2 className="text-2xl font-bold">Create an Account</h2>
-          <form onSubmit={handleSubmit} className="space-y-4">
-            {[
-              { label: "Username", name: "username", type: "text", placeholder: "Enter your username" },
-              { label: "First Name", name: "first_name", type: "text", placeholder: "Enter your first name" },
-              { label: "Last Name", name: "last_name", type: "text", placeholder: "Enter your last name" },
-              { label: "Email", name: "email", type: "email", placeholder: "Enter your email" },
-              { label: "Batch", name: "batch", type: "text", placeholder: "Enter your batch" },
-              { label: "Password", name: "password", type: "password", placeholder: "Enter your password" },
-              {
-                label: "Confirm Password",
-                name: "confirm_password",
-                type: "password",
-                placeholder: "Confirm your password",
-              },
-              { label: "Student ID", name: "student_id", type: "text", placeholder: "Enter your student ID" },
-            ].map(({ label, name, type, placeholder }) => (
-              <div key={name} className="flex flex-col">
-                <label htmlFor={name} className="text-sm font-medium">
-                  {label}
-                </label>
-                <input
-                  id={name}
-                  name={name}
-                  type={type}
-                  value={formData[name]}
-                  onChange={handleChange}
-                  placeholder={placeholder}
-                  className="border border-gray-300 rounded-lg p-2 mt-1 focus:outline-none focus:ring focus:ring-blue-300"
-                />
-                {errors[name] && <span className="text-red-500 text-sm">{errors[name]}</span>}
-              </div>
-            ))}
-            {/* <div className="flex flex-col">
-              <label htmlFor="image" className="text-sm font-medium">
-                Image URL
-              </label>
-              <input
-                id="image"
-                name="image"
-                type="file"
-                onChange={handleChange}
-                className="border border-gray-300 rounded-lg p-2 mt-1 focus:outline-none focus:ring focus:ring-blue-300"
-              />
-              {errors.image && <span className="text-red-500 text-sm">{errors.image}</span>}
-            </div> */}
-            <button
-              type="submit"
-              className="w-full bg-[#C3E92D] text-white px-4 py-2 rounded-lg font-bold hover:bg-green-400"
-            >
-              Register
-            </button>
-          </form>
+    <div className="flex justify-center items-center bg-gray-900">
+      <div className="min-h-[calc(100vh-150px)] max-w-7xl w-full px-3 md:px-5 lg:px-0 flex flex-col md:flex-row">
+        <div className="md:w-1/2 w-full h-full">
+          <div className="w-full bg-gray-700 shadow-lg rounded-lg h-full flex flex-col justify-center items-center px-10 py-14">
+            <h1 className="text-xl font-bold text-center mb-6 text-yellow-400">
+              Create your account
+            </h1>
+            <form onSubmit={handleSubmit} className="space-y-8 w-full">
+              {[
+                { label: "Username", name: "username", type: "text" },
+                { label: "First Name", name: "first_name", type: "text" },
+                { label: "Last Name", name: "last_name", type: "text" },
+                { label: "Email", name: "email", type: "email" },
+                { label: "Batch", name: "batch", type: "text" },
+                { label: "Password", name: "password", type: "password" },
+                {
+                  label: "Confirm Password",
+                  name: "confirm_password",
+                  type: "password",
+                },
+                { label: "Student ID", name: "student_id", type: "text" },
+              ].map(({ label, name, type }) => (
+                <div key={name} className="flex flex-col gap-1">
+                  <label
+                    htmlFor={name}
+                    className="mb-0 font-medium text-gray-300"
+                  >
+                    {label}
+                  </label>
+                  <input
+                    id={name}
+                    name={name}
+                    type={type}
+                    value={formData[name]}
+                    onChange={handleChange}
+                    placeholder={`Enter your ${label.toLowerCase()}`}
+                    className="form-input block w-full px-3 py-2 border border-gray-600 rounded-md shadow-sm focus:outline-none focus:ring-yellow-500 focus:border-yellow-500 bg-gray-600 text-white"
+                  />
+                  {errors[name] && (
+                    <span className="text-red-400 text-sm mt-1">
+                      {errors[name]}
+                    </span>
+                  )}
+                </div>
+              ))}
+              <button
+                type="submit"
+                className="w-full bg-yellow-500 hover:bg-yellow-600 text-white font-bold py-2 px-4 rounded-lg transition-colors"
+              >
+                Register
+              </button>
+            </form>
+          </div>
         </div>
-
-        <div className="hidden xs:hidden md:block">
-          <img
-            src="https://via.placeholder.com/400"
-            alt="Registration Illustration"
-            className="w-full h-auto rounded-lg shadow-md"
-          />
+        <div className="md:w-1/2 w-full flex justify-center items-center">
+          <div className="bg-gray-800 text-gray-200 p-10 rounded-lg shadow-lg h-full flex flex-col justify-center">
+            <h2 className="text-3xl font-semibold mb-4 text-yellow-400">
+              Welcome to Our Platform!
+            </h2>
+            <p className="text-lg">
+              Create your account to join a vibrant community of learners and
+              access a wide range of educational resources tailored to enhance
+              your academic and professional growth.
+            </p>
+            <h3 className="text-2xl mt-6 mb-2 font-medium">Why Join Us?</h3>
+            <p className="text-base">
+              Engage with experts, participate in discussions, and gain insights
+              from diverse educational content that drives real-world
+              application and success.
+            </p>
+            <h3 className="text-2xl mt-6 mb-2 font-medium">
+              Exclusive Benefits
+            </h3>
+            <p className="text-base">
+              As a member, you will receive exclusive access to workshops,
+              webinars, and networking events designed to foster collaboration
+              and innovation among students and professionals.
+            </p>
+            <h3 className="text-2xl mt-6 mb-2 font-medium">
+              Join Our Community
+            </h3>
+            <p className="text-base">
+              Become part of a supportive network where you can share ideas,
+              seek advice, and collaborate on projects that matter to you.
+            </p>
+            <span
+              onClick={() => navigate("/login")}
+              className="mt-4 text-center font-bold cursor-pointer"
+            >
+              Already have an account?
+              <br />
+              <span className="text-yellow-500">Login</span>
+            </span>
+          </div>
         </div>
       </div>
     </div>
