@@ -41,14 +41,14 @@ export const AuthProvider = ({ children }) => {
 
   const logout = async () => {
     try {
-      const response = await fetch("https://computer-club.onrender.com/users/logout/", {
-        method: "POST",
-        headers: {
-          "Content-Type": "application/json",
-          "Authorization": `Token ${localStorage.getItem("token")}`,
-        },
-      });
-      await handleResponse(response);
+      // const response = await fetch("https://computer-club.onrender.com/users/logout/", {
+      //   method: "POST",
+      //   headers: {
+      //     "Content-Type": "application/json",
+      //     "Authorization": `Token ${localStorage.getItem("token")}`,
+      //   },
+      // });
+      // await handleResponse(response);
       localStorage.removeItem("token");
       localStorage.removeItem("userId");
       setAuthState(null);
