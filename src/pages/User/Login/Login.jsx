@@ -33,7 +33,7 @@ const Login = () => {
       setErrors(validationErrors);
     } else {
       try {
-        const response = await fetch('https://computer-club.onrender.com/users/login', {
+        const response = await fetch('https://computer-club.onrender.com/users/login/', {
           method: 'POST',
           headers: {
             'Content-Type': 'application/json',
@@ -46,6 +46,7 @@ const Login = () => {
         const data = await response.json();
         if (response.ok) {
           alert("Login successful!");
+          localStorage.setItem("token", data.token); 
           console.log(data);
         } else {
           throw new Error(data.message || "Failed to login");
