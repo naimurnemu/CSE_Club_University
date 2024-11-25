@@ -9,15 +9,26 @@ const Register = () => {
     batch: "",
     password: "",
     confirm_password: "",
-    image: "",
+    // image: "",
     student_id: "",
   });
 
   const [errors, setErrors] = useState({});
 
   const handleChange = (e) => {
-    const { name, value } = e.target;
-    setFormData({ ...formData, [name]: value });
+    const { name, type, value, files } = e.target;
+    if (type === "file") {
+      const file = files[0];
+      if (file) {
+        const reader = new FileReader();
+        reader.onloadend = () => {
+          setFormData((prevData) => ({ ...prevData, [name]: reader.result }));
+        };
+        reader.readAsDataURL(file);
+      }
+    } else {
+      setFormData((prevData) => ({ ...prevData, [name]: value }));
+    }
   };
 
   const validateForm = () => {
@@ -54,7 +65,6 @@ const Register = () => {
     if (Object.keys(validationErrors).length > 0) {
       setErrors(validationErrors);
     } else {
-      // Prepare data for the API call
       const requestOptions = {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
@@ -65,15 +75,15 @@ const Register = () => {
         const response = await fetch('https://computer-club.onrender.com/users/register/', requestOptions);
         const data = await response.json();
         if (response.ok) {
-          alert("Form submitted successfully!");
-          console.log(data); // Log or handle response data as needed
+          // alert("Form submitted successfully!");
+          console.log(data);
         } else {
-          alert("Failed to register. " + data.message);
+          // alert("Failed to register. " + data.message);
           setErrors(data.errors || {});
         }
       } catch (error) {
         console.error('Failed to submit form:', error);
-        alert("An error occurred while submitting the form.");
+        // alert("An error occurred while submitting the form.");
       }
     }
   };
@@ -81,8 +91,7 @@ const Register = () => {
   return (
     <div className="max-w-6xl mx-auto p-4">
       <h1 className="text-3xl font-bold text-center mb-6">Register</h1>
-      <div className="grid grid-cols-1 md:grid-cols-2 gap-8  justify-between">
-        {/* Left Side Form */}
+      <div className="grid grid-cols-1 md:grid-cols-2 gap-8 justify-between">
         <div className="space-y-4 w-full">
           <h2 className="text-2xl font-bold">Create an Account</h2>
           <form onSubmit={handleSubmit} className="space-y-4">
@@ -100,7 +109,6 @@ const Register = () => {
                 placeholder: "Confirm your password",
               },
               { label: "Student ID", name: "student_id", type: "text", placeholder: "Enter your student ID" },
-              { label: "Image URL", name: "image", type: "url", placeholder: "Enter image URL" },
             ].map(({ label, name, type, placeholder }) => (
               <div key={name} className="flex flex-col">
                 <label htmlFor={name} className="text-sm font-medium">
@@ -118,6 +126,19 @@ const Register = () => {
                 {errors[name] && <span className="text-red-500 text-sm">{errors[name]}</span>}
               </div>
             ))}
+            {/* <div className="flex flex-col">
+              <label htmlFor="image" className="text-sm font-medium">
+                Image URL
+              </label>
+              <input
+                id="image"
+                name="image"
+                type="file"
+                onChange={handleChange}
+                className="border border-gray-300 rounded-lg p-2 mt-1 focus:outline-none focus:ring focus:ring-blue-300"
+              />
+              {errors.image && <span className="text-red-500 text-sm">{errors.image}</span>}
+            </div> */}
             <button
               type="submit"
               className="w-full bg-[#C3E92D] text-white px-4 py-2 rounded-lg font-bold hover:bg-green-400"
@@ -127,7 +148,6 @@ const Register = () => {
           </form>
         </div>
 
-        {/* Right Side Image */}
         <div className="hidden xs:hidden md:block">
           <img
             src="https://via.placeholder.com/400"
