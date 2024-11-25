@@ -45,7 +45,7 @@ export const AuthProvider = ({ children }) => {
         method: "POST",
         headers: {
           "Content-Type": "application/json",
-          "Authorization": `Bearer ${localStorage.getItem("token")}`,
+          "Authorization": `Token ${localStorage.getItem("token")}`,
         },
       });
       await handleResponse(response);

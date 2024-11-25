@@ -4,9 +4,7 @@ import { AuthContext } from "../../../contexts/AuthContext";
 const UserProfile = () => {
   const { authState } = useContext(AuthContext);
   const { user } = authState || {};
-  console.log(user);
 
-  // Format the membership date
   const formatDate = (dateString) => {
     const options = { year: "numeric", month: "long", day: "numeric" };
     return new Date(dateString).toLocaleDateString(undefined, options);
