@@ -15,3 +15,6 @@ export { Vote } from "./User/Vote";
 export { ExecutiveBody } from "./Public/ExecutiveBody";
 export {BlogDetails} from "./Public/BolgDetails";
 export {UserProfile} from "./User/UserProfile";
+export {AllEvents} from "./Public/AllEvents";
+export {EventDetails} from "./Public/EventDetails";
+export {MemberDetails} from "./Public/MemberDetails"

@@ -1,7 +1,8 @@
 import React, { useState, useEffect } from "react";
 import { FaMapMarkerAlt, FaCalendarAlt, FaClock } from "react-icons/fa";
-import blogImg from "../../assets/images/hero.jpg";
-import { Link } from "react-router-dom";
+import blogImg from "../../../assets/images/hero.jpg";
+
+
 
 const Events = () => {
   const [eventData, setEventData] = useState([]);
@@ -14,30 +15,15 @@ const Events = () => {
   }, []);
 
   return (
-   <div className="w-full bg-white">
-     <div
+    <section
       style={{ backgroundImage: `url(${blogImg})` }}
-      className="bg-gray-100 py-10 bg-fixed bg-center bg-cover max-w-7xl mx-auto"
+      className="bg-gray-100 py-10 bg-fixed bg-center bg-cover"
     >
       <div className="px-4 space-y-6">
-        {/* Title */}
-        <h1 className="lg:text-xl font-semibold text-[#C3E92D]">
-          RUNNING EVENTS
-        </h1>
-        <div className="flex justify-between items-center">
-          <h2 className="text-xl lg:text-4xl lg:font-bold font-semibold text-white">
-            RUNNING EVENTS COMING UP INCLUDE
-          </h2>
-          <Link to="/allEvents">
-          <button className="lg:text-2xl text-sm font-bold text-white items-center hover:text-[#C3E92D] transition-colors duration-500 ease-in-out">
-            VIEW ALL
-          </button>
-          </Link>
-        </div>
-
+     
         {/* Event Card */}
-        <div className="grid grid-cols-1 gap-6 lg:min-h-screen lg:pt-20 pt-8">
-        {eventData.slice(0, 2).map((item) => (
+        <div className="grid grid-cols-1 gap-6 lg:min-h-screen">
+        {eventData.map((item) => (
             <div
               key={item.id}
               className="bg-white overflow-hidden grid lg:grid-cols-3 h-72"
@@ -90,18 +76,15 @@ const Events = () => {
                 </div>
 
                 {/* Button */}
-                <Link to={`/eventDetails/${item.id}`}>
                 <button className="mt-4 px-6 py-2 lg:py-4 bg-[#C3E92D] text-black hover:bg-black hover:text-white font-bold rounded-md text-start">
                   Learn More
                 </button>
-                </Link>
               </div>
             </div>
           ))}
         </div>
       </div>
-    </div>
-   </div>
+    </section>
   );
 };
 

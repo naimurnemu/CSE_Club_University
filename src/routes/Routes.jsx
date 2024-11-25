@@ -18,6 +18,9 @@ import {
   ExecutiveBody,
   BlogDetails,
   UserProfile,
+  AllEvents,
+  EventDetails,
+  MemberDetails,
 } from "../pages";
 
 export const router = createBrowserRouter([
@@ -90,6 +93,18 @@ export const router = createBrowserRouter([
         path: '/blogDetails/:id',
         element: <BlogDetails />
       },
+      {
+        path: "/allEvents",
+        element: <AllEvents />
+      },
+      {
+        path: "/eventDetails/:id",
+        element: <EventDetails />
+      },
+      {
+        path: "/memberDetails/:id",
+        element: <MemberDetails />
+      }
     ],
   },
 ]);

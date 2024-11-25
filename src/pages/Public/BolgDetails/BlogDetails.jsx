@@ -17,9 +17,13 @@ const BlogDetails = () => {
     return <p>Loading...</p>;
   }
 
+  const formatDate = (dateString) => {
+    return dateString ? dateString.split("T")[0] : "N/A";
+  };
+
   return (
     <div className="w-full bg-white">
-      <div className="max-w-screen-xl mx-auto space-y-4 pt-2 lg:px-4 px-2 lg:pb-10 pb-5">
+      <div className="lg:max-w-screen-xl mx-auto space-y-4 pt-2 lg:px-4 px-2 lg:pb-10 pb-5">
         <button className="bg-black text-[#C3E92D] px-3 py-2 rounded-md hover:bg-[#C3E92D] hover:text-black text-xs font-bold">
           RUNNING
         </button>
@@ -33,11 +37,12 @@ const BlogDetails = () => {
               <img src="https://img.daisyui.com/images/stock/photo-1534528741775-53994a69daeb.webp" />
             </div>
           </div>
-          <p className="text-black">by Tony Nguyen -- Oct 12, 2023</p>
+          <p className="text-black">by {details.author_name}--<span>{formatDate(details.created_at)}</span></p>
         </div>
-        <div className="text-black">
-          <p>{details.created_at}</p>
-          <p>{details.updated_at}</p>
+        <div >
+
+          <p className="text-black font-bold">Updated_At: <span className="text-black/60 font-sm">{formatDate(details.updated_at)}</span></p>
+          
         </div>
 
         <img

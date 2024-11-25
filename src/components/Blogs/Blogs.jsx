@@ -12,6 +12,11 @@ const Blogs = () => {
       .catch((error) => console.error("Error fetching JSON:", error));
   }, []);
 
+  const formatDate = (isoString) => {
+    const date = new Date(isoString);
+    return date.toISOString().split("T")[0];
+  };
+
   return (
     <div className="w-full bg-white">
       <div className="max-w-screen-xl lg:py-10 py-6  px-6">
@@ -73,7 +78,7 @@ const Blogs = () => {
                       {item.title || "Default Blog Title"}
                     </h3>
                     <p className="text-sm text-black hover:text-[#C3E92D]">
-                      by {item.author || "Unknown"} — {item.date || "N/A"}
+                      by {item.author_name || "Unknown"} — {formatDate(item.created_at) || "N/A"}
                     </p>
                   </div>
                   <Link to={`/blogDetails/${item.id}`}>
