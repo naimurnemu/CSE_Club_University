@@ -17,6 +17,7 @@ import {
   Vote,
   ExecutiveBody,
   BlogDetails,
+  UserProfile,
 } from "../pages";
 
 export const router = createBrowserRouter([
@@ -64,6 +65,10 @@ export const router = createBrowserRouter([
       {
         path: "/login",
         element: <Login />,
+      },
+      {
+        path: "/user-profile",
+        element: <UserProfile />,
       },
       {
         path: "/chat",
