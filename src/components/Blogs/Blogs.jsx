@@ -86,6 +86,14 @@ const Blogs = () => {
             ))}
           </div>
         </div>
+        <button className="text-black text-[14px] font-medium text-start">
+          READ MORE
+        </button>
+      </div>
+    </div>
+  ))}
+</div>
+
       </div>
     </div>
   );

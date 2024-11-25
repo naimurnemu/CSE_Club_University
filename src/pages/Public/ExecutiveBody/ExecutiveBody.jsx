@@ -1,63 +1,38 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
+import { FaLinkedin } from "react-icons/fa";
 
 const ExecutiveBody = () => {
-  // Static data to simulate API response
-  const [participants] = useState([
-    {
-      name: "Tasnim Akter",
-      photo: "https://via.placeholder.com/100",
-      vote_count: 5,
-      role: "President",
-    },
-    {
-      name: "Arif Hossain",
-      photo: "https://via.placeholder.com/100",
-      vote_count: 4,
-      role: "President",
-    },
-    {
-      name: "Rahim Uddin",
-      photo: "https://via.placeholder.com/100",
-      vote_count: 3,
-      role: "Vice President",
-    },
-    {
-      name: "Sadia Rahman",
-      photo: "https://via.placeholder.com/100",
-      vote_count: 2,
-      role: "Vice President",
-    },
-    {
-      name: "Nusrat Jahan",
-      photo: "https://via.placeholder.com/100",
-      vote_count: 6,
-      role: "General Secretary",
-    },
-    {
-      name: "Nusrat Jahan",
-      photo: "https://via.placeholder.com/100",
-      vote_count: 7,
-      role: "General Secretary",
-    },
-  ]);
+  const [participants, setParticipants] = useState([]);
 
-  // Function to process and filter participants by role
+  useEffect(() => {
+    fetch("https://computer-club.onrender.com/executive/executives/")
+      .then((response) => response.json())
+      .then((data) => {
+        console.log("data", data);
+        setParticipants(data);
+      })
+      .catch((error) => console.error("Error fetching data:", error));
+  }, []);
+
+  // Function to process and filter participants by designation
   const getFilteredParticipants = () => {
     const filteredParticipants = [];
-    const groupedByRole = participants.reduce((acc, participant) => {
-      const { role } = participant;
-      if (!acc[role]) acc[role] = [];
-      acc[role].push(participant);
+    const groupedByDesignation = participants.reduce((acc, participant) => {
+      const { designation } = participant;
+      if (!acc[designation]) acc[designation] = [];
+      acc[designation].push(participant);
       return acc;
     }, {});
 
-    for (const [role, candidates] of Object.entries(groupedByRole)) {
-      if (role === "President" || role === "General Secretary") {
+    for (const [designation, candidates] of Object.entries(
+      groupedByDesignation
+    )) {
+      if (designation === "President" || designation === "General Secretary") {
         // Select the candidate with the highest vote count for President
         const maxVoteCandidate = candidates.reduce((max, candidate) =>
           candidate.vote_count > max.vote_count ? candidate : max
         );
-        filteredParticipants.push({ ...maxVoteCandidate, role });
+        filteredParticipants.push({ ...maxVoteCandidate, designation });
       } else {
         // Select up to 2 candidates for other roles
         const limitedCandidates = candidates.slice(0, 2);
@@ -69,30 +44,56 @@ const ExecutiveBody = () => {
   };
 
   // Render cards for each role
-  const renderCards = (role) => {
-    const roleParticipants = getFilteredParticipants().filter(
-      (p) => p.role === role
+  const renderCards = (designation) => {
+    const designationParticipants = getFilteredParticipants().filter(
+      (p) => p.designation === designation
     );
 
     return (
-      <div key={role} className="mb-10">
-        <h2 className="text-center font-bold text-xl mb-6">{role}</h2>
-        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 justify-center">
-          {roleParticipants.map((participant, index) => (
+      <div key={designation} className="mb-10 mt-10">
+        <h2 className="text-center font-bold text-2xl md:text-3xl mb-6">
+          {designation}
+        </h2>
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
+          {designationParticipants.map((participant, index) => (
             <div
               key={`${participant.name}-${index}`}
-              className="bg-white shadow-md rounded-lg overflow-hidden flex flex-col justify-between items-center p-6 h-full w-full max-w-[250px] mx-auto"
+              className="border border-blue-900 bg-white shadow-md rounded-lg overflow-hidden flex flex-col justify-between items-center px-4 py-6 h-full w-full max-w-[250px] mx-auto"
             >
               {/* Photo */}
-              <img
-                src={participant.photo}
-                alt={participant.name}
-                className="w-24 h-24 rounded-full mb-4"
-              />
-              {/* Name */}
-              <h3 className="text-lg font-semibold text-center mb-2">
+              <div className="flex justify-end items-top">
+                <img
+                  src={participant.photo || "https://via.placeholder.com/150"}
+                  alt={participant.name}
+                  className="w-36 h-36 rounded-full mb-4 object-cover"
+                />
+                <a
+                  href={participant.linkedIn}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="absolute text-blue-500 hover:underline text-2xl mt-[120px] mr-12 bg-white rounded-full p-2"
+                >
+                  <FaLinkedin />
+                </a>
+              </div>
+              <h3 className="text-lg md:text-2xl font-semibold text-center mb-2 text-gray-800">
                 {participant.name}
               </h3>
+              <div className="flex flex-col items-start">
+                <p className="text-gray-600 text-sm break-all mb-1">
+                  <b>Email:</b>{" "}
+                  <a href={`mailto:${participant.email}`}>
+                    {participant.email}
+                  </a>
+                </p>
+                <p className="text-gray-600 text-sm mb-1">
+                  <b>Phone:</b>{" "}
+                  <a href={`tel:${participant.phone}`}>{participant.phone}</a>
+                </p>
+              </div>
+              <p className="text-gray-600 text-center text-sm">
+                {participant.description}
+              </p>
             </div>
           ))}
         </div>
@@ -100,13 +101,13 @@ const ExecutiveBody = () => {
     );
   };
 
-  const uniqueRoles = [
-    ...new Set(getFilteredParticipants().map((p) => p.role)),
+  const uniqueDesignations = [
+    ...new Set(participants.map((p) => p.designation)),
   ];
 
   return (
     <div className="max-w-6xl mx-auto px-4">
-      {uniqueRoles.map((role) => renderCards(role))}
+      {uniqueDesignations.map((designation) => renderCards(designation))}
     </div>
   );
 };
