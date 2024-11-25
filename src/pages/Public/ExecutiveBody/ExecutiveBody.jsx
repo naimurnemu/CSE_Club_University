@@ -8,7 +8,6 @@ const ExecutiveBody = () => {
     fetch("https://computer-club.onrender.com/executive/executives/")
       .then((response) => response.json())
       .then((data) => {
-        console.log("data", data);
         setParticipants(data);
       })
       .catch((error) => console.error("Error fetching data:", error));
