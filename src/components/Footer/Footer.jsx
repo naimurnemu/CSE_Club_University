@@ -7,6 +7,8 @@ import {
 } from "react-icons/fa";
 import { FiPhoneCall, FiSend } from "react-icons/fi";
 import { HiOutlineLocationMarker } from "react-icons/hi";
+import { logo } from "../../assets/logos";
+import { Link } from "react-router-dom";
 
 const Footer = () => {
   return (
@@ -14,7 +16,19 @@ const Footer = () => {
       <div className="container mx-auto grid grid-cols-1 lg:grid-cols-4 gap-10 pb-10">
         {/* Column 1: Logo and Description */}
         <div>
-          <h1 className="text-[#C3E92D] text-3xl font-bold mb-4">Zunzo</h1>
+          <div className="flex items-center gap-2 mb-4">
+            <Link to="/">
+              <img className="w-10 h-10" src={logo} alt="Zunzo" />
+            </Link>
+            <div className="flex flex-col">
+              <span className="font-medium text-2xl font-mono decoration-neutral text-yellow-400">
+                Computer Club
+              </span>
+              <span className="text-white tracking-[0.3rem] font-thin font-sm mt-[-8px]">
+                City University
+              </span>
+            </div>
+          </div>
           <p className="text-gray-300 text-sm">
             Welcome to our running community! Discover the joy of running,
             connect with fellow enthusiasts, and unlock your full potential with

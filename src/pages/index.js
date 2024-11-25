@@ -13,4 +13,5 @@ export { Sponsorship } from "./Public/Sponsorship";
 export { Chat } from "./User/Chat";
 export { Vote } from "./User/Vote";
 export { ExecutiveBody } from "./Public/ExecutiveBody";
-export {BlogDetails} from "./Public/BolgDetails"
+export {BlogDetails} from "./Public/BolgDetails";
+export {UserProfile} from "./User/UserProfile";

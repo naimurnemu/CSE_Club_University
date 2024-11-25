@@ -50,6 +50,7 @@ export const AuthProvider = ({ children }) => {
       });
       await handleResponse(response);
       localStorage.removeItem("token");
+      localStorage.removeItem("userId");
       setAuthState(null);
     } catch (error) {
       alert(error.message);
