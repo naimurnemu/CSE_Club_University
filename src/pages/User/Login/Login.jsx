@@ -2,7 +2,7 @@ import React, { useState } from "react";
 
 const Login = () => {
   const [formData, setFormData] = useState({
-    username: "", // Changed from email to username
+    username: "",
     password: "",
   });
 
@@ -15,7 +15,7 @@ const Login = () => {
 
   const validateForm = () => {
     const newErrors = {};
-    if (!formData.username.trim()) { // Updated to check username
+    if (!formData.username.trim()) {
       newErrors.username = "Username is required.";
     }
     if (!formData.password.trim()) {
@@ -32,7 +32,6 @@ const Login = () => {
     if (Object.keys(validationErrors).length > 0) {
       setErrors(validationErrors);
     } else {
-      // API call using fetch
       try {
         const response = await fetch('https://computer-club.onrender.com/users/login', {
           method: 'POST',
@@ -40,14 +39,14 @@ const Login = () => {
             'Content-Type': 'application/json',
           },
           body: JSON.stringify({
-            username: formData.username, // Using username for login
+            username: formData.username,
             password: formData.password,
           }),
         });
         const data = await response.json();
         if (response.ok) {
           alert("Login successful!");
-          console.log(data); // Handle the response data as needed
+          console.log(data);
         } else {
           throw new Error(data.message || "Failed to login");
         }
@@ -61,7 +60,6 @@ const Login = () => {
     <div className="max-w-6xl mx-auto p-4">
       <h1 className="text-3xl font-bold text-center mb-6">Login</h1>
       <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
-        {/* Left Side Image */}
         <div className="hidden md:block">
           <img
             src="https://via.placeholder.com/400"
@@ -70,12 +68,11 @@ const Login = () => {
           />
         </div>
 
-        {/* Right Side Form */}
         <div className="space-y-4">
           <h2 className="text-2xl font-bold">Welcome Back</h2>
           <form onSubmit={handleSubmit} className="space-y-4">
             {[
-              { label: "Username", name: "username", type: "text", placeholder: "Enter your username" }, // Changed label and placeholder
+              { label: "Username", name: "username", type: "text", placeholder: "Enter your username" },
               { label: "Password", name: "password", type: "password", placeholder: "Enter your password" },
             ].map(({ label, name, type, placeholder }) => (
               <div key={name} className="flex flex-col">

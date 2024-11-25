@@ -77,9 +77,9 @@ const Blogs = () => {
                     </p>
                   </div>
                   <Link to={`/blogDetails/${item.id}`}>
-                  <button className="text-black text-[14px] font-medium text-start">
-                    READ MORE
-                  </button>
+                    <button className="text-black text-[14px] font-medium text-start">
+                      READ MORE
+                    </button>
                   </Link>
                 </div>
               </div>
@@ -89,11 +89,6 @@ const Blogs = () => {
         <button className="text-black text-[14px] font-medium text-start">
           READ MORE
         </button>
-      </div>
-    </div>
-  ))}
-</div>
-
       </div>
     </div>
   );
