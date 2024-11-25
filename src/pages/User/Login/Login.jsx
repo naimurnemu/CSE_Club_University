@@ -1,4 +1,5 @@
-import React, { useState } from "react";
+import React, { useState, useContext } from "react";
+import { AuthContext } from '../../../contexts/AuthContext';
 
 const Login = () => {
   const [formData, setFormData] = useState({
@@ -7,6 +8,7 @@ const Login = () => {
   });
 
   const [errors, setErrors] = useState({});
+  const { login } = useContext(AuthContext);
 
   const handleChange = (e) => {
     const { name, value } = e.target;
@@ -32,28 +34,7 @@ const Login = () => {
     if (Object.keys(validationErrors).length > 0) {
       setErrors(validationErrors);
     } else {
-      try {
-        const response = await fetch('https://computer-club.onrender.com/users/login/', {
-          method: 'POST',
-          headers: {
-            'Content-Type': 'application/json',
-          },
-          body: JSON.stringify({
-            username: formData.username,
-            password: formData.password,
-          }),
-        });
-        const data = await response.json();
-        if (response.ok) {
-          alert("Login successful!");
-          localStorage.setItem("token", data.token); 
-          console.log(data);
-        } else {
-          throw new Error(data.message || "Failed to login");
-        }
-      } catch (error) {
-        alert(error.message);
-      }
+      login(formData.username, formData.password);
     }
   };
 
