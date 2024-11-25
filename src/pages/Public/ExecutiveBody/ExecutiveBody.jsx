@@ -106,7 +106,7 @@ const ExecutiveBody = () => {
   ];
 
   return (
-    <div className="max-w-6xl mx-auto px-4">
+    <div className="max-w-7xl mx-auto px-4">
       {uniqueDesignations.map((designation) => renderCards(designation))}
     </div>
   );
