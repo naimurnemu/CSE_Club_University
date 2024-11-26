@@ -27,7 +27,7 @@ const ExecutiveBody = () => {
       groupedByDesignation
     )) {
       if (designation === "President" || designation === "General Secretary") {
-        // Select the candidate with the highest vote count for President
+        // Select the candidate with the highest vote count for President/General Secretary
         const maxVoteCandidate = candidates.reduce((max, candidate) =>
           candidate.vote_count > max.vote_count ? candidate : max
         );
@@ -50,48 +50,57 @@ const ExecutiveBody = () => {
 
     return (
       <div key={designation} className="mb-10 mt-10">
-        <h2 className="text-center font-bold text-2xl md:text-3xl mb-6">
+        <h2 className="text-center font-bold text-2xl md:text-3xl text-teal-400 mb-6">
           {designation}
         </h2>
-        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8">
           {designationParticipants.map((participant, index) => (
             <div
               key={`${participant.name}-${index}`}
-              className="border border-blue-900 bg-white shadow-md rounded-lg overflow-hidden flex flex-col justify-between items-center px-4 py-6 h-full w-full max-w-[250px] mx-auto"
+              className="bg-gray-800 text-white rounded-lg shadow-lg p-6 flex flex-col items-center transition-transform transform hover:scale-105"
             >
               {/* Photo */}
-              <div className="flex justify-end items-top">
+              <div className="relative">
                 <img
                   src={participant.photo || "https://via.placeholder.com/150"}
                   alt={participant.name}
-                  className="w-36 h-36 rounded-full mb-4 object-cover"
+                  className="w-32 h-32 rounded-full border-4 border-teal-400 object-cover"
                 />
-                <a
-                  href={participant.linkedIn}
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="absolute text-blue-500 hover:underline text-2xl mt-[120px] mr-12 bg-white rounded-full p-2"
-                >
-                  <FaLinkedin />
-                </a>
+                {participant.linkedIn && (
+                  <a
+                    href={participant.linkedIn}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="absolute bottom-2 right-2 bg-teal-400 p-2 rounded-full text-black hover:bg-teal-500"
+                  >
+                    <FaLinkedin size={20} />
+                  </a>
+                )}
               </div>
-              <h3 className="text-lg md:text-2xl font-semibold text-center mb-2 text-gray-800">
-                {participant.name}
-              </h3>
-              <div className="flex flex-col items-start">
-                <p className="text-gray-600 text-sm break-all mb-1">
-                  <b>Email:</b>{" "}
-                  <a href={`mailto:${participant.email}`}>
+              <h3 className="text-xl font-semibold mt-4">{participant.name}</h3>
+              <p className="text-gray-400 italic">{participant.designation}</p>
+              <div className="mt-4 text-sm space-y-2">
+                <p>
+                  <strong>Email:</strong>{" "}
+                  <a
+                    href={`mailto:${participant.email}`}
+                    className="text-teal-400 hover:underline"
+                  >
                     {participant.email}
                   </a>
                 </p>
-                <p className="text-gray-600 text-sm mb-1">
-                  <b>Phone:</b>{" "}
-                  <a href={`tel:${participant.phone}`}>{participant.phone}</a>
+                <p>
+                  <strong>Phone:</strong>{" "}
+                  <a
+                    href={`tel:${participant.phone}`}
+                    className="text-teal-400 hover:underline"
+                  >
+                    {participant.phone}
+                  </a>
                 </p>
               </div>
-              <p className="text-gray-600 text-center text-sm">
-                {participant.description}
+              <p className="text-gray-300 mt-4 text-center">
+                {participant.description || "No description provided."}
               </p>
             </div>
           ))}
@@ -105,8 +114,13 @@ const ExecutiveBody = () => {
   ];
 
   return (
-    <div className="max-w-7xl mx-auto px-4">
-      {uniqueDesignations.map((designation) => renderCards(designation))}
+    <div className="bg-gray-900 min-h-screen py-10 px-4">
+      <div className="max-w-6xl mx-auto">
+        <h1 className="text-center text-4xl font-bold text-teal-400 mb-12">
+          Meet Our Executive Body
+        </h1>
+        {uniqueDesignations.map((designation) => renderCards(designation))}
+      </div>
     </div>
   );
 };
