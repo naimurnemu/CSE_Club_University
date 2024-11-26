@@ -67,7 +67,9 @@ const Footer = () => {
             <li className="hover:text-[#C3E92D] cursor-pointer">About Us</li>
             <li className="hover:text-[#C3E92D] cursor-pointer">Our Event</li>
             <li className="hover:text-[#C3E92D] cursor-pointer">Latest News</li>
-            <li className="hover:text-[#C3E92D] cursor-pointer">Contact Us</li>
+            <li className="hover:text-[#C3E92D] cursor-pointer">
+              <Link to="/contact">Contact Us</Link>
+            </li>
           </ul>
         </div>
 
@@ -77,10 +79,14 @@ const Footer = () => {
           <ul className="space-y-2">
             <li className="hover:text-[#C3E92D] cursor-pointer">Blogs</li>
             <li className="hover:text-[#C3E92D] cursor-pointer">
-              Events Detail
+              <Link to="/vote">Vote</Link>
             </li>
-            <li className="hover:text-[#C3E92D] cursor-pointer">Events</li>
-            <li className="hover:text-[#C3E92D] cursor-pointer">About Us</li>
+            <li className="hover:text-[#C3E92D] cursor-pointer">
+              <Link to="/chat">Forum</Link>
+            </li>
+            <li className="hover:text-[#C3E92D] cursor-pointer">
+              <Link to="/about-us">About Us</Link>
+            </li>
           </ul>
         </div>
 

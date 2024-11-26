@@ -44,14 +44,14 @@ const Login = () => {
   };
 
   return (
-    <div className=" bg-gray-900">
+    <div className=" bg-gray-900 md:py-10">
       {state?.successRegister && (
         <div className="max-w-7xl w-full mx-auto px-2 md:px-5 lg:px-0 bg-green-800 text-gray-200 p-4 rounded-lg mb-4 shadow-lg flex items-center">
           <span className="text-2xl font-normal mr-2">✅</span>
           <span className="text-xl font-normal">Please check your email and verify your account before logging in!</span>
         </div>
       )}
-      <div className="flex flex-col lg:flex-row justify-between items-center max-w-7xl w-full mx-auto px-2 md:px-5 lg:px-0 bg-gray-800 border border-gray-700 rounded-lg shadow-lg my-10 gap-6">
+      <div className="flex flex-col lg:flex-row justify-between items-center max-w-7xl w-full mx-auto px-2 md:px-5 lg:px-0 bg-gray-800 border border-gray-700 rounded-lg shadow-lg  gap-6">
         <div className="md:block w-full lg:w-1/2 md:px-5 order-2 lg:order-1">
           <div className="p-5 flex flex-col justify-between items-center text-white h-full space-y-20">
             <div>
