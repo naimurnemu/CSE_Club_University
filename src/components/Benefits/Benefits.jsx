@@ -1,4 +1,4 @@
-import middlePhoto from "../../assets/images/cse-club.png";
+import img from "../../assets/images/fixedImg.jpg";
 
 const Benefits = () => {
   return (
@@ -20,11 +20,11 @@ const Benefits = () => {
                 <div className="flex items-center gap-4">
                   <div className="border-r-2 border-[#C3E92D] text-end pr-2">
                     <h1 className="text-xl md:text-2xl font-semibold text-white">
-                      BE HEALTHY
+                      SKILL DEVELOPMENT
                     </h1>
                     <p className="text-sm md:text-xl">
-                      Improve your physical fitness and well-being through
-                      regular running.
+                      Enhance your programming and technical skills by working
+                      on real-world projects.
                     </p>
                   </div>
                   <p className="text-4xl md:text-7xl font-bold text-[#C3E92D]">
@@ -37,11 +37,11 @@ const Benefits = () => {
                 <div className="flex items-center gap-4">
                   <div className="border-r-2 border-[#C3E92D] text-end pr-2">
                     <h1 className="text-xl md:text-2xl font-semibold text-white">
-                      BE HEALTHY
+                      NETWORKING
                     </h1>
                     <p className="text-sm md:text-xl">
-                      Improve your physical fitness and well-being through
-                      regular running.
+                      Connect with like-minded peers and industry professionals
+                      to expand your network.
                     </p>
                   </div>
                   <p className="text-4xl md:text-7xl font-bold text-[#C3E92D]">
@@ -54,8 +54,8 @@ const Benefits = () => {
             {/* Middle Section */}
             <div className="rounded-[50%] w-full lg:w-[40%] flex justify-center">
               <img
-                className="rounded-[50%] w-[70%] md:w-[50%] lg:w-[70%]"
-                src={middlePhoto}
+                className="lg:rounded-[50%] w-full md:w-[50%] lg:w-[70%] lg:h-[85%]"
+                src={img}
                 alt="Programming Benefits"
               />
             </div>
@@ -68,12 +68,12 @@ const Benefits = () => {
                     03
                   </p>
                   <div className="border-l-2 border-[#C3E92D] pl-2">
-                    <h1 className="text-xl md:text-2xl font-semibold text-white">
-                      BE HEALTHY
+                    <h1 className="text-xl md:text-2xl font-semibold text-start text-white">
+                      COLLABORATION
                     </h1>
-                    <p className="text-sm md:text-xl">
-                      Improve your physical fitness and well-being through
-                      regular running.
+                    <p className="text-sm md:text-xl text-start">
+                      Work in teams on innovative projects and build solutions
+                      for real-world problems.
                     </p>
                   </div>
                 </div>
@@ -85,12 +85,12 @@ const Benefits = () => {
                     04
                   </p>
                   <div className="border-l-2 border-[#C3E92D] pl-2">
-                    <h1 className="text-xl md:text-2xl font-semibold text-white">
-                      BE HEALTHY
+                    <h1 className="text-xl md:text-2xl font-semibold text-start text-white">
+                      LEADERSHIP OPPORTUNITIES
                     </h1>
-                    <p className="text-sm md:text-xl">
-                      Improve your physical fitness and well-being through
-                      regular running.
+                    <p className="text-sm md:text-xl text-start">
+                      Take on leadership roles and organize events to enhance
+                      your management skills.
                     </p>
                   </div>
                 </div>
