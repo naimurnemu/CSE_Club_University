@@ -158,13 +158,13 @@ const Header = () => {
                 About Us
               </Link>
               <Link
-                to="/events"
+                to="/allEvents"
                 className="text-white font-medium hover:underline hover:transition-colors"
               >
                 Events
               </Link>
               <Link
-                to="/news"
+                to="/blogs"
                 className="text-white font-medium hover:underline hover:transition-colors"
               >
                 Blogs

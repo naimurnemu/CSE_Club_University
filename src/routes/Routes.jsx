@@ -22,6 +22,7 @@ import {
   EventDetails,
   MemberDetails,
 } from "../pages";
+import { Blogs } from "../components";
 
 export const router = createBrowserRouter([
   {
@@ -104,6 +105,10 @@ export const router = createBrowserRouter([
       {
         path: "/memberDetails/:id",
         element: <MemberDetails />
+      },
+      {
+        path: "/blogs",
+        element: <Blogs />
       }
     ],
   },
