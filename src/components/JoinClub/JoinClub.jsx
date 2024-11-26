@@ -6,9 +6,8 @@ const JoinClub = () => {
   return (
     <div className="flex flex-col md:flex-row w-full">
       {/* Left Side: Image Section */}
-
       <div className="lg:w-1/2">
-        <img className="lg:h-screen" src={banner} alt="" />
+        <div className="h-screen bg-cover bg-center" style={{ backgroundImage: `url(${banner})` }}></div>
       </div>
 
       {/* Right Side: Form Section */}
@@ -45,20 +44,20 @@ const JoinClub = () => {
           <input
             type="text"
             placeholder="Your name*"
-            className="col-span-1 p-2 md:p-3 bg-white text-black border border-white rounded-md"
+            className="col-span-1 p-2 md:p-3 bg-white text-black border border-gray-300 rounded-md shadow-sm focus:ring-2 focus:ring-green-500 focus:border-transparent transition-all duration-300"
           />
           <input
             type="email"
             placeholder="Your email*"
-            className="col-span-1 p-2 md:p-3 bg-white text-black border border-white rounded-md"
+            className="col-span-1 p-2 md:p-3 bg-white text-black border border-gray-300 rounded-md shadow-sm focus:ring-2 focus:ring-green-500 focus:border-transparent transition-all duration-300"
           />
           <input
             type="tel"
             placeholder="Telephone*"
-            className="col-span-1 p-2 md:p-3 bg-white text-black border border-white rounded-md"
+            className="col-span-1 p-2 md:p-3 bg-white text-black border border-gray-300 rounded-md shadow-sm focus:ring-2 focus:ring-green-500 focus:border-transparent transition-all duration-300"
           />
           <select
-            className="col-span-1 p-2 md:p-3 bg-white text-black border border-white rounded-md"
+            className="col-span-1 p-2 md:p-3 bg-white text-black border border-gray-300 rounded-md shadow-sm focus:ring-2 focus:ring-green-500 focus:border-transparent transition-all duration-300"
             defaultValue=""
           >
             <option value="" disabled>

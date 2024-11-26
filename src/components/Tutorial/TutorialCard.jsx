@@ -5,7 +5,7 @@ const TutorialCard = ({ item }) => {
   const { title, description, comments, category } = item;
 
   return (
-    <div className="card rounded-none">
+    <div className="card rounded-lg border border-gray-300 shadow-lg p-4">
       <figure>
         <img
           className="hover:scale-105 transition-transform duration-500"
@@ -14,22 +14,22 @@ const TutorialCard = ({ item }) => {
         />
       </figure>
       <div className="flex items-center gap-7 py-3">
-        <p className="flex items-center text-black">
+        <p className="flex items-center text-gray-700">
           <FaTag className="mr-2" />
-          <span className="hover:text-[#C3E92D]">{category}</span>
+          <span className="font-medium">{category}</span>
         </p>
-        <p className="flex items-center text-black">
+        <p className="flex items-center text-gray-700">
           <FaComments className="mr-2" />
-          <span className="hover:text-[#C3E92D]">{comments} comments</span>
+          <span className="font-medium">{comments} comments</span>
         </p>
       </div>
       <div className="space-y-4">
-        <h2 className="text-2xl font-semibold text-black hover:text-[#C3E92D]">
+        <h2 className="text-xl font-bold text-black">
           {title}
         </h2>
-        <p className="font-semibold">{description}</p>
+        <p className="text-gray-600 font-normal">{description}</p>
         <div className="card-actions">
-          <button className="bg-[#C3E92D] text-black hover:bg-black font-semibold hover:text-[#C3E92D] lg:py-3 px-6 py-2 rounded-md">
+          <button className="bg-[#C3E92D] text-black hover:bg-[#A3C92D] font-semibold rounded-full lg:py-3 px-6 py-2">
             Read More
           </button>
         </div>

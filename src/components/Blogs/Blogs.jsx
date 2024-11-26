@@ -19,12 +19,12 @@ const Blogs = () => {
 
   return (
     <div className="w-full bg-white">
-      <div className="max-w-screen-xl lg:py-10 py-6  px-6">
+      <div className="max-w-7xl w-full mx-auto px-2 md:px-5 lg:px-0 py-24">
         <div className="flex justify-between">
           <h2 className="text-2xl lg:text-5xl font-bold text-black mb-8">
             OUR BLOGS
           </h2>
-          <button className="lg:text-xl text-sm font-semibold lg:font-bold pb-8 items-center hover:text-[#C3E92D] transition-colors duration-500 ease-in-out">
+          <button className="border-2 border-gray-500 text-gray-500 text-xs font-semibold lg:font-bold mb-8 items-center hover:bg-gray-500 hover:text-white transition-colors duration-500 ease-in-out rounded-full px-4 py-2">
             VIEW ALL
           </button>
         </div>
