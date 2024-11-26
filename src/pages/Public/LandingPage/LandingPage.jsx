@@ -4,8 +4,7 @@ import { Banner, Benefits, Blogs, Events, ExampleComp, Footer, JoinClub, Running
 const LandingPage = () => {
   return (
     <div>
-      {/* <h2>This is the main landing page</h2> */}
-      {/* <ExampleComp /> */}
+
       <Banner />
       <RunningCommunity />
       <Tutorial />

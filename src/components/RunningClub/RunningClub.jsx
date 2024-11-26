@@ -5,10 +5,10 @@ import { Link } from "react-router-dom";
 const JoinClub = () => {
   return (
     <div
-      className="lg:h-screen bg-fixed bg-center bg-cover flex items-center pb-8"
+      className="text-white bg-fixed bg-center bg-cover flex items-center pb-8"
       style={{ backgroundImage: `url(${blogImg})` }}
     >
-      <div className=" text-white lg:space-y-10 space-y-5 pl-10 lg:pl-20">
+      <div className="max-w-7xl w-full mx-auto px-2 md:px-5 lg:px-0 py-56">
         <h1 className="text-2xl lg:text-4xl font-bold text-white">
           Join Our Running Club Now{" "}
           <span className="bg-[#C3E92D] rounded-full px-2 text-black">

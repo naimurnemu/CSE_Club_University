@@ -14,7 +14,7 @@ const Team = () => {
 
   return (
     <div className="w-full bg-white">
-      <div className="py-10 bg-white px-6 mx-auto max-w-screen-xl">
+      <div className="max-w-7xl w-full mx-auto px-2 md:px-5 lg:px-0 py-24">
         <div className="text-center space-y-4 pb-8">
           <h1 className="text-black text-opacity-50 text-xl font-semibold">
             OUR TEAM
@@ -23,11 +23,11 @@ const Team = () => {
             OUR MEMBER, COUCH
           </h1>
         </div>
-        <div className="mx-auto grid grid-cols-1 lg:grid-cols-3 gap-4">
+        <div className="mx-auto grid grid-cols-1 lg:grid-cols-3 gap-10">
           {teamData.map((item) => (
             <div
               key={item.id}
-              className="relative group card rounded-none overflow-hidden space-y-3"
+              className="relative group card rounded-lg border border-gray-300 shadow-lg overflow-hidden space-y-3 p-4"
             >
               {/* Image Section */}
               <figure className="bg-slate-300">

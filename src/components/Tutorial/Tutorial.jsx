@@ -12,8 +12,9 @@ const Tutorial = () => {
   }, []);
 
   return (
-    <div className="bg-white p-6">
-      <div className="text-center space-y-4">
+    <div className="bg-white">
+      <div className="max-w-7xl w-full mx-auto px-2 md:px-5 lg:px-0">
+        <div className="text-center space-y-4">
         <h1 className="text-black text-opacity-50 text-xl font-semibold">
           TUTORIAL
         </h1>
@@ -22,10 +23,11 @@ const Tutorial = () => {
         </h1>
       </div>
 
-      <div className="grid lg:grid-cols-3 grid-cols-1 gap-8 py-10">
+      <div className="grid lg:grid-cols-3 grid-cols-1 gap-10 py-10">
         {data.map((item) => (
           <TutorialCard key={item.title} item={item}></TutorialCard>
         ))}
+      </div>
       </div>
     </div>
   );

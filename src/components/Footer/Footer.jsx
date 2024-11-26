@@ -12,8 +12,8 @@ import { Link } from "react-router-dom";
 
 const Footer = () => {
   return (
-    <div className="bg-[#121212] text-white py-10 px-5">
-      <div className="container mx-auto grid grid-cols-1 lg:grid-cols-4 gap-10 pb-10">
+    <div className="bg-[#121212] text-white ">
+      <div className="max-w-7xl w-full mx-auto px-2 md:px-5 lg:px-0 py-10 flex flex-wrap justify-between ">
         {/* Column 1: Logo and Description */}
         <div>
           <div className="flex items-center gap-2 mb-4">
@@ -29,9 +29,11 @@ const Footer = () => {
               </span>
             </div>
           </div>
-          <p className="text-gray-300 text-sm">
-            Welcome to our running community! Discover the joy of running,
-            connect with fellow enthusiasts, and unlock your full potential with
+          <p className="text-gray-300 text-sm whitespace-break-spaces">
+            Welcome to our running community! <br /> Discover the joy of
+            running, <br />
+            connect with fellow enthusiasts, <br /> and unlock your full
+            potential with <br />
             our expert resources and training programs.
           </p>
           <div className="flex gap-4 mt-4">
@@ -111,19 +113,19 @@ const Footer = () => {
         </div>
       </div>
       <div
-        style={{ borderColor: "gray" }}
-        className="border-t-[1px] flex justify-between lg:flex-row flex-col text-sm"
+        style={{ borderColor: "gray", textAlign: "center" }}
+        className="border-t-[1px] flex justify-between lg:flex-row flex-col text-sm pb-4 max-w-7xl w-full mx-auto px-2 md:px-5 lg:px-0"
       >
-        <div className="mt-4">
+        <div className="mt-4 text-center">
           <p>
-            ©2023{" "}
+            &copy;<span>{new Date().getFullYear()}</span>
             <span className="hover:text-[#C3E92D]">
-              <a href="#">Zunzo</a>
+              <a href="#">Computer Club City University</a>
             </span>
             . All Rights Reserved.
           </p>
         </div>
-        <div className="flex items-center gap-3 mt-4">
+        <div className="flex items-center gap-3 mt-4 text-center">
           <a className="hover:text-[#C3E92D]" href="#">
             Terms Of Services
           </a>
