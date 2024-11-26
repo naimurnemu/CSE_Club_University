@@ -21,6 +21,9 @@ import {
   AllEvents,
   EventDetails,
   MemberDetails,
+  CookiePolicy,
+  PrivacyPolicy,
+  TermsAndServices,
 } from "../pages";
 import { Blogs } from "../components";
 
@@ -41,6 +44,18 @@ export const router = createBrowserRouter([
       {
         path: "/contact",
         element: <ContactUsPage />,
+      },
+      {
+        path: "/cookie",
+        element: <CookiePolicy />,
+      },
+      {
+        path: "/privacy",
+        element: <PrivacyPolicy />,
+      },
+      {
+        path: "/terms-and-services",
+        element: <TermsAndServices />,
       },
       {
         path: "/about-us",
@@ -91,16 +106,16 @@ export const router = createBrowserRouter([
         element: <NotFoundPage />,
       },
       {
-        path: '/blogDetails/:id',
-        element: <BlogDetails />
+        path: "/blogDetails/:id",
+        element: <BlogDetails />,
       },
       {
         path: "/allEvents",
-        element: <AllEvents />
+        element: <AllEvents />,
       },
       {
         path: "/eventDetails/:id",
-        element: <EventDetails />
+        element: <EventDetails />,
       },
       {
         path: "/memberDetails/:id",

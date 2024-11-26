@@ -132,15 +132,15 @@ const Footer = () => {
           </p>
         </div>
         <div className="flex items-center gap-3 mt-4 text-center">
-          <a className="hover:text-[#C3E92D]" href="#">
-            Terms Of Services
-          </a>
-          <a className="hover:text-[#C3E92D]" href="#">
-            Privacy Policy
-          </a>
-          <a className="hover:text-[#C3E92D]" href="#">
-            Cookie Policy
-          </a>
+          <p className="hover:text-[#C3E92D]" >
+            <Link to="/terms-and-services">Terms Of Services</Link>
+          </p>
+          <p className="hover:text-[#C3E92D]">
+            <Link to="/privacy">Privacy Policy</Link>
+          </p>
+          <p className="hover:text-[#C3E92D]">
+            <Link to="/cookie">Cookie Policy</Link>
+          </p>
         </div>
       </div>
     </div>
