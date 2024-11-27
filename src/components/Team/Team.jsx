@@ -30,7 +30,7 @@ const Team = () => {
               className="relative group card rounded-lg border border-gray-300 shadow-lg overflow-hidden space-y-3 p-4"
             >
               {/* Image Section */}
-              <figure className="bg-slate-300">
+              <figure className="bg-gray-700">
                 <img
                   className="hover:scale-105 transition-transform duration-500 lg:h-[300px]"
                   src={item.photo}

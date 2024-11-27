@@ -2,7 +2,8 @@ import img from "../../assets/images/fixedImg.jpg";
 
 const Benefits = () => {
   return (
-    <div className="w-full bg-[#121212]">
+   <div className="bg-gray-900">
+     <div className="max-w-screen-xl mx-auto">
       <div className="max-w-7xl w-full mx-auto px-2 md:px-5 lg:px-0 py-24">
         <div className="text-center space-y-4">
           <h1 className="text-[#C3E92D] text-xl font-semibold">
@@ -22,7 +23,7 @@ const Benefits = () => {
                     <h1 className="text-xl md:text-2xl font-semibold text-white">
                       SKILL DEVELOPMENT
                     </h1>
-                    <p className="text-sm md:text-xl">
+                    <p className="text-sm md:text-xl text-white">
                       Enhance your programming and technical skills by working
                       on real-world projects.
                     </p>
@@ -39,7 +40,7 @@ const Benefits = () => {
                     <h1 className="text-xl md:text-2xl font-semibold text-white">
                       NETWORKING
                     </h1>
-                    <p className="text-sm md:text-xl">
+                    <p className="text-sm md:text-xl text-white">
                       Connect with like-minded peers and industry professionals
                       to expand your network.
                     </p>
@@ -52,9 +53,9 @@ const Benefits = () => {
             </div>
 
             {/* Middle Section */}
-            <div className="rounded-[50%] w-full lg:w-[40%] flex justify-center">
+            <div className="rounded-[50%] w-full lg:w-[28%] flex justify-center">
               <img
-                className="lg:rounded-[50%] w-full md:w-[50%] lg:w-[70%] lg:h-[85%]"
+                className="lg:rounded-[50%]"
                 src={img}
                 alt="Programming Benefits"
               />
@@ -71,7 +72,7 @@ const Benefits = () => {
                     <h1 className="text-xl md:text-2xl font-semibold text-start text-white">
                       COLLABORATION
                     </h1>
-                    <p className="text-sm md:text-xl text-start">
+                    <p className="text-sm md:text-xl text-start text-white">
                       Work in teams on innovative projects and build solutions
                       for real-world problems.
                     </p>
@@ -88,7 +89,7 @@ const Benefits = () => {
                     <h1 className="text-xl md:text-2xl font-semibold text-start text-white">
                       LEADERSHIP OPPORTUNITIES
                     </h1>
-                    <p className="text-sm md:text-xl text-start">
+                    <p className="text-sm md:text-xl text-start text-white">
                       Take on leadership roles and organize events to enhance
                       your management skills.
                     </p>
@@ -100,6 +101,7 @@ const Benefits = () => {
         </div>
       </div>
     </div>
+   </div>
   );
 };
 

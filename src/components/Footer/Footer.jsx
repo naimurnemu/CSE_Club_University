@@ -64,9 +64,19 @@ const Footer = () => {
         <div>
           <h2 className="font-bold text-lg mb-4">QUICK LINKS</h2>
           <ul className="space-y-2">
-            <li className="hover:text-[#C3E92D] cursor-pointer">About Us</li>
-            <li className="hover:text-[#C3E92D] cursor-pointer">Our Event</li>
-            <li className="hover:text-[#C3E92D] cursor-pointer">Latest News</li>
+            <li className="hover:text-[#C3E92D] cursor-pointer">
+              <Link to="/chat">Forum</Link>
+            </li>
+            <li className="hover:text-[#C3E92D] cursor-pointer">
+              <Link to="/alumni">Alumni</Link>
+            </li>
+            <li className="hover:text-[#C3E92D] cursor-pointer">
+              <Link to="/vote">Vote</Link>
+            </li>
+            <li className="hover:text-[#C3E92D] cursor-pointer">
+              <Link to="/about-us">About Us</Link>
+            </li>
+
             <li className="hover:text-[#C3E92D] cursor-pointer">
               <Link to="/contact">Contact Us</Link>
             </li>

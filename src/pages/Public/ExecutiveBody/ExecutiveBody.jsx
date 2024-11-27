@@ -1,8 +1,10 @@
 import React, { useState, useEffect } from "react";
 import { FaLinkedin } from "react-icons/fa";
+import { useLocation } from "react-router-dom";
 
 const ExecutiveBody = () => {
   const [participants, setParticipants] = useState([]);
+  const location = useLocation();
 
   useEffect(() => {
     fetch("https://computer-club.onrender.com/executive/executives/")
@@ -116,9 +118,11 @@ const ExecutiveBody = () => {
   return (
     <div className="bg-gray-900 min-h-screen py-10 px-4">
       <div className="max-w-6xl mx-auto">
-        <h1 className="text-center text-4xl font-bold text-teal-400 mb-12">
-          Meet Our Executive Body
-        </h1>
+        {location.pathname === "/executives" && (
+          <h1 className="text-center text-4xl font-bold text-teal-400 mb-12">
+            Meet Our Executive Body
+          </h1>
+        )}
         {uniqueDesignations.map((designation) => renderCards(designation))}
       </div>
     </div>

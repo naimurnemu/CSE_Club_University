@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from "react";
 import { FaMapMarkerAlt, FaCalendarAlt, FaClock } from "react-icons/fa";
-import blogImg from "../../assets/images/hero.jpg";
+import blogImg from "../../assets/images/eventBG.jpeg";
 import { Link } from "react-router-dom";
 
 const Events = () => {
@@ -14,13 +14,14 @@ const Events = () => {
   }, []);
 
   return (
-    <div
+    <div className="bg-gray-900">
+      <div
       style={{
         backgroundImage: `url(${blogImg})`,
         backgroundSize: "cover",
         backgroundPosition: "center",
       }}
-      className="w-full bg-fixed bg-white"
+      className="w-full bg-fixed max-w-screen-xl mx-auto rounded-md"
     >
       <div className="max-w-7xl w-full mx-auto px-2 md:px-5 lg:px-0 py-24">
         <div className="px-4 space-y-5">
@@ -44,24 +45,24 @@ const Events = () => {
             {eventData.slice(0, 2).map((item) => (
               <div
                 key={item.id}
-                className="bg-white overflow-hidden grid lg:grid-cols-3 "
+                className="bg-gray-700 bg-opacity-40 rounded-md overflow-hidden grid lg:grid-cols-3 "
               >
                 {/* Event Info */}
                 <div className="flex items-center">
                   <div className="p-6">
-                    <h3 className="text-2xl font-bold text-gray-800 mb-4">
+                    <h3 className="text-2xl font-bold text-white mb-4">
                       {item.name}
                     </h3>
                     <ul className="space-y-4 font-bold">
-                      <li className="flex items-center text-gray-700">
+                      <li className="flex items-center text-white">
                         <FaMapMarkerAlt className="text-[#C3E92D] mr-3" />
                         {item.location}
                       </li>
-                      <li className="flex items-center text-gray-700">
+                      <li className="flex items-center text-white">
                         <FaCalendarAlt className="text-[#C3E92D] mr-3" />
                         {item.start_date}
                       </li>
-                      <li className="flex items-center text-gray-700">
+                      <li className="flex items-center text-white">
                         <FaClock className="text-[#C3E92D] mr-3" />
                         Start {item.start_time} - Until Finish
                       </li>
@@ -79,7 +80,7 @@ const Events = () => {
                 </div>
 
                 {/* Ticket Info */}
-                <div className="bg-gray-50 p-6 flex flex-col justify-center items-start">
+                <div className="bg-gray-700 bg-opacity-40 p-6 flex flex-col justify-center items-start ">
                   {/* Ticket Label */}
                   <p className="text-lg font-semibold text-[#C3E92D] mb-1 text-start">
                     Ticket
@@ -87,10 +88,10 @@ const Events = () => {
 
                   {/* Price Section */}
                   <div className="flex items-baseline text-start">
-                    <p className="text-5xl font-extrabold text-gray-900">
+                    <p className="text-5xl font-extrabold text-white">
                       FREE
                     </p>
-                    <span className="text-sm text-gray-500 ml-1 self-baseline">
+                    <span className="text-sm ml-1 self-baseline">
                       /ticket
                     </span>
                   </div>
@@ -107,6 +108,7 @@ const Events = () => {
           </div>
         </div>
       </div>
+    </div>
     </div>
   );
 };
