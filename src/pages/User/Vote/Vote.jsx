@@ -12,7 +12,8 @@ const Vote = () => {
   const token = localStorage.getItem("token"); // Fetch token from localStorage
   const navigate = useNavigate();
   const API_URL = "https://computer-club.onrender.com/vote/votes/";
-  const WINNER_API = "https://computer-club.onrender.com/vote/candidates/winners/";
+  const WINNER_API =
+    "https://computer-club.onrender.com/vote/candidates/winners/";
   const endDate = new Date("2024-12-01T23:59:59");
   const [timeLeft, setTimeLeft] = useState({
     days: "00",
@@ -116,6 +117,7 @@ const Vote = () => {
         toast.success("Vote submitted successfully!", {
           position: "top-center",
         });
+        fetchParticipants();
       }
     } catch (error) {
       console.error("Error while voting:", error);
@@ -167,7 +169,7 @@ const Vote = () => {
               <div className="relative mb-4">
                 <img
                   src={
-                    candidate.image_url ||
+                    candidate.image ||
                     "https://img.freepik.com/premium-vector/election-day-icon-clipart-avatar-logotype-isolated-vector-illustration_955346-569.jpg"
                   }
                   alt={candidate.full_name}
@@ -185,14 +187,9 @@ const Vote = () => {
               </p>
               <button
                 onClick={() => handleVote(position, candidate.id)}
-                disabled={votedCandidateId === candidate.id}
-                className={`font-semibold py-2 px-4 text-sm rounded w-full ${
-                  votedCandidateId
-                    ? "bg-gray-600 text-gray-400 cursor-not-allowed"
-                    : "bg-green-500 hover:bg-green-700 text-white"
-                }`}
+                className={`font-semibold py-2 px-4 text-sm rounded w-full bg-green-500 hover:bg-green-700 text-white`}
               >
-                {votedCandidateId ? "Voted" : "Vote"}
+                Vote
               </button>
             </div>
           ))}
@@ -231,9 +228,7 @@ const Vote = () => {
                 </div>
               </div>
             </div>
-            {Object.keys(participants).map((position) =>
-              renderCards(position)
-            )}
+            {Object.keys(participants).map((position) => renderCards(position))}
           </div>
         ) : (
           <div>

@@ -126,7 +126,7 @@ const Chat = () => {
           <h2 className="text-center text-3xl font-bold mb-4 text-gray-100 py-3">
             All Club Members
           </h2>
-          <ul className="space-y-2 max-h-[70vh] overflow-y-auto scrollbar-thin scrollbar-thumb-gray-700 scrollbar-track-gray-800">
+          <ul className="space-y-2 max-h-[80vh] overflow-y-auto scrollbar-thin scrollbar-thumb-gray-700 scrollbar-track-gray-800">
             {users.length === 0 ? (
               <p className="text-gray-400 text-center">No users found.</p>
             ) : (

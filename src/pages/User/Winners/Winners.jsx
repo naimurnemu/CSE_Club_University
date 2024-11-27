@@ -24,7 +24,7 @@ const WinnerPage = () => {
                 >
                   <div className="relative mb-4">
                     <img
-                      src="https://img.freepik.com/premium-vector/election-day-icon-clipart-avatar-logotype-isolated-vector-illustration_955346-569.jpg"
+                      src={candidate.image ||"https://img.freepik.com/premium-vector/election-day-icon-clipart-avatar-logotype-isolated-vector-illustration_955346-569.jpg"}
                       alt={candidate.full_name}
                       className="w-32 h-32 rounded-full border-4 border-green-500 object-cover"
                     />

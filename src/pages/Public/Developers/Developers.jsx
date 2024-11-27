@@ -1,98 +1,97 @@
 import React from "react";
 import { FaGithub, FaLinkedin } from "react-icons/fa";
 
-// Dummy user data
 const users = [
   {
     name: "Yeasaleh",
     phone: "+8801643797859",
     email: "yeasalehofficial2002@gmail.com",
-    expertise: "Product Manager, Frontend",
+    work: "3+ years of professional experience as a Software Engineer",
+    expertise:
+      "JavaScript, React.js,  Redux toolkit, Next.js, Node.js, Express.js, Python, DSA, C++, C prgramming, Rest API, AWS,  GraphQL, MongoDB, SQL, MySQL, Jest, Project Management and more.",
     github: "https://github.com/yeasaleh2002",
     linkedin: "https://www.linkedin.com/in/yea-saleh",
     image: "https://avatars.githubusercontent.com/u/86636383?v=4",
-    role: "Product Manager, Frontend",
+    role: "Product Manager & Software Engineer",
   },
   {
-    name: "Naimur",
-    phone: "234-567-8901",
-    email: "naimur@example.com",
-    expertise: "Frontend Lead",
-    github: "https://github.com/naimur",
-    linkedin: "https://www.linkedin.com/in/naimur",
-    image: "https://via.placeholder.com/150",
-    role: "Frontend Lead",
+    name: "Md Naimur Rahman Hridoy",
+    phone: "8801401254113",
+    email: "naimurrahaman82@gmail.com",
+    work: "3+ years of professional experience as a Software Engineer",
+    expertise:
+      "C, C++, JavaScript, ReactJS, NextJS, MaterialUI, Redux, GraphQL, and RestAPis ",
+    github: "https://github.com/naimurnemu",
+    linkedin: "https://www.linkedin.com/in/naimurnemu",
+    image: "https://i.postimg.cc/9fryr7vw/Naimur.jpg",
+    role: "Software Engineer(Frontend-Lead)",
   },
   {
-    name: "Fazle Rabby",
-    phone: "345-678-9012",
-    email: "fazle@example.com",
-    expertise: "Backend Lead",
-    github: "https://github.com/fazle-rabby",
-    linkedin: "https://www.linkedin.com/in/fazle-rabby",
-    image: "https://via.placeholder.com/150",
-    role: "Backend Lead",
+    name: "Fazle Rabbi",
+    phone: "01722913206",
+    email: "fazlerabbi0172291@gmail.com",
+    expertise:
+      "Backend Developer with Django (DRF), C programming, C++, Python, DSA, SQL, JavaScript, HTML, CSS, React(learning)",
+    github: "https://github.com/Fazle-Rabbi72",
+    linkedin: "https://www.linkedin.com/in/fazle-rabbi-852616252/",
+    image:
+      "https://media.licdn.com/dms/image/v2/D5603AQH_NgZppdgiTQ/profile-displayphoto-shrink_800_800/profile-displayphoto-shrink_800_800/0/1710407394331?e=1738195200&v=beta&t=2vs7qtTFiouUZyqfg0lhJmOhDmEZBa-iw-xJcEbyy0U",
+    role: "Software Engineer(Backend-Lead)",
   },
+
   {
     name: "ZEAUR RAHMAN",
     phone: "01984753024",
     email: "rahmanzea31@gmail.com",
     expertise:
-      "Backend Development  with Django(Django Rest APi),Data Structure & Algorithm,My SQL(Database),Problem solving,Programming Language(C,C++,Python(OOP),Java(OOP)).",
+      "Backend Development with Django(Django Rest APi),Data Structure & Algorithm,My SQL(Database),Problem solving,Programming Language(C,C++,Python(OOP),Java(OOP)).",
     github: "https://github.com/Zea2002",
     linkedin: "https://www.linkedin.com/in/zeaur-rahman-4209622a8/",
     image: "https://avatars.githubusercontent.com/u/143029141?v=4",
-    role: "Backend Developer",
+    role: "Software Engineer(Backend)",
+  },
+  {
+    name: "Md Rashed Biswas",
+    phone: "01303433342",
+    email: "mdrashedbiswas83@gmail.com",
+    expertise:
+      "JavaScript, React.Js, Next.Js, Node.Js, Express.Js, MongoDB, C, HTML, CSS, Tailwind Css",
+    github: "https://github.com/mdrashed62",
+    linkedin: "https://www.linkedin.com/in/rashed83",
+    image: "https://i.postimg.cc/QtgYPjBN/Rashed.jpg",
+    role: "Software Engineer(Frontend)",
   },
   {
     name: "Md Alif",
-    phone: "456-789-0123",
-    email: "alif@example.com",
-    expertise: "QA Lead",
-    github: "https://github.com/mdalif",
-    linkedin: "https://www.linkedin.com/in/mdalif",
-    image: "https://via.placeholder.com/150",
-    role: "QA Lead",
+    phone: "01646195393",
+    email: "alifseoexpert@gmail.com",
+    expertise:
+      "SEO Expert,Problem solving,Programming Language(C,C++,Java(OOP))",
+    github: "https://github.com/AlifSEOpro",
+    linkedin: "https://www.linkedin.com/in/alifseopro/",
+    image: "https://i.ibb.co.com/HFLd6K9/Alif-Proefe-mnjkwerf.jpg",
+    role: "Quality Assurance Engineer",
   },
   {
-    name: "Afsana",
-    phone: "567-890-1234",
-    email: "afsana@example.com",
-    expertise: "Frontend Developer",
-    github: "https://github.com/afsana",
-    linkedin: "https://www.linkedin.com/in/afsana",
-    image: "https://via.placeholder.com/150",
-    role: "Frontend Developer",
+    name: " MD. Nurujjaman Shipat",
+    phone: "01609996720",
+    email: " mdshipat100@gmail.com",
+    expertise:
+      " Mobile Application Developer (Dart , C , Java  and Flutter)  also  Business and Customer Service Experience ",
+    github: "https://github.com/MdNurujjamanShipat",
+    linkedin: "https://linkedin.com/in/Md.NurujjamanShipat",
+    image: "https://i.ibb.co.com/r5JVTXK/smartpi.jpg",
+    role: "Quality Assurance Engineer",
   },
   {
-    name: "Imran",
-    phone: "678-901-2345",
-    email: "imran@example.com",
-    expertise: "Backend Developer",
-    github: "https://github.com/imran",
-    linkedin: "https://www.linkedin.com/in/imran",
-    image: "https://via.placeholder.com/150",
-    role: "Backend Developer",
-  },
-  {
-    name: "Sana",
-    phone: "789-012-3456",
-    email: "sana@example.com",
-    expertise: "Product Designer",
-    github: "https://github.com/sana",
-    linkedin: "https://www.linkedin.com/in/sana",
-    image: "https://via.placeholder.com/150",
-    role: "Product Designer",
-  },
-  {
-    name: "Rahat",
-    phone: "890-123-4567",
-    email: "rahat@example.com",
-    expertise: "DevOps Engineer",
-    github: "https://github.com/rahat",
-    linkedin: "https://www.linkedin.com/in/rahat",
-    image: "https://via.placeholder.com/150",
-    role: "DevOps Engineer",
+    name: "Maruf Hasan Mahin",
+    phone: "01400097077",
+    email: "marufhasanmahin@gmail.com",
+    expertise: "Programming Language(C,Java(OOP))",
+    linkedin: "https:www.linkedin.com/in/mahin-hasan-4536a233a",
+    image:
+      "https://i.ibb.co.com/m5gxb5z/Whats-App-Image-2024-11-27-at-19-39-56-53396195.jpg",
+    role: "Quality Assurance Engineer",
   },
 ];
 
@@ -174,18 +173,30 @@ const DeveloperCard = ({ user }) => {
             fontSize: "1.125rem", // Increased font size for role
             fontWeight: "700", // Bold role text
             marginBottom: "5px",
+            color: "#49D78A",
           }}
         >
           {user.role}
         </p>
+        {user?.work && (
+          <p style={{ fontSize: "0.875rem", marginBottom: "5px" }}>
+            <strong>{user.work}</strong>
+          </p>
+        )}
         <p style={{ fontSize: "0.875rem", marginBottom: "5px" }}>
-          Phone: {user.phone}
+          <strong>Phone:</strong> {user.phone}
         </p>
         <p style={{ fontSize: "0.875rem", marginBottom: "5px" }}>
-          Email: {user.email}
+          <strong>Email:</strong> {user.email}
         </p>
-        <p style={{ fontSize: "0.875rem", marginBottom: "15px" }}>
-          Expertise: {user.expertise}
+        <p
+          style={{
+            fontSize: "0.875rem",
+            marginBottom: "15px",
+            wordWrap: "break-word",
+          }}
+        >
+          <strong> Expertise: </strong> {user.expertise}
         </p>
       </div>
     </div>
