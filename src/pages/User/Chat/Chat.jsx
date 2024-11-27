@@ -14,7 +14,7 @@ const Chat = () => {
     if (token) {
       fetch("http://computer-club.onrender.com/users/users/", {
         headers: {
-          Authorization: `${token}`,
+          Authorization: `Token ${token}`,
         },
         method: "GET",
       })
@@ -60,7 +60,7 @@ const Chat = () => {
       method: "POST",
       headers: {
         "Content-Type": "application/json",
-        Authorization: `Bearer ${token}`,
+        Authorization: `Token ${token}`,
       },
       body: JSON.stringify(newMessage),
     })

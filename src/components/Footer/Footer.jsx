@@ -133,6 +133,9 @@ const Footer = () => {
         </div>
         <div className="flex items-center gap-3 mt-4 text-center">
           <p className="hover:text-[#C3E92D]" >
+            <a href="https://computer-club.onrender.com/admin/login/?next=/admin/" >Admin</a>
+          </p>
+          <p className="hover:text-[#C3E92D]" >
             <Link to="/terms-and-services">Terms Of Services</Link>
           </p>
           <p className="hover:text-[#C3E92D]">
