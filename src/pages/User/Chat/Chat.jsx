@@ -40,6 +40,9 @@ const Chat = () => {
     };
 
     fetchMessages();
+    const intervalId = setInterval(fetchMessages, 2000); // Call every 2 seconds
+
+    return () => clearInterval(intervalId);
   }, [token]);
 
   useEffect(() => {
@@ -63,7 +66,10 @@ const Chat = () => {
     try {
       const response = await axios.post(
         "https://computer-club.onrender.com/message/messages/",
-        { message: inputMessage, sender: Number(localStorage.getItem("userId")) }, // Update the key to match the API's expected payload
+        {
+          message: inputMessage,
+          sender: Number(localStorage.getItem("userId")),
+        }, // Update the key to match the API's expected payload
         {
           headers: {
             "Content-Type": "application/json",
@@ -118,7 +124,7 @@ const Chat = () => {
           <h2 className="text-center text-3xl font-bold mb-4 text-gray-100 py-3">
             All Club Members
           </h2>
-          <ul className="space-y-2 max-h-[80vh] overflow-y-auto scrollbar-thin scrollbar-thumb-gray-700 scrollbar-track-gray-800">
+          <ul className="space-y-2 max-h-[70vh] overflow-y-auto scrollbar-thin scrollbar-thumb-gray-700 scrollbar-track-gray-800">
             {users.length === 0 ? (
               <p className="text-gray-400 text-center">No users found.</p>
             ) : (
@@ -155,7 +161,7 @@ const Chat = () => {
           </h2>
           <div className="p-4">
             <div className="flex-grow overflow-y-auto">
-              <div className="space-y-3 max-h-[80vh] overflow-y-auto">
+              <div className="space-y-3 max-h-[70vh] overflow-y-auto">
                 {messages.length === 0 ? (
                   <p className="text-center text-xl text-gray-400">
                     {token
@@ -164,36 +170,57 @@ const Chat = () => {
                   </p>
                 ) : (
                   groupedMessages.map((group, index) => (
-                    <div key={index} className="space-y-2">
+                    <div key={index} className="space-y-2 ">
                       {/* Sender Info */}
-                      <div className="flex items-center space-x-3">
-                        <img
-                          src={group.senderImage}
-                          alt={group.senderName}
-                          className="w-10 h-10 rounded-full"
-                        />
-                        <strong className="font-semibold">
-                          {group.senderName}
-                        </strong>
-                      </div>
-                      {/* Messages */}
-                      {group.messages.map((msg, i) => (
+                      <div
+                        className={`flex flex-col space-x-3 ${
+                          group.messages[0].sender === authState?.user?.id
+                            ? "justify-end items-end"
+                            : "justify-start items-start"
+                        }`}
+                      >
+                        <div className="flex items-center space-x-3">
+                          {group.messages[0].sender === authState?.user?.id && (
+                            <strong className="font-semibold">
+                              {group.senderName}
+                            </strong>
+                          )}
+                          <img
+                            src={group.senderImage}
+                            alt={group.senderName}
+                            className="w-10 h-10 rounded-full mb-2"
+                          />
+                          {group.messages[0].sender !== authState?.user?.id && (
+                            <strong className="font-semibold">
+                              {group.senderName}
+                            </strong>
+                          )}
+                        </div>
+                        {/* Messages */}
+                        {group.messages.map((msg, i) => (
+                          <div
+                            key={i}
+                            className={`p-2 rounded mb-2 ${
+                              msg.sender === authState?.user?.id
+                                ? "bg-blue-700 text-white w-fit text-left" // Keep left alignment for the current user
+                                : "bg-gray-700 w-fit text-left"
+                            }`} // Keep left alignment for other users
+                          >
+                            <span>{msg.message}</span>
+                          </div>
+                        ))}
+                        {/* Timestamp */}
                         <div
-                          key={i}
-                          className={`p-2 rounded ${
-                            msg.sender === authState?.user?.id
-                              ? "bg-blue-700 text-white self-end"
-                              : "bg-gray-700"
+                          className={`text-gray-400 text-xs ${
+                            group.messages[0].sender === authState?.user?.id
+                              ? "text-right"
+                              : "text-left"
                           }`}
                         >
-                          <span>{msg.message}</span>
+                          {moment(
+                            group.messages[group.messages.length - 1].timestamp
+                          ).format("MMM Do, YYYY [at] h:mm A")}
                         </div>
-                      ))}
-                      {/* Timestamp */}
-                      <div className="text-gray-400 text-xs text-right">
-                        {moment(
-                          group.messages[group.messages.length - 1].timestamp
-                        ).format("MMM Do, YYYY [at] h:mm A")}
                       </div>
                     </div>
                   ))
