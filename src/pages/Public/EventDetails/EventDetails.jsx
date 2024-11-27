@@ -18,7 +18,7 @@ const EventDetails = () => {
     return <p>Loading...</p>;
   }
   return (
-    <div className="bg-white">
+    <div className="w-full">
       <div className="flex lg:flex-row flex-col max-w-screen-xl mx-auto px-4">
         <div className="lg:w-1/2">
           <img className="min-h-screen" src={img} alt="" />
