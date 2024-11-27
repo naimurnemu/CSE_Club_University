@@ -22,7 +22,7 @@ const BlogDetails = () => {
   };
 
   return (
-    <div className="w-full">
+    <div className="w-full bg-gray-900">
       <div className="lg:max-w-screen-xl mx-auto space-y-4 pt-2 lg:px-4 px-2 lg:pb-10 pb-5">
         <button className="bg-black text-[#C3E92D] px-3 py-2 rounded-md hover:bg-[#C3E92D] hover:text-black text-xs font-bold">
           RUNNING

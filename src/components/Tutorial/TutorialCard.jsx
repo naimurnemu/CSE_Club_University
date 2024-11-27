@@ -14,20 +14,20 @@ const TutorialCard = ({ item }) => {
         />
       </figure>
       <div className="flex items-center gap-7 py-3">
-        <p className="flex items-center text-gray-700">
+        <p className="flex items-center text-white">
           <FaTag className="mr-2" />
           <span className="font-medium">{category}</span>
         </p>
-        <p className="flex items-center text-gray-700">
+        <p className="flex items-center text-white">
           <FaComments className="mr-2" />
           <span className="font-medium">{comments} comments</span>
         </p>
       </div>
       <div className="space-y-4">
-        <h2 className="text-xl font-bold text-black">
+        <h2 className="text-xl font-bold text-white">
           {title}
         </h2>
-        <p className="text-gray-600 font-normal">{description}</p>
+        <p className="text-white font-normal">{description}</p>
         <div className="card-actions">
           <button className="bg-[#C3E92D] text-black hover:bg-[#A3C92D] font-semibold rounded-full lg:py-3 px-6 py-2">
             Read More

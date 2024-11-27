@@ -12,13 +12,13 @@ const Tutorial = () => {
   }, []);
 
   return (
-    <div className="bg-white">
+    <div className="bg-gray-900">
       <div className="max-w-7xl w-full mx-auto px-2 md:px-5 lg:px-0">
         <div className="text-center space-y-4">
-        <h1 className="text-black text-opacity-50 text-xl font-semibold">
+        <h1 className="text-white text-opacity-80 text-xl font-semibold">
           TUTORIAL
         </h1>
-        <h1 className="lg:text-5xl text-2xl text-black font-bold lg:w-3/4 mx-auto">
+        <h1 className="lg:text-5xl text-2xl text-white font-bold lg:w-3/4 mx-auto">
           RUNNING COURSE ARTICLES & VIDEO TUTORIALS ABOUT RUNNING
         </h1>
       </div>

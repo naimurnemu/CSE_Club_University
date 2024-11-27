@@ -1,5 +1,6 @@
 import React from "react";
-import { Banner, Benefits, Blogs, Events, ExampleComp, Footer, JoinClub, RunningClub, RunningCommunity, Team, Tutorial } from "../../../components";
+import { Banner, Benefits, Blogs, Events, RunningClub, RunningCommunity, Team, Tutorial } from "../../../components";
+import { ContactUsPage } from "../ContactUsPage";
 
 const LandingPage = () => {
   return (
@@ -13,7 +14,7 @@ const LandingPage = () => {
       <Team />
       <RunningClub />
       <Blogs />
-      <JoinClub />
+      <ContactUsPage />
     </div>
   );
 };

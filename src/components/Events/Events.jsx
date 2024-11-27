@@ -15,7 +15,11 @@ const Events = () => {
 
   return (
     <div
-      style={{ backgroundImage: `url(${blogImg})`, backgroundSize: "cover", backgroundPosition: "center" }}
+      style={{
+        backgroundImage: `url(${blogImg})`,
+        backgroundSize: "cover",
+        backgroundPosition: "center",
+      }}
       className="w-full bg-fixed bg-white"
     >
       <div className="max-w-7xl w-full mx-auto px-2 md:px-5 lg:px-0 py-24">
@@ -29,7 +33,7 @@ const Events = () => {
               RUNNING EVENTS COMING UP INCLUDE
             </h2>
             <Link to="/allEvents">
-              <button className="lg:text-2xl text-sm font-bold text-white items-center hover:text-[#C3E92D] transition-colors duration-500 ease-in-out">
+              <button className="border-2 border-gray-500 bg-slate-300 text-black text-xs font-semibold lg:font-bold items-center hover:bg-gray-500 hover:text-white transition-colors duration-500 ease-in-out rounded-full px-4 py-3">
                 VIEW ALL
               </button>
             </Link>
@@ -103,7 +107,6 @@ const Events = () => {
           </div>
         </div>
       </div>
-    
     </div>
   );
 };

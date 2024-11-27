@@ -13,13 +13,13 @@ const Team = () => {
   }, []);
 
   return (
-    <div className="w-full bg-white">
+    <div className="w-full bg-gray-900">
       <div className="max-w-7xl w-full mx-auto px-2 md:px-5 lg:px-0 py-24">
         <div className="text-center space-y-4 pb-8">
-          <h1 className="text-black text-opacity-50 text-xl font-semibold">
+          <h1 className="text-white text-opacity-50 text-xl font-semibold">
             OUR TEAM
           </h1>
-          <h1 className="lg:text-5xl text-2xl text-black font-bold lg:w-3/4 mx-auto">
+          <h1 className="lg:text-5xl text-2xl text-white font-bold lg:w-3/4 mx-auto">
             OUR MEMBER, COUCH
           </h1>
         </div>
@@ -39,7 +39,7 @@ const Team = () => {
               </figure>
 
               {/* Name Section */}
-              <h2 className="text-2xl lg:text-3xl font-semibold text-black text-center group-hover:text-[#C3E92D] transition-colors duration-300">
+              <h2 className="text-2xl lg:text-3xl font-semibold text-white text-center group-hover:text-[#C3E92D] transition-colors duration-300">
                 {item.name}
               </h2>
 

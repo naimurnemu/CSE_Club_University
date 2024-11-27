@@ -3,7 +3,8 @@ import blogImg from "../../assets/images/blogImg.jpeg";
 
 const RunningCommunity = () => {
   return (
-    <div className="bg-white">
+    <div className="w-full bg-gray-900">
+      <div className="">
       <div className="max-w-7xl w-full mx-auto px-2 md:px-5 lg:px-0 flex flex-col lg:flex-row py-24">
         <div className="flex-1 flex gap-3">
           <img
@@ -20,11 +21,11 @@ const RunningCommunity = () => {
 
 
         <div className="text-left space-y-4 mt-3 w-1/2">
-          <h5 className="text-gray-500 font-bold">WELCOME TO RUNCLUB!</h5>
-          <h2 className="text-2xl sm:text-3xl lg:text-5xl font-bold text-gray-900">
+          <h5 className="text-white font-bold">WELCOME TO RUNCLUB!</h5>
+          <h2 className="text-2xl sm:text-3xl lg:text-5xl font-bold text-white">
             ZUNZO - YOUR ULTIMATE RUNNING COMMUNITY
           </h2>
-          <p className="text-gray-600 text-sm sm:text-base lg:text-lg">
+          <p className="text-white text-sm sm:text-base lg:text-lg">
             Welcome to our vibrant running community, where we organize exciting
             running events, provide helpful running tutorials, and keep you
             informed with the latest running news.
@@ -44,10 +45,10 @@ const RunningCommunity = () => {
                 </div>
               </div>
               <div className="sm:text-left">
-                <p className="font-medium text-gray-900 text-sm sm:text-base">
+                <p className="font-medium text-white text-sm sm:text-base">
                   Chris Pad
                 </p>
-                <p className="text-xs sm:text-sm text-gray-500">
+                <p className="text-xs sm:text-sm text-white">
                   Co - Founder Zunzo
                 </p>
               </div>
@@ -55,6 +56,7 @@ const RunningCommunity = () => {
           </div>
         </div>
       </div>
+    </div>
     </div>
   );
 };

@@ -18,7 +18,7 @@ const Blogs = () => {
   };
 
   return (
-    <div className="w-full">
+    <div className="w-full bg-gray-900">
       <div className="max-w-7xl w-full mx-auto px-2 md:px-5 lg:px-0 py-24">
         <div className="flex justify-between">
           <h2 className="text-2xl lg:text-5xl font-bold text-white mb-8">
