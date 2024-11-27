@@ -26,6 +26,7 @@ import {
   TermsAndServices,
   Developers,
   Winners,
+  AllBlogs,
 } from "../pages";
 import { Blogs } from "../components";
 
@@ -135,6 +136,10 @@ export const router = createBrowserRouter([
         path: "/blogs",
         element: <Blogs />,
       },
+      {
+        path: "/all-blogs",
+        element: <AllBlogs />
+      }
     ],
   },
 ]);

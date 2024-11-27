@@ -1,5 +1,5 @@
 import { useEffect, useState } from "react";
-import blogImg from "../../assets/images/blogImg.jpeg";
+import blogImg from "../../assets/images/b4.jpg";
 import { Link } from "react-router-dom";
 
 const Blogs = () => {
@@ -24,9 +24,11 @@ const Blogs = () => {
           <h2 className="text-2xl lg:text-5xl font-bold text-white mb-8 text-center">
             OUR BLOGS
           </h2>
+          <Link to="/all-blogs">
           <button className="border-2 border-gray-500 text-white text-xs font-semibold lg:font-bold mb-8 items-center hover:bg-gray-500 hover:text-white transition-colors duration-500 ease-in-out rounded-full px-4 py-2">
             VIEW ALL
           </button>
+          </Link>
         </div>
         <div className="grid lg:grid-cols-8 grid-cols-1 gap-8 mx-auto">
           {/* Left Section */}
@@ -39,7 +41,7 @@ const Blogs = () => {
                 alt="Main Blog"
               />
               <div className="absolute bottom-0 left-0  text-white p-6 space-y-3">
-                <button className=" bg-black text-[#C3E92D] rounded-md hover:bg-[#C3E92D] hover:text-black px-3 py-2 text-sm font-bold">
+                <button className=" bg-gray-600 text-[#C3E92D] rounded-md hover:bg-[#C3E92D] hover:text-black px-3 py-2 text-sm font-bold">
                   RUNNING
                 </button>
                 <h2 className="lg:text-2xl font-bold hover:text-[#22C55E]">

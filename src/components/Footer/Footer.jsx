@@ -12,8 +12,8 @@ import { Link } from "react-router-dom";
 
 const Footer = () => {
   return (
-    <div className="bg-[#121212] text-white ">
-      <div className="max-w-7xl w-full mx-auto px-2 md:px-5 lg:px-0 py-10 flex flex-wrap justify-between ">
+    <div className="bg-gray-900 text-white ">
+      <div className="max-w-7xl w-full mx-auto md:px-5 px-1 py-10 flex flex-wrap justify-between ">
         {/* Column 1: Logo and Description */}
         <div>
           <div className="flex items-center gap-2 mb-4">

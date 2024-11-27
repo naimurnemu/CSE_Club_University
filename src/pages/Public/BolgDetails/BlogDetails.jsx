@@ -23,8 +23,9 @@ const BlogDetails = () => {
 
   return (
     <div className="w-full bg-gray-900">
-      <div className="lg:max-w-screen-xl mx-auto space-y-4 pt-2 lg:px-4 px-2 lg:pb-10 pb-5">
-        <h1 className="text-white lg:text-3xl text-xl font-bold">
+      <div className="lg:max-w-screen-xl mx-auto flex lg:flex-col flex-col-reverse  pt-2 lg:px-4 px-2 lg:pb-10 pb-5">
+       <div className="space-y-4">
+       <h1 className="text-white lg:text-3xl text-xl font-bold">
           {details.title}
         </h1>
         <p className="text-white">{details.content}</p>
@@ -47,9 +48,10 @@ const BlogDetails = () => {
             </span>
           </p>
         </div>
+       </div>
 
         <img
-          className="w-full h-auto max-h-[500px] object-cover"
+          className="w-full mt-2 h-auto max-h-[500px] object-cover"
           src={blogImg}
           alt="details img"
         />

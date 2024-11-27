@@ -18,26 +18,27 @@ const EventDetails = () => {
   }
 
   return (
-    <div className="w-full bg-white py-10">
-      <div className="max-w-screen-xl mx-auto p-6 md:flex md:items-center md:space-x-8">
+   <div className="bg-gray-900">
+     <div className="max-w-screen-xl py-10 mx-auto">
+      <div className=" p-6 flex lg:flex-row flex-col-reverse md:space-x-8">
         {/* Mentor's Info */}
-        <div className="md:w-1/2 space-y-4 text-start">
-          <h1 className="text-3xl font-bold text-gray-800">
+        <div className="md:w-1/2 space-y-4 text-start my-4">
+          <h1 className="text-3xl font-bold text-white">
             {mentorDetails.name}
           </h1>
-          <p className="text-xl text-gray-600 font-semibold">
+          <p className="text-xl text-white font-semibold">
             {mentorDetails.designation}
           </p>
-          <p className="text-gray-700">
+          <p className="text-white">
             <strong>Expertise:</strong> {mentorDetails.expertise}
           </p>
-          <p className="text-gray-700">
+          <p className="text-white">
             <strong>Email:</strong> {mentorDetails.email}
           </p>
-          <p className="text-gray-700">
+          <p className="text-white">
             <strong>Phone:</strong> {mentorDetails.phone}
           </p>
-          <p className="text-gray-700">
+          <p className="text-white">
             <strong>Bio:</strong> {mentorDetails.bio}
           </p>
           {/* LinkedIn Icon */}
@@ -52,16 +53,18 @@ const EventDetails = () => {
           </a>
         </div>
 
-        {/* Mentor's Photo */}
-        <div className="md:w-1/2 flex justify-center mt-6 md:mt-0">
+        <div className="lg:w-[300px] rounded-md flex justify-center mt-6 md:mt-0 bg-gray-600">
           <img
             src={mentorDetails.photo}
             alt={`${mentorDetails.name} Photo`}
-            className="rounded-lg shadow-md max-w-full lg:h-[300px] w-auto object-cover"
+            className="rounded-lg shadow-md h-[300px] w-auto object-cover"
           />
         </div>
+
       </div>
+     
     </div>
+   </div>
   );
 };
 

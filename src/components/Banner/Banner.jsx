@@ -1,19 +1,22 @@
-import banner from "../../assets/images/bannerBG.jpg";
-import sidePhoto from "../../assets/images/images.png";
+import { Link } from "react-router-dom";
+import banner from "../../assets/images/b.jpeg"
+import sidePhoto from "../../assets/images/b2.jpg";
 import { FaCalendar, FaMapMarkerAlt, FaStopwatch } from "react-icons/fa";
 
 const Banner = () => {
   return (
-    <div
+  
+     <div
       style={{
         backgroundImage: `url(${banner})`,
         backgroundSize: "cover",
         backgroundPosition: "center",
         backgroundRepeat: "no-repeat",
       }}
-      className="w-full"
+      className="lg:pl-10 rounded-md relative"
     >
-      <div className="max-w-7xl w-full px-4 md:px-6 lg:px-0 mx-auto flex flex-col lg:p-24 min-h-[70vh] lg:min-h-[600px] lg:flex-row justify-between items-center gap-8 space-y-4 lg:py-16 relative">
+       <div className="absolute inset-0 bg-black bg-opacity-40 rounded-md"></div>
+      <div className="w-full max-w-7xl px-4 md:px-6 lg:px-2 mx-auto flex flex-col-reverse lg:p-24 lg:min-h-[600px]  lg:flex-row justify-between items-center gap-8 space-y-4 lg:py-16 relative">
         <div className="lg:w-1/2 space-y-5 flex flex-col lg:flex-none">
           <h1 className="font-bold lg:text-7xl text-3xl text-white">
             City University Computer Club
@@ -23,15 +26,14 @@ const Banner = () => {
             explore the latest advancements in computer science and technology.
           </p>
           <div className="space-x-3">
-            <button className="bg-[#C3E92D] font-semibold lg:py-3 lg:px-4 py-2 px-3 hover:bg-black hover:text-white text-black rounded-sm">
+           <Link>
+           <button className="bg-[#C3E92D] font-semibold lg:py-4 lg:px-14 py-2 px-3 hover:bg-black hover:text-white text-black rounded-sm">
               Join The Club
             </button>
-            <button className="text-[#127CC1] font-semibold bg-white lg:py-3 lg:px-4 py-2 px-3 rounded-sm">
-              Learn More
-            </button>
+           </Link>
           </div>
         </div>
-        <div className="bg-black/70 shadow-2xl lg:w-96 rounded-lg overflow-hidden flex flex-col items-center mx-auto">
+        <div className="bg-black/60 shadow-2xl lg:w-96 rounded-lg overflow-hidden flex flex-col items-center mx-auto">
           <div className="bg-[#C3E92D] rounded-t-lg p-3 w-full">
             <h1 className="font-semibold text-black text-center">NEW EVENT</h1>
           </div>
