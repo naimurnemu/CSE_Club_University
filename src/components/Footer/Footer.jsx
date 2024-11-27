@@ -87,6 +87,9 @@ const Footer = () => {
             <li className="hover:text-[#C3E92D] cursor-pointer">
               <Link to="/about-us">About Us</Link>
             </li>
+            <li className="hover:text-[#C3E92D] cursor-pointer">
+              <Link to="/alumni">Alumni</Link>
+            </li>
           </ul>
         </div>
 
