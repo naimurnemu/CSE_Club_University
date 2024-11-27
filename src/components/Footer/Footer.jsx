@@ -129,7 +129,10 @@ const Footer = () => {
               <a href="#"> Computer Club City University</a>
             </span>
             . All Rights Reserved by{" "}
-            <Link className="text-[#49D78A]" to="/developers">Developer Team</Link>.
+            <Link className="text-[#49D78A]" to="/developers">
+              Developer Team
+            </Link>
+            .
           </p>
         </div>
         <div className="flex items-center gap-3 mt-4 text-center">

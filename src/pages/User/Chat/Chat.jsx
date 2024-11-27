@@ -1,17 +1,17 @@
 import React, { useState, useEffect, useContext } from "react";
+import moment from "moment"; // Import moment.js
 import { IoIosSend } from "react-icons/io";
 import { useNavigate } from "react-router-dom";
 import { AuthContext } from "../../../contexts/AuthContext";
+import axios from "axios";
 
 const Chat = () => {
   const [users, setUsers] = useState([]);
-  const [selectedUser, setSelectedUser] = useState(null);
   const [messages, setMessages] = useState([]);
   const [inputMessage, setInputMessage] = useState("");
   const navigate = useNavigate();
   const token = localStorage.getItem("token");
   const { authState } = useContext(AuthContext);
-  console.log("authState", authState?.user?.username);
 
   // Fetch Messages
   useEffect(() => {
@@ -23,19 +23,16 @@ const Chat = () => {
           "https://computer-club.onrender.com/message/messages/",
           {
             headers: {
-              Authorization: `Token ${token}`,
+              Authorization: `Bearer ${token}`,
             },
           }
         );
-
-        console.log("Messages Response Status:", response.status);
 
         if (!response.ok) {
           throw new Error(`Error fetching messages: ${response.statusText}`);
         }
 
         const data = await response.json();
-        console.log("Fetched Messages:", data);
         setMessages(data);
       } catch (error) {
         console.error("Error fetching messages:", error);
@@ -63,46 +60,55 @@ const Chat = () => {
       return;
     }
 
-    const newMessage = {
-      // username: authState?.user?.username,
-      messages: inputMessage,
-    };
-
     try {
-      const response = await fetch(
+      const response = await axios.post(
         "https://computer-club.onrender.com/message/messages/",
+        { message: inputMessage, sender: Number(localStorage.getItem("userId")) }, // Update the key to match the API's expected payload
         {
-          method: "POST",
-          credentials: "include",
           headers: {
             "Content-Type": "application/json",
-            Authorization: `Token ${token}`,
+            Authorization: `Bearer ${token}`, // Ensure token is included correctly
           },
-          body: JSON.stringify(newMessage),
         }
       );
 
-      console.log("Send Message Response Status:", response.status);
+      console.log("Message Sent Response:", response.data);
 
-      if (!response.ok) {
-        throw new Error(`Error sending message: ${response.statusText}`);
-      }
-
-      const data = await response.json();
-      console.log("Message Sent:", data);
-      setMessages([...messages, data]);
-      setInputMessage("");
+      // Append the new message to the state
+      setMessages([...messages, response.data]);
+      setInputMessage(""); // Clear input field
     } catch (error) {
       console.error("Error sending message:", error);
+
+      // Log detailed error response if available
+      if (error.response) {
+        console.error("Error Response Data:", error.response.data);
+      }
     }
   };
 
-  // Handle Enter Key for Message Input
   const handleKeyDown = (e) => {
     if (e.key === "Enter") {
       sendMessage();
     }
   };
+
+  const groupedMessages = [];
+  messages.forEach((msg, index) => {
+    const lastGroup = groupedMessages[groupedMessages.length - 1];
+    if (lastGroup && lastGroup.sender === msg.sender) {
+      lastGroup.messages.push(msg);
+    } else {
+      groupedMessages.push({
+        sender: msg.sender,
+        senderName: msg.sender_name,
+        senderImage:
+          msg.sender_image ||
+          "https://cdn.pixabay.com/photo/2015/03/04/22/35/avatar-659652_1280.png",
+        messages: [msg],
+      });
+    }
+  });
 
   return (
     <div className="bg-gray-900 text-gray-200">
@@ -149,7 +155,7 @@ const Chat = () => {
           </h2>
           <div className="p-4">
             <div className="flex-grow overflow-y-auto">
-              <div className="space-y-3">
+              <div className="space-y-3 max-h-[80vh] overflow-y-auto">
                 {messages.length === 0 ? (
                   <p className="text-center text-xl text-gray-400">
                     {token
@@ -157,17 +163,38 @@ const Chat = () => {
                       : "Join the club to start a conversation!"}
                   </p>
                 ) : (
-                  messages.map((msg, index) => (
-                    <div
-                      key={index}
-                      className={`flex items-center space-x-2 p-2 rounded ${
-                        msg.username === localStorage.getItem("name")
-                          ? "bg-blue-700 text-white self-end"
-                          : "bg-gray-700"
-                      }`}
-                    >
-                      <strong className="font-semibold">{msg.username}:</strong>
-                      <span>{msg.messages}</span>
+                  groupedMessages.map((group, index) => (
+                    <div key={index} className="space-y-2">
+                      {/* Sender Info */}
+                      <div className="flex items-center space-x-3">
+                        <img
+                          src={group.senderImage}
+                          alt={group.senderName}
+                          className="w-10 h-10 rounded-full"
+                        />
+                        <strong className="font-semibold">
+                          {group.senderName}
+                        </strong>
+                      </div>
+                      {/* Messages */}
+                      {group.messages.map((msg, i) => (
+                        <div
+                          key={i}
+                          className={`p-2 rounded ${
+                            msg.sender === authState?.user?.id
+                              ? "bg-blue-700 text-white self-end"
+                              : "bg-gray-700"
+                          }`}
+                        >
+                          <span>{msg.message}</span>
+                        </div>
+                      ))}
+                      {/* Timestamp */}
+                      <div className="text-gray-400 text-xs text-right">
+                        {moment(
+                          group.messages[group.messages.length - 1].timestamp
+                        ).format("MMM Do, YYYY [at] h:mm A")}
+                      </div>
                     </div>
                   ))
                 )}

@@ -34,6 +34,17 @@ const users = [
     role: "Backend Lead",
   },
   {
+    name: "ZEAUR RAHMAN",
+    phone: "01984753024",
+    email: "rahmanzea31@gmail.com",
+    expertise:
+      "Backend Development  with Django(Django Rest APi),Data Structure & Algorithm,My SQL(Database),Problem solving,Programming Language(C,C++,Python(OOP),Java(OOP)).",
+    github: "https://github.com/Zea2002",
+    linkedin: "https://www.linkedin.com/in/zeaur-rahman-4209622a8/",
+    image: "https://avatars.githubusercontent.com/u/143029141?v=4",
+    role: "Backend Developer",
+  },
+  {
     name: "Md Alif",
     phone: "456-789-0123",
     email: "alif@example.com",

@@ -25,6 +25,7 @@ import {
   PrivacyPolicy,
   TermsAndServices,
   Developers,
+  Winners,
 } from "../pages";
 import { Blogs } from "../components";
 
@@ -95,6 +96,10 @@ export const router = createBrowserRouter([
         element: <Developers />,
       },
       {
+        path: "/winner",
+        element: <Winners />,
+      },
+      {
         path: "/chat",
         element: <Chat />,
       },
@@ -124,12 +129,12 @@ export const router = createBrowserRouter([
       },
       {
         path: "/memberDetails/:id",
-        element: <MemberDetails />
+        element: <MemberDetails />,
       },
       {
         path: "/blogs",
-        element: <Blogs />
-      }
+        element: <Blogs />,
+      },
     ],
   },
 ]);

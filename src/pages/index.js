@@ -22,3 +22,4 @@ export {PrivacyPolicy} from "./Public/PrivacyPolicy";
 export {TermsAndServices} from "./Public/TermsAndServices";
 export {CookiePolicy} from "./Public/CookiePolicy";
 export {Developers} from "./Public/Developers";
+export {Winners} from "./User/Winners";
