@@ -1,4 +1,6 @@
 import React, { useState } from "react";
+import { ToastContainer, toast } from "react-toastify";
+import "react-toastify/dist/ReactToastify.css";
 
 const ContactUsPage = () => {
   const [formData, setFormData] = useState({
@@ -9,6 +11,7 @@ const ContactUsPage = () => {
   });
 
   const [errors, setErrors] = useState({});
+  const [isSubmitting, setIsSubmitting] = useState(false);
 
   const handleChange = (e) => {
     const { name, value } = e.target;
@@ -28,19 +31,66 @@ const ContactUsPage = () => {
     return newErrors;
   };
 
-  const handleSubmit = (e) => {
+  const handleSubmit = async (e) => {
     e.preventDefault();
     const validationErrors = validateForm();
     if (Object.keys(validationErrors).length > 0) {
       setErrors(validationErrors);
     } else {
-      alert("Message sent successfully!");
-      console.log(formData);
+      setErrors({});
+      setIsSubmitting(true);
+
+      try {
+        const response = await fetch(
+          "https://computer-club.onrender.com/contact-us/contact/",
+          {
+            method: "POST",
+            headers: {
+              "Content-Type": "application/json",
+            },
+            body: JSON.stringify(formData),
+          }
+        );
+
+        if (response.ok) {
+          toast.success("Message sent successfully!", {
+            position: "top-right",
+            autoClose: 3000,
+          });
+          setFormData({
+            name: "",
+            email: "",
+            subject: "",
+            message: "",
+          });
+        } else {
+          const errorData = await response.json();
+          toast.error(
+            `Failed to send message: ${errorData.message || "Unknown error"}`,
+            {
+              position: "top-right",
+              autoClose: 3000,
+            }
+          );
+        }
+      } catch (error) {
+        console.error("Error submitting the form:", error);
+        toast.error(
+          "An error occurred while sending the message. Please try again.",
+          {
+            position: "top-right",
+            autoClose: 3000,
+          }
+        );
+      } finally {
+        setIsSubmitting(false);
+      }
     }
   };
 
   return (
     <div className="min-h-screen bg-gray-900 text-gray-200 p-4">
+      <ToastContainer />
       <h1 className="text-4xl font-extrabold text-center mb-8 text-gradient-to-r from-green-400 to-blue-500">
         Contact Us
       </h1>
@@ -131,8 +181,9 @@ const ContactUsPage = () => {
             <button
               type="submit"
               className="w-full bg-gradient-to-r from-green-400 to-blue-500 text-white px-4 py-3 rounded-lg font-bold hover:from-green-300 hover:to-blue-400 transition duration-300"
+              disabled={isSubmitting}
             >
-              Send Message
+              {isSubmitting ? "Sending..." : "Send Message"}
             </button>
           </form>
         </div>
