@@ -1,4 +1,4 @@
-import React, { useState, useEffect, useContext } from "react";
+import React, { useState, useEffect, useContext, useRef } from "react";
 import moment from "moment"; // Import moment.js
 import { IoIosSend } from "react-icons/io";
 import { useNavigate } from "react-router-dom";
@@ -12,6 +12,7 @@ const Chat = () => {
   const navigate = useNavigate();
   const token = localStorage.getItem("token");
   const { authState } = useContext(AuthContext);
+  const messagesEndRef = useRef(null);
 
   // Fetch Messages
   useEffect(() => {
@@ -83,6 +84,7 @@ const Chat = () => {
       // Append the new message to the state
       setMessages([...messages, response.data]);
       setInputMessage(""); // Clear input field
+      messagesEndRef.current?.scrollIntoView({ behavior: "smooth" });
     } catch (error) {
       console.error("Error sending message:", error);
 
