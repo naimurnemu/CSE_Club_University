@@ -24,6 +24,7 @@ import {
   CookiePolicy,
   PrivacyPolicy,
   TermsAndServices,
+  Developers,
 } from "../pages";
 import { Blogs } from "../components";
 
@@ -88,6 +89,10 @@ export const router = createBrowserRouter([
       {
         path: "/user-profile",
         element: <UserProfile />,
+      },
+      {
+        path: "/developers",
+        element: <Developers />,
       },
       {
         path: "/chat",

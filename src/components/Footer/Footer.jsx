@@ -126,16 +126,19 @@ const Footer = () => {
           <p>
             &copy;<span>{new Date().getFullYear()}</span>
             <span className="hover:text-[#C3E92D]">
-              <a href="#">Computer Club City University</a>
+              <a href="#"> Computer Club City University</a>
             </span>
-            . All Rights Reserved.
+            . All Rights Reserved by{" "}
+            <Link className="text-[#49D78A]" to="/developers">Developer Team</Link>.
           </p>
         </div>
         <div className="flex items-center gap-3 mt-4 text-center">
-          <p className="hover:text-[#C3E92D]" >
-            <a href="https://computer-club.onrender.com/admin/login/?next=/admin/" >Admin</a>
+          <p className="hover:text-[#C3E92D]">
+            <a href="https://computer-club.onrender.com/admin/login/?next=/admin/">
+              Admin
+            </a>
           </p>
-          <p className="hover:text-[#C3E92D]" >
+          <p className="hover:text-[#C3E92D]">
             <Link to="/terms-and-services">Terms Of Services</Link>
           </p>
           <p className="hover:text-[#C3E92D]">
