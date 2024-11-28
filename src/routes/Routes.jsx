@@ -29,6 +29,7 @@ import {
   AllBlogs,
 } from "../pages";
 import { Blogs } from "../components";
+import { FAQ } from "../pages/Public/FAQ";
 
 export const router = createBrowserRouter([
   {
@@ -139,6 +140,10 @@ export const router = createBrowserRouter([
       {
         path: "/all-blogs",
         element: <AllBlogs />
+      },
+      {
+        path: "/faqs",
+        element: <FAQ />
       }
     ],
   },

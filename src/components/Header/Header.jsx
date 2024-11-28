@@ -114,18 +114,48 @@ const Header = () => {
                       </div>
                       <hr className="w-full" />
                       <ul className="w-full">
-                        <li className="border-b border-gray-300 font-medium p-0.5">
-                          <Link to="/about-us">About Us</Link>
-                        </li>
+                        <div className="dropdown dropdown-hover">
+                          <div tabIndex={0} role="button">
+                            About
+                          </div>
+                          <ul
+                            tabIndex={0}
+                            className="dropdown-content menu bg-black/50 rounded-md z-[1] w-40 py-4"
+                          >
+                            <li>
+                              <Link to="/executives">Executive Body</Link>
+                            </li>
+                            <li>
+                              <Link to="/about-us">About Us</Link>
+                            </li>
+                          </ul>
+                        </div>
                         <li className="border-b border-gray-300 font-medium p-0.5">
                           <Link to="/events">Events</Link>
                         </li>
                         <li className="border-b border-gray-300 font-medium p-0.5">
                           <Link to="/blogs">Blogs</Link>
                         </li>
-                        <li className="border-b border-gray-300 font-medium p-0.5">
-                          <Link to="/support">Support</Link>
-                        </li>
+
+                        <div className="dropdown dropdown-hover">
+                          <div tabIndex={0} role="button">
+                            More
+                          </div>
+                          <ul
+                            tabIndex={0}
+                            className="dropdown-content bg-black/50 font-semibold menu rounded-md z-[1] w-40 py-4"
+                          >
+                            <li>
+                              <Link to="/faqs">FAQs</Link>
+                            </li>
+                            <li>
+                              <Link to="/chat">Chat</Link>
+                            </li>
+                            <li>
+                              <Link to="/support">Support</Link>
+                            </li>
+                          </ul>
+                        </div>
                       </ul>
                     </>
                   ) : (
@@ -151,12 +181,22 @@ const Header = () => {
 
           <>
             <nav className="items-center gap-6 text-base hidden md:flex">
-              <Link
-                to="/about-us"
-                className="text-white font-medium hover:underline hover:transition-colors"
-              >
-                About Us
-              </Link>
+              <div className="dropdown dropdown-hover">
+                <div tabIndex={0} role="button">
+                  About
+                </div>
+                <ul
+                  tabIndex={0}
+                  className="dropdown-content bg-black/50 font-semibold menu rounded-md z-[1] w-[150px] py-4"
+                >
+                  <li>
+                    <Link to="/executives">Executive Body</Link>
+                  </li>
+                  <li>
+                    <Link to="/about-us">About Us</Link>
+                  </li>
+                </ul>
+              </div>
               <Link
                 to="/allEvents"
                 className="text-white font-medium hover:underline hover:transition-colors"
@@ -169,12 +209,25 @@ const Header = () => {
               >
                 Blogs
               </Link>
-              <Link
-                to="/contact"
-                className="text-white font-medium hover:underline hover:transition-colors"
-              >
-                Support
-              </Link>
+              <div className="dropdown dropdown-hover">
+                <div tabIndex={0} role="button">
+                  More
+                </div>
+                <ul
+                  tabIndex={0}
+                  className="dropdown-content bg-black/50 font-semibold menu rounded-md z-[1] w-40 py-4"
+                >
+                  <li>
+                    <Link to="/faqs">FAQs</Link>
+                  </li>
+                  <li>
+                    <Link to="/chat">Chat</Link>
+                  </li>
+                  <li>
+                    <Link to="/support">Support</Link>
+                  </li>
+                </ul>
+              </div>
             </nav>
             <div className="items-center gap-3 hidden md:flex">
               {user?.username ? (

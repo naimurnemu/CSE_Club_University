@@ -1,6 +1,6 @@
 import { useEffect, useState } from "react";
 import { useParams } from "react-router-dom";
-import blogImg from "../../../assets/images/blogImg.jpeg";
+import blogImg from "../../../assets/images/img7.jpg";
 
 const BlogDetails = () => {
   const { id } = useParams();
@@ -24,8 +24,8 @@ const BlogDetails = () => {
   return (
     <div className="w-full bg-gray-900">
       <div className="lg:max-w-screen-xl mx-auto flex lg:flex-col flex-col-reverse  pt-2 lg:px-4 px-2 lg:pb-10 pb-5">
-       <div className="space-y-4">
-       <h1 className="text-white lg:text-3xl text-xl font-bold">
+       <div className="space-y-4 text-opacity-80">
+       <h1 className="text-white lg:text-3xl text-xl text-opacity-80 font-bold">
           {details.title}
         </h1>
         <p className="text-white">{details.content}</p>
@@ -43,7 +43,7 @@ const BlogDetails = () => {
         <div>
           <p className="text-white font-bold">
             Updated_At:{" "}
-            <span className="text-white font-sm">
+            <span className="text-white font-sm text-opacity-80">
               {formatDate(details.updated_at)}
             </span>
           </p>
@@ -51,7 +51,7 @@ const BlogDetails = () => {
        </div>
 
         <img
-          className="w-full mt-2 h-auto max-h-[500px] object-cover"
+          className="w-full mt-2 h-auto rounded-md object-cover"
           src={blogImg}
           alt="details img"
         />
