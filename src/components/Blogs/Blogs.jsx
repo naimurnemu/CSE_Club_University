@@ -1,5 +1,5 @@
 import { useEffect, useState } from "react";
-import blogImg from "../../assets/images/b4.jpg";
+import blogImg from "../../assets/images/img6.jpg"
 import { Link } from "react-router-dom";
 
 const Blogs = () => {
@@ -20,17 +20,17 @@ const Blogs = () => {
   return (
     <div className="w-full bg-gray-900">
       <div className="max-w-7xl w-full mx-auto px-2 md:px-5 lg:px-0 py-24">
-        <div className="flex justify-between">
-          <h2 className="text-2xl lg:text-5xl font-bold text-white mb-8 text-center">
+        <div className="flex justify-between items-center">
+          <h2 className="text-2xl lg:text-5xl font-bold text-white text-center">
             OUR BLOGS
           </h2>
           <Link to="/all-blogs">
-          <button className="border-2 border-gray-500 text-white text-xs font-semibold lg:font-bold mb-8 items-center hover:bg-gray-500 hover:text-white transition-colors duration-500 ease-in-out rounded-full px-4 py-2">
+          <button className="border-2 border-gray-500 text-white text-xs font-semibold lg:font-bold items-center hover:bg-gray-500 hover:text-white transition-colors duration-500 ease-in-out rounded-full px-4 lg:py-3 py-2">
             VIEW ALL
           </button>
           </Link>
         </div>
-        <div className="grid lg:grid-cols-8 grid-cols-1 gap-8 mx-auto">
+        <div className="grid lg:grid-cols-8 grid-cols-1 gap-8 mx-auto mt-8 lg:mt-16">
           {/* Left Section */}
           <div className="lg:col-span-4 col-span-1">
             <div className="relative h-full">
@@ -40,7 +40,7 @@ const Blogs = () => {
                 src={blogImg}
                 alt="Main Blog"
               />
-              <div className="absolute bottom-0 left-0  text-white p-6 space-y-3">
+              {/* <div className="absolute bottom-0 left-0  text-white p-6 space-y-3">
                 <button className=" bg-gray-600 text-[#C3E92D] rounded-md hover:bg-[#C3E92D] hover:text-black px-3 py-2 text-sm font-bold">
                   RUNNING
                 </button>
@@ -49,7 +49,7 @@ const Blogs = () => {
                   Journey Right
                 </h2>
                 <p className="text-sm">by Tony Nguyen — Oct 12, 2023</p>
-              </div>
+              </div> */}
             </div>
           </div>
 

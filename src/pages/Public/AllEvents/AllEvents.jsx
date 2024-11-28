@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from "react";
 import { FaMapMarkerAlt, FaCalendarAlt, FaClock } from "react-icons/fa";
+import { Link } from "react-router-dom";
 
 const Events = () => {
   const [eventData, setEventData] = useState([]);
@@ -72,9 +73,11 @@ const Events = () => {
                   </div>
 
                   {/* Button */}
-                  <button className="mt-4 px-6 py-2 lg:py-4 bg-[#C3E92D] text-black hover:bg-black hover:text-white lg:font-bold font-medium rounded-md text-start">
-                    Learn More
+                 <Link to="/contact">
+                 <button className="mt-4 px-6 py-2 lg:py-4 bg-[#C3E92D] text-black hover:bg-[#22C55E] hover:text-white lg:font-bold font-medium rounded-md text-start">
+                    More Info
                   </button>
+                 </Link>
                 </div>
               </div>
             ))}

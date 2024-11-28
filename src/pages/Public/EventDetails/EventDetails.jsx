@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from "react";
-import { useParams } from "react-router-dom";
+import { Link, useParams } from "react-router-dom";
 import img from "../../../assets/images/fixedImg.jpg";
 import { FaCalendarAlt, FaClock, FaMapMarkerAlt } from "react-icons/fa";
 
@@ -32,7 +32,9 @@ const EventDetails = () => {
 
             {/* Price Section */}
             <div className="flex items-baseline text-start">
-              <p className="lg:text-5xl text-2xl font-extrabold text-white">FREE</p>
+              <p className="lg:text-5xl text-2xl font-extrabold text-white">
+                FREE
+              </p>
               <span className="text-sm text-gray-300 ml-1 self-baseline">
                 /ticket
               </span>
@@ -61,6 +63,11 @@ const EventDetails = () => {
                       Start {eventDetails.start_time} - Until Finish
                     </span>
                   </li>
+                  <Link to="/contact">
+                    <button className="mt-4 px-6 py-2 lg:py-4 bg-[#C3E92D] text-black hover:bg-[#22C55E] hover:text-white lg:font-bold font-medium rounded-md text-start">
+                      More Info
+                    </button>
+                  </Link>
                 </ul>
               </div>
             </div>

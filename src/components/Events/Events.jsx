@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from "react";
 import { FaMapMarkerAlt, FaCalendarAlt, FaClock } from "react-icons/fa";
-import blogImg from "../../assets/images/eventBG.jpeg";
+import blogImg from "../../assets/images/img3.jpg";
 import { Link } from "react-router-dom";
 
 const Events = () => {
@@ -23,6 +23,7 @@ const Events = () => {
       }}
       className="w-full bg-fixed max-w-screen-xl mx-auto rounded-md"
     >
+      {/* <div className="absolute inset-0 bg-black bg-opacity-30 rounded-md"></div> */}
       <div className="max-w-7xl w-full mx-auto px-2 md:px-5 lg:px-0 py-24">
         <div className="px-4 space-y-5">
           {/* Title */}
@@ -80,7 +81,7 @@ const Events = () => {
                 </div>
 
                 {/* Ticket Info */}
-                <div className="bg-gray-700 bg-opacity-40 p-6 flex flex-col justify-center items-start ">
+                <div className="bg-gray-700 bg-opacity-50 p-6 flex flex-col justify-center items-start ">
                   {/* Ticket Label */}
                   <p className="text-lg font-semibold text-[#C3E92D] mb-1 text-start">
                     Ticket
@@ -98,7 +99,7 @@ const Events = () => {
 
                   {/* Button */}
                   <Link to={`/eventDetails/${item.id}`}>
-                    <button className="mt-4 px-6 py-2 lg:py-4 bg-[#C3E92D] text-black hover:bg-black hover:text-white font-bold rounded-md text-start">
+                    <button className="mt-4 px-6 py-2 lg:py-4 bg-[#C3E92D] text-black hover:bg-[#22C55E] hover:text-white font-bold rounded-md text-start">
                       Learn More
                     </button>
                   </Link>

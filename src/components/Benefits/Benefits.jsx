@@ -2,7 +2,8 @@ import img from "../../assets/images/fixedImg.jpg";
 
 const Benefits = () => {
   return (
-   <div className="bg-gray-900">
+   <div className="bg-gray-900 relative">
+    <div className="absolute inset-0 bg-black bg-opacity-20 rounded-md"></div>
      <div className="max-w-screen-xl mx-auto">
       <div className="max-w-7xl w-full mx-auto px-2 md:px-5 lg:px-0 py-24">
         <div className="text-center space-y-4">
