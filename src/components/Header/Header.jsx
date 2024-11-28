@@ -43,7 +43,7 @@ const Header = () => {
   return (
     <>
       <div className="bg-gray-900 text-white py-5" onClick={handleMenuClose}>
-        <div className="flex justify-between items-center max-w-7xl w-full px-3 md:px-5 lg:px-0 mx-auto">
+        <div className="flex justify-between items-center max-w-7xl w-full px-3 md:px-5 mx-auto">
           <Link to="/">
             <div className="flex items-center gap-2">
               <img className="w-10 h-10" src={logo} alt="Zunzo" />
