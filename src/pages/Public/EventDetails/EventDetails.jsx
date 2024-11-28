@@ -18,12 +18,12 @@ const EventDetails = () => {
     return <p>Loading...</p>;
   }
   return (
-    <div className="w-full">
-      <div className="flex lg:flex-row flex-col max-w-screen-xl mx-auto px-4">
-        <div className="lg:w-1/2">
-          <img className="min-h-screen" src={img} alt="" />
+    <div className="w-full bg-gray-900">
+      <div className="flex lg:flex-row flex-col max-w-screen-xl mx-auto px-4 gap-4 py-4">
+        <div className="lg:w-1/2 w-full rounded-md">
+          <img className="lg:min-h-screen h-auto rounded-md" src={img} alt="" />
         </div>
-        <div className="bg-black lg:pl-8 pl-4 lg:w-1/2 flex items-center">
+        <div className="bg-gray-700 lg:pl-8 lg:w-1/2 flex items-center rounded-md">
           <div className="p-6 flex flex-col justify-center items-start">
             {/* Ticket Label */}
             <p className="lg:text-3xl text-xl font-semibold lg:font-bold text-[#C3E92D] mb-1 text-start">
@@ -32,13 +32,13 @@ const EventDetails = () => {
 
             {/* Price Section */}
             <div className="flex items-baseline text-start">
-              <p className="text-5xl font-extrabold text-white">FREE</p>
+              <p className="lg:text-5xl text-2xl font-extrabold text-white">FREE</p>
               <span className="text-sm text-gray-300 ml-1 self-baseline">
                 /ticket
               </span>
             </div>
 
-            <h1 className="text-2xl lg:text-4xl font-bold text-white pt-4 lg:pt-6">
+            <h1 className="text-xl lg:text-4xl font-bold text-white pt-4 lg:pt-6">
               {eventDetails.name}
             </h1>
 
@@ -64,10 +64,6 @@ const EventDetails = () => {
                 </ul>
               </div>
             </div>
-
-            <button className="mt-6 mb-6 px-6 lg:px-8 py-2 lg:py-4 bg-[#C3E92D] text-black hover:bg-black hover:text-white font-bold rounded-md text-start">
-              JOIN NOW
-            </button>
           </div>
         </div>
       </div>

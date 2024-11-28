@@ -9,7 +9,7 @@ const JoinClub = () => {
         className="text-white relative bg-fixed bg-center bg-cover flex items-center pb-8 max-w-screen-xl rounded-md mx-auto"
         style={{ backgroundImage: `url(${blogImg})` }}
       >
-        <div className="absolute inset-0 bg-black bg-opacity-40 rounded-md"></div>
+        <div className="absolute inset-0 bg-black bg-opacity-20 rounded-md"></div>
         <div className="max-w-7xl w-full mx-auto px-2 md:px-5 lg:px-0 lg:py-40 py-20 space-y-3 lg:pl-20 pl-10">
           <h1 className="text-2xl lg:text-4xl font-bold text-white">
             Join Our Running Club Now{" "}

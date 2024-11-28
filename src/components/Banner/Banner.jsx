@@ -15,7 +15,7 @@ const Banner = () => {
       }}
       className="lg:pl-10 rounded-md relative"
     >
-       <div className="absolute inset-0 bg-black bg-opacity-40 rounded-md"></div>
+       <div className="absolute inset-0 bg-black bg-opacity-20 rounded-md"></div>
       <div className="w-full max-w-7xl px-4 md:px-6 lg:px-2 mx-auto flex flex-col-reverse lg:p-24 lg:min-h-[600px]  lg:flex-row justify-between items-center gap-8 space-y-4 lg:py-16 relative">
         <div className="lg:w-1/2 space-y-5 flex flex-col lg:flex-none">
           <h1 className="font-bold lg:text-7xl text-3xl text-white">
@@ -26,7 +26,7 @@ const Banner = () => {
             explore the latest advancements in computer science and technology.
           </p>
           <div className="space-x-3">
-           <Link>
+           <Link to="/register">
            <button className="bg-[#C3E92D] font-semibold lg:py-4 lg:px-14 py-2 px-3 hover:bg-black hover:text-white text-black rounded-sm">
               Join The Club
             </button>

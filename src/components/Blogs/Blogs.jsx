@@ -34,7 +34,7 @@ const Blogs = () => {
           {/* Left Section */}
           <div className="lg:col-span-4 col-span-1">
             <div className="relative h-full">
-            <div className="absolute inset-0 bg-black bg-opacity-40 rounded-md"></div>
+            <div className="absolute inset-0 bg-black bg-opacity-20 rounded-md"></div>
               <img
                 className="w-full h-full object-cover rounded-md"
                 src={blogImg}
