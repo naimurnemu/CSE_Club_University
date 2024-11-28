@@ -43,7 +43,7 @@ const Header = () => {
   return (
     <>
       <div className="bg-gray-900 text-white py-5" onClick={handleMenuClose}>
-        <div className="flex justify-between items-center max-w-7xl w-full px-3 md:px-5 mx-auto">
+        <div className="flex justify-between items-center max-w-7xl w-full px-3 md:px-5 lg:px-0 mx-auto">
           <Link to="/">
             <div className="flex items-center gap-2">
               <img className="w-10 h-10" src={logo} alt="Zunzo" />
@@ -150,7 +150,7 @@ const Header = () => {
           </div>
 
           <>
-            <nav className="items-center gap-6 text-base hidden md:flex">
+            <nav className="items-center gap-3 lg:gap-6 px-5 text-base hidden md:flex">
               <Link
                 to="/about-us"
                 className="text-white font-medium hover:underline hover:transition-colors"
@@ -193,7 +193,7 @@ const Header = () => {
                           className="px-4 py-3 hover:bg-gray-700 cursor-pointer text-center w-full"
                           onClick={() => navigate("/user-profile")}
                         >
-                          Profile
+                          Edit Profile
                         </div>
                       </li>
                       <li className="w-full">
