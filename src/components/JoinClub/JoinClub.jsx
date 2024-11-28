@@ -1,13 +1,14 @@
 import React from "react";
 import { FaTwitter, FaDribbble, FaBehance, FaPinterest } from "react-icons/fa";
-import banner from "../../assets/images/joinClubImg.jpg";
+// import banner from "../../assets/images/joinClubImg.jpg";
+// banner photo/joinClub photo missing
 
 const JoinClub = () => {
   return (
     <div className="flex flex-col md:flex-row w-full">
       {/* Left Side: Image Section */}
       <div className="lg:w-1/2">
-        <div className="h-screen bg-cover bg-center" style={{ backgroundImage: `url(${banner})` }}></div>
+        {/* <div className="h-screen bg-cover bg-center" style={{ backgroundImage: `url(${banner})` }}></div> */}
       </div>
 
       {/* Right Side: Form Section */}
