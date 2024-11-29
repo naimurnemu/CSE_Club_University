@@ -12,7 +12,7 @@ import {
   Alumni,
   ClubBlogs,
   Newsletter,
-  Sponsorship,
+  // Sponsorship,
   Chat,
   Vote,
   ExecutiveBody,
@@ -27,6 +27,7 @@ import {
   Developers,
   Winners,
   AllBlogs,
+  Activities,
 } from "../pages";
 import { Blogs } from "../components";
 import { FAQ } from "../pages/Public/FAQ";
@@ -48,6 +49,10 @@ export const router = createBrowserRouter([
       {
         path: "/contact",
         element: <ContactUsPage />,
+      },
+      {
+        path: "/activities",
+        element: <Activities />,
       },
       {
         path: "/cookie",

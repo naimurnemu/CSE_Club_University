@@ -14,11 +14,11 @@ const Footer = () => {
   return (
     <div className="bg-gray-900 text-white pt-4">
       <div
-       style={{
-        background: "rgba(15, 23, 42, 0.8)",
-        backdropFilter: "blur(10px)",
-        borderTop: "1px solid rgba(255, 255, 255, 0.1)"
-      }}
+        style={{
+          background: "rgba(15, 23, 42, 0.8)",
+          backdropFilter: "blur(10px)",
+          borderTop: "1px solid rgba(255, 255, 255, 0.1)",
+        }}
         className="max-w-7xl w-full mx-auto px-5 py-10 flex flex-wrap lg:justify-between justify-center gap-y-8"
       >
         {/* Column 1: Logo and Description */}
@@ -73,13 +73,10 @@ const Footer = () => {
             <h2 className="font-bold text-lg mb-4">QUICK LINKS</h2>
             <ul className="space-y-2">
               <li className="hover:text-[#C3E92D] cursor-pointer">
-                <Link to="/chat">Forum</Link>
+                <Link to="/events">Events</Link>
               </li>
               <li className="hover:text-[#C3E92D] cursor-pointer">
-                <Link to="/alumni">Alumni</Link>
-              </li>
-              <li className="hover:text-[#C3E92D] cursor-pointer">
-                <Link to="/vote">Vote</Link>
+                <Link to="/activities">Activities</Link>
               </li>
               <li className="hover:text-[#C3E92D] cursor-pointer">
                 <Link to="/about-us">About Us</Link>
@@ -87,24 +84,29 @@ const Footer = () => {
               <li className="hover:text-[#C3E92D] cursor-pointer">
                 <Link to="/contact">Contact Us</Link>
               </li>
+              <li className="hover:text-[#C3E92D] cursor-pointer">
+                <Link to="/executives">Executive Body</Link>
+              </li>
             </ul>
           </div>
 
           <div>
             <h2 className="font-bold text-lg mb-4">PAGE</h2>
             <ul className="space-y-2">
-              <li className="hover:text-[#C3E92D] cursor-pointer">Blogs</li>
               <li className="hover:text-[#C3E92D] cursor-pointer">
-                <Link to="/vote">Vote</Link>
+                <Link to="/blogs">Blogs</Link>
               </li>
               <li className="hover:text-[#C3E92D] cursor-pointer">
                 <Link to="/chat">Forum</Link>
               </li>
               <li className="hover:text-[#C3E92D] cursor-pointer">
-                <Link to="/about-us">About Us</Link>
+                <Link to="/vote">Vote</Link>
               </li>
               <li className="hover:text-[#C3E92D] cursor-pointer">
                 <Link to="/alumni">Alumni</Link>
+              </li>
+              <li className="hover:text-[#C3E92D] cursor-pointer">
+                <Link to="/faqs">FAQs</Link>
               </li>
             </ul>
           </div>
