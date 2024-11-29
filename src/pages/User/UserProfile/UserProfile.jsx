@@ -20,15 +20,24 @@ const UserProfile = () => {
     batch: "",
     username: "",
   });
+  const [showPasswordUpdate, setShowPasswordUpdate] = useState(false);
+  const [currentPassword, setCurrentPassword] = useState("");
+  const [newPassword, setNewPassword] = useState("");
+  const [confirmPassword, setConfirmPassword] = useState("");
+  const [passwordErrors, setPasswordErrors] = useState({
+    current: "",
+    new: "",
+    confirm: "",
+  });
 
   useEffect(() => {
     if (user?.username) {
       setFormData({
         first_name: user?.first_name,
-      last_name: user?.last_name,
-      email: user?.email,
-      student_id: user?.student_id,
-      batch: user?.batch,
+        last_name: user?.last_name,
+        email: user?.email,
+        student_id: user?.student_id,
+        batch: user?.batch,
         username: user?.username,
       });
     }
@@ -180,6 +189,65 @@ const UserProfile = () => {
     }
   };
 
+  const validatePasswords = () => {
+    let errors = { current: "", new: "", confirm: "" };
+    if (!currentPassword) {
+      errors.current = "Current password is required.";
+    }
+    if (!newPassword) {
+      errors.new = "New password is required.";
+    } else if (newPassword.length < 6) {
+      errors.new = "New password must be at least 6 characters.";
+    }
+    if (!confirmPassword) {
+      errors.confirm = "Confirmation password is required.";
+    } else if (newPassword !== confirmPassword) {
+      errors.confirm = "New password and confirmation do not match.";
+    }
+    setPasswordErrors(errors);
+    return Object.values(errors).every((error) => error === "");
+  };
+
+  const handleUpdatePassword = async (e) => {
+    e.preventDefault();
+    if (!validatePasswords()) {
+      return;
+    }
+
+    setLoading(true);
+    const token = localStorage.getItem("token");
+
+    try {
+      const response = await fetch(
+        `https://computer-club.onrender.com/change-password/`,
+        {
+          method: "POST",
+          headers: {
+            "Content-Type": "application/json",
+            Authorization: `Bearer ${token}`,
+          },
+          body: JSON.stringify({
+            old_password: currentPassword,
+            new_password: newPassword,
+            confirm_password: confirmPassword,
+          }),
+        }
+      );
+
+      if (!response.ok) {
+        throw new Error("Failed to update password");
+      }
+
+      alert("Password updated successfully!");
+      setShowPasswordUpdate(false);
+    } catch (error) {
+      console.error("Error updating password:", error);
+      alert("Failed to update password.");
+    } finally {
+      setLoading(false);
+    }
+  };
+
   return (
     <div className="flex flex-col items-center p-5 max-w-screen-sm mx-auto">
       <div className="flex flex-col items-center relative">
@@ -258,7 +326,7 @@ const UserProfile = () => {
               required
               className="border border-gray-300 p-2 rounded mb-6 w-full"
             />
-             <input
+            <input
               disabled
               type="text"
               name="username"
@@ -365,13 +433,96 @@ const UserProfile = () => {
         </div>
       )}
 
-      <div>
-        <button>
-          Update Password
-        </button> 
+      <div
+        className={`mt-4 mb-10 mx-auto w-full p-4 rounded shadow-lg ${
+          showPasswordUpdate ? "h-auto border border-gray-300" : "h-0"
+        }`}
+      >
+        {!showPasswordUpdate ? (
+          <button
+            onClick={() => setShowPasswordUpdate(true)}
+            className="bg-yellow-600 hover:bg-yellow-700 text-white py-2 px-8 rounded-full w-full"
+          >
+            Update Password
+          </button>
+        ) : (
+          <form onSubmit={handleUpdatePassword}>
+            <h3 className="text-lg font-semibold mb-4">Update Password</h3>
+            <input
+              type="password"
+              name="current_password"
+              placeholder="Current Password"
+              // required
+              className="border border-gray-300 p-2 rounded mt-6 w-full"
+              value={currentPassword}
+              onChange={(e) => {
+                setCurrentPassword(e.target.value);
+                if (passwordErrors.current) {
+                  setPasswordErrors((prev) => ({ ...prev, current: "" }));
+                }
+              }}
+            />
+            {passwordErrors.current && (
+              <p className="text-red-500 text-sm">{passwordErrors.current}</p>
+            )}
+            <input
+              type="password"
+              name="new_password"
+              placeholder="New Password"
+              // required
+              className="border border-gray-300 p-2 rounded mt-6 w-full"
+              value={newPassword}
+              onChange={(e) => {
+                setNewPassword(e.target.value);
+                if (passwordErrors.new) {
+                  setPasswordErrors((prev) => ({ ...prev, new: "" }));
+                }
+              }}
+            />
+            {passwordErrors.new && (
+              <p className="text-red-500 text-sm">{passwordErrors.new}</p>
+            )}
+            <input
+              type="password"
+              name="confirm_password"
+              placeholder="Confirm New Password"
+              // required
+              className="border border-gray-300 p-2 rounded mt-6 w-full"
+              value={confirmPassword}
+              onChange={(e) => {
+                setConfirmPassword(e.target.value);
+                if (passwordErrors.confirm) {
+                  setPasswordErrors((prev) => ({ ...prev, confirm: "" }));
+                }
+              }}
+            />
+            {passwordErrors.confirm && (
+              <p className="text-red-500 text-sm">{passwordErrors.confirm}</p>
+            )}
+            <div className="flex justify-between mt-6">
+              <button
+                type="submit"
+                className="bg-green-500 hover:bg-green-700 text-white py-2 px-8 rounded-full"
+              >
+                Update
+              </button>
+              <button
+                type="button"
+                onClick={() => {
+                  setShowPasswordUpdate(false);
+                  setCurrentPassword("");
+                  setNewPassword("");
+                  setConfirmPassword("");
+                  setPasswordErrors({ current: "", new: "", confirm: "" });
+                }}
+                className="bg-gray-600 hover:bg-gray-700 text-white py-2 px-8 rounded-full"
+              >
+                Cancel
+              </button>
+            </div>
+          </form>
+        )}
       </div>
-
-      
 
       <Modal
         isDelete={modalType === "confirmDelete"}
