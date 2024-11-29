@@ -158,14 +158,14 @@ const Header = () => {
                       </li>
                       <li className="border-b border-gray-300 font-medium p-0.5">
                         <Link
-                          to="/faqs"
+                          to="/activities"
                           onClick={() =>
                             (document.getElementById(
                               "my-drawer-4"
                             ).checked = false)
                           }
                         >
-                          FAQs
+                          Activities
                         </Link>
                       </li>
                       <li className="border-b border-gray-300 font-medium p-0.5">
@@ -177,7 +177,7 @@ const Header = () => {
                             ).checked = false)
                           }
                         >
-                          Chat
+                          Forum
                         </Link>
                       </li>
                       <li className="border-b border-gray-300 font-medium p-0.5">
@@ -190,6 +190,42 @@ const Header = () => {
                           }
                         >
                           Support
+                        </Link>
+                      </li>
+                      <li className="border-b border-gray-300 font-medium p-0.5">
+                        <Link
+                          to="/about-us"
+                          onClick={() =>
+                            (document.getElementById(
+                              "my-drawer-4"
+                            ).checked = false)
+                          }
+                        >
+                          About Us
+                        </Link>
+                      </li>
+                      <li className="border-b border-gray-300 font-medium p-0.5">
+                        <Link
+                          to="/executives"
+                          onClick={() =>
+                            (document.getElementById(
+                              "my-drawer-4"
+                            ).checked = false)
+                          }
+                        >
+                          Executives
+                        </Link>
+                      </li>
+                      <li className="border-b border-gray-300 font-medium p-0.5">
+                        <Link
+                          to="/faqs"
+                          onClick={() =>
+                            (document.getElementById(
+                              "my-drawer-4"
+                            ).checked = false)
+                          }
+                        >
+                          FAQs
                         </Link>
                       </li>
                     </ul>
@@ -266,7 +302,7 @@ const Header = () => {
                     to="/executives"
                     className="text-white font-medium hover:underline hover:transition-colors"
                   >
-                    Executive Body
+                    Executives 
                   </Link>
                 </li>
               </ul>
@@ -311,18 +347,18 @@ const Header = () => {
                 </li>
                 <li>
                   <Link
-                    to="/faqs"
-                    className="text-white font-medium hover:underline hover:transition-colors"
-                  >
-                    FAQs
-                  </Link>
-                </li>
-                <li>
-                  <Link
                     to="/contact"
                     className="text-white font-medium hover:underline hover:transition-colors"
                   >
                     Support
+                  </Link>
+                </li>
+                <li>
+                  <Link
+                    to="/faqs"
+                    className="text-white font-medium hover:underline hover:transition-colors"
+                  >
+                    FAQs
                   </Link>
                 </li>
               </ul>
