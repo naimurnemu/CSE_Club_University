@@ -89,7 +89,7 @@ const ContactUsPage = () => {
   };
 
   return (
-    <div className="min-h-screen bg-gray-900 text-gray-200 p-4">
+    <div className="pb-20 bg-gray-900 text-gray-200 p-4">
       <ToastContainer />
       <h1 className="text-4xl font-extrabold text-center mb-8 text-gradient-to-r from-green-400 to-blue-500">
         Contact Us
@@ -104,7 +104,7 @@ const ContactUsPage = () => {
           </p>
           <div>
             <h3 className="font-bold text-lg text-blue-300">Address</h3>
-            <p>123 Main Street, City, Country</p>
+            <p>City University, Savar, Dhaka</p>
           </div>
           <div>
             <h3 className="font-bold text-lg text-blue-300">Phone</h3>

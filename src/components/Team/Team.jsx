@@ -46,7 +46,7 @@ const Team = () => {
 
               {/* View Details Button */}
               <div className="absolute inset-0 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity duration-300">
-                <Link to={`/memberDetails/${item.id}`}>
+                <Link to={`/membership/${item.id}`}>
                 <button className="px-6 lg:py-3 py-2 bg-[#C3E92D] text-black font-bold rounded-md hover:bg-black hover:text-white transition-colors duration-300">
                   View Details
                 </button>

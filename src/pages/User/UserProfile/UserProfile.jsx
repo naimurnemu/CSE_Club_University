@@ -109,7 +109,7 @@ const UserProfile = () => {
     <div className="flex flex-col items-center p-5">
       <div className="flex flex-col items-center relative">
         {loading && (
-          <RiLoader2Fill className="absolute inset-0 m-auto w-6 h-6" /> 
+          <RiLoader2Fill className="absolute top-8 left-15 m-auto w-8 h-8 text-yellow-600 animate-spin z-50 bg-gray-900 rounded-full" /> 
         )}
         {user?.image ? (
           <div className="relative">

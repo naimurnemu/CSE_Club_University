@@ -34,7 +34,7 @@ const Events = () => {
             <h2 className="text-xl lg:text-4xl lg:font-bold font-semibold text-white">
               RUNNING EVENTS COMING UP INCLUDE
             </h2>
-            <Link to="/allEvents">
+            <Link to="/events">
               <button className="border-2 border-gray-500 bg-slate-300 text-black text-xs font-semibold lg:font-bold items-center hover:bg-gray-500 hover:text-white transition-colors duration-500 ease-in-out rounded-full px-4 py-3">
                 VIEW ALL
               </button>
@@ -98,7 +98,7 @@ const Events = () => {
                   </div>
 
                   {/* Button */}
-                  <Link to={`/eventDetails/${item.id}`}>
+                  <Link to={`/events/${item.id}`}>
                     <button className="mt-4 px-6 py-2 lg:py-4 bg-[#C3E92D] text-black hover:bg-[#22C55E] hover:text-white font-bold rounded-md text-start">
                       Learn More
                     </button>

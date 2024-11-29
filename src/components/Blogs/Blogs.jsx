@@ -71,7 +71,7 @@ const Blogs = () => {
                       {formatDate(item.created_at) || "N/A"}
                     </p>
                   </div>
-                  <Link to={`/blogDetails/${item.id}`}>
+                  <Link to={`/blogs/${item.id}`}>
                     <button className="text-white text-[14px] font-medium text-start underline hover:text-[#22C55E] pt-4">
                       READ MORE
                     </button>

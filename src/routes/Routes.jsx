@@ -90,7 +90,7 @@ export const router = createBrowserRouter([
         element: <Login />,
       },
       {
-        path: "/user-profile",
+        path: "/edit-profile",
         element: <UserProfile />,
       },
       {
@@ -118,24 +118,24 @@ export const router = createBrowserRouter([
         element: <NotFoundPage />,
       },
       {
-        path: "/blogDetails/:id",
-        element: <BlogDetails />,
-      },
-      {
-        path: "/allEvents",
+        path: "/events",
         element: <AllEvents />,
       },
       {
-        path: "/eventDetails/:id",
+        path: "/events/:id",
         element: <EventDetails />,
       },
       {
-        path: "/memberDetails/:id",
+        path: "/membership/:id",
         element: <MemberDetails />,
       },
       {
         path: "/blogs",
         element: <Blogs />,
+      },
+      {
+        path: "/blogs/:id",
+        element: <BlogDetails />,
       },
       {
         path: "/all-blogs",

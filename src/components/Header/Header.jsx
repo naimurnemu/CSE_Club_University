@@ -2,13 +2,14 @@ import React, { useContext, useEffect, useState } from "react";
 import { Link, useNavigate } from "react-router-dom";
 import { AuthContext } from "../../contexts/AuthContext";
 import { logo } from "../../assets/logos";
-import { CgProfile } from "react-icons/cg";
 import { IoMenu } from "react-icons/io5";
+import { FaCaretDown } from "react-icons/fa";
 
 const Header = () => {
   const { authState, setAuthState, logout, getUserDetails } =
     useContext(AuthContext);
   const [menuOpen, setMenuOpen] = useState(false);
+  const [dropdownOpen, setDropdownOpen] = useState(null);
   const navigate = useNavigate();
   const user = authState?.user || {};
 
@@ -31,17 +32,24 @@ const Header = () => {
     setMenuOpen((prev) => !prev);
   };
 
-  const handleMenuClose = () => {
-    setMenuOpen(false);
+  const handleMouseEnter = (dropdown) => {
+    setDropdownOpen(dropdown);
   };
 
-  const handleMenuClick = (e) => {
-    e.stopPropagation();
-    toggleMenu(e);
+  const handleMouseLeave = () => {
+    setDropdownOpen(null);
+  };
+
+  const handleMenuClose = () => {
+    setMenuOpen(false);
+    setDropdownOpen(null);
   };
 
   return (
-    <div className="bg-gray-900 text-white py-5" onClick={handleMenuClose}>
+    <div
+      className="bg-gray-900 text-white py-5 sticky top-0 left-0 w-full z-50"
+      onClick={handleMenuClose}
+    >
       <div className="flex justify-between items-center max-w-7xl w-full px-3 md:px-5 lg:px-0 mx-auto">
         <Link to="/">
           <div className="flex items-center gap-2">
@@ -73,7 +81,7 @@ const Header = () => {
                 aria-label="close sidebar"
                 className="drawer-overlay"
               ></label>
-              <div className="menu bg-base-200 text-base-content flex flex-col items-center w-[85%]  h-full p-10">
+              <div className="menu bg-base-200 text-base-content flex flex-col items-center w-[85%] h-full p-10">
                 {user?.username ? (
                   <>
                     {user.image ? (
@@ -83,9 +91,7 @@ const Header = () => {
                         className="w-24 h-24 rounded-full"
                       />
                     ) : (
-                      <div className="w-24 h-24 bg-gray-400 flex justify-center items-center rounded-full">
-                        No Image
-                      </div>
+                      <div className="w-24 h-24 bg-gray-700 flex justify-center items-center rounded-full text-white text-sm" />
                     )}
                     <div className="flex flex-col w-full text-center space-y-5 mb-5">
                       <span className="font-medium text-2xl font-mono decoration-neutral whitespace-nowrap text-yellow-400">
@@ -93,7 +99,7 @@ const Header = () => {
                       </span>
                       <button
                         className="text-white bg-green-500 px-4 py-2 my-2 rounded-full w-full"
-                        onClick={() => navigate("/user-profile")}
+                        onClick={() => navigate("/edit-profile")}
                       >
                         View Profile
                       </button>
@@ -108,49 +114,22 @@ const Header = () => {
                       </button>
                     </div>
                     <hr className="w-full" />
-                    <ul className="w-full">
-                      <div className="dropdown dropdown-hover">
-                        <div tabIndex={0} role="button">
-                          About
-                        </div>
-                        <ul
-                          tabIndex={0}
-                          className="dropdown-content menu bg-black/50 rounded-md z-[1] w-40 py-4"
-                        >
-                          <li>
-                            <Link to="/executives">Executive Body</Link>
-                          </li>
-                          <li>
-                            <Link to="/about-us">About Us</Link>
-                          </li>
-                        </ul>
-                      </div>
+                    <ul className="w-full space-y-2">
                       <li className="border-b border-gray-300 font-medium p-0.5">
                         <Link to="/events">Events</Link>
                       </li>
                       <li className="border-b border-gray-300 font-medium p-0.5">
                         <Link to="/blogs">Blogs</Link>
                       </li>
-
-                      <div className="dropdown dropdown-hover">
-                        <div tabIndex={0} role="button">
-                          More
-                        </div>
-                        <ul
-                          tabIndex={0}
-                          className="dropdown-content bg-black/50 font-semibold menu rounded-md z-[1] w-40 py-4"
-                        >
-                          <li>
-                            <Link to="/faqs">FAQs</Link>
-                          </li>
-                          <li>
-                            <Link to="/chat">Chat</Link>
-                          </li>
-                          <li>
-                            <Link to="/support">Support</Link>
-                          </li>
-                        </ul>
-                      </div>
+                      <li className="border-b border-gray-300 font-medium p-0.5">
+                        <Link to="/faqs">FAQs</Link>
+                      </li>
+                      <li className="border-b border-gray-300 font-medium p-0.5">
+                        <Link to="/chat">Chat</Link>
+                      </li>
+                      <li className="border-b border-gray-300 font-medium p-0.5">
+                        <Link to="/contact">Support</Link>
+                      </li>
                     </ul>
                   </>
                 ) : (
@@ -174,24 +153,8 @@ const Header = () => {
           </div>
         </div>
         <nav className="items-center gap-6 text-base hidden md:flex">
-          <div className="dropdown dropdown-hover">
-            <div tabIndex={0} role="button">
-              About
-            </div>
-            <ul
-              tabIndex={0}
-              className="dropdown-content bg-black/50 font-semibold menu rounded-md z-[1] w-[150px] py-4"
-            >
-              <li>
-                <Link to="/executives">Executive Body</Link>
-              </li>
-              <li>
-                <Link to="/about-us">About Us</Link>
-              </li>
-            </ul>
-          </div>
           <Link
-            to="/allEvents"
+            to="/events"
             className="text-white font-medium hover:underline hover:transition-colors"
           >
             Events
@@ -202,42 +165,116 @@ const Header = () => {
           >
             Blogs
           </Link>
-          <div className="dropdown dropdown-hover">
-            <div tabIndex={0} role="button">
-              More
-            </div>
-            <ul
+          <div
+            className="dropdown dropdown-hover"
+            onMouseLeave={handleMouseLeave}
+          >
+            <div
               tabIndex={0}
-              className="dropdown-content bg-black/50 font-semibold menu rounded-md z-[1] w-40 py-4"
+              role="button"
+              className="flex items-center"
+              onMouseEnter={() => handleMouseEnter("aboutDesktop")}
             >
-              <li>
-                <Link to="/faqs">FAQs</Link>
-              </li>
-              <li>
-                <Link to="/chat">Chat</Link>
-              </li>
-              <li>
-                <Link to="/support">Support</Link>
-              </li>
-            </ul>
+              <span className="text-white font-medium hover:underline hover:transition-colors">
+                About
+              </span>
+              <FaCaretDown className="ml-1 text-white" />
+            </div>
+            {dropdownOpen === "aboutDesktop" && (
+              <ul
+                tabIndex={0}
+                className="dropdown-content bg-black/70 font-semibold menu rounded-md z-[1] w-[150px] py-4" 
+              >
+                <li>
+                  <Link
+                    to="/executives"
+                    className="text-white font-medium hover:underline hover:transition-colors"
+                  >
+                    Executive Body
+                  </Link>
+                </li>
+                <li>
+                  <Link
+                    to="/about-us"
+                    className="text-white font-medium hover:underline hover:transition-colors"
+                  >
+                    About Us
+                  </Link>
+                </li>
+              </ul>
+            )}
+          </div>
+          <div
+            className="dropdown dropdown-hover"
+            onMouseLeave={handleMouseLeave}
+          >
+            <div
+              tabIndex={0}
+              role="button"
+              className="flex items-center"
+              onMouseEnter={() => handleMouseEnter("moreDesktop")}
+            >
+              <span className="text-white font-medium hover:underline hover:transition-colors">
+                More
+              </span>
+              <FaCaretDown className="ml-1 text-white" />
+            </div>
+            {dropdownOpen === "moreDesktop" && (
+              <ul
+                tabIndex={0}
+                className="dropdown-content bg-black/70 font-semibold menu rounded-md z-[1] w-40 py-4"
+              >
+                <li>
+                  <Link
+                    to="/faqs"
+                    className="text-white font-medium hover:underline hover:transition-colors"
+                  >
+                    FAQs
+                  </Link>
+                </li>
+                <li>
+                  <Link
+                    to="/chat"
+                    className="text-white font-medium hover:underline hover:transition-colors"
+                  >
+                    Chat
+                  </Link>
+                </li>
+                <li>
+                  <Link
+                    to="/contact"
+                    className="text-white font-medium hover:underline hover:transition-colors"
+                  >
+                    Support
+                  </Link>
+                </li>
+              </ul>
+            )}
           </div>
         </nav>
         <div className="items-center gap-3 hidden md:flex">
           {user?.username ? (
             <div className="relative flex items-center gap-3">
-              <div
-                className="flex items-center gap-2 cursor-pointer"
-                onClick={handleMenuClick}
-              >
-                <CgProfile size={20} />
-                <span className="text-white">{` ${user.first_name} ${user.last_name}`}</span>
-              </div>
+              <span className="text-white overflow-hidden whitespace-nowrap text-ellipsis max-w-[150px]">{`${user.first_name} ${user.last_name}`}</span>
+              {user.image ? (
+                <img
+                  src={user.image}
+                  alt={`${user.username}`}
+                  className="w-10 h-10 rounded-full cursor-pointer"
+                  onClick={toggleMenu}
+                />
+              ) : (
+                <div
+                  className="w-10 h-10 bg-gray-400 flex justify-center items-center rounded-full cursor-pointer"
+                  onClick={toggleMenu}
+                />
+              )}
               {menuOpen && (
                 <ul className="absolute right-0 z-50 bg-gray-800 text-white rounded shadow-lg w-40 mt-[150px] flex flex-col items-center">
                   <li className="w-full">
                     <div
                       className="px-4 py-3 hover:bg-gray-700 cursor-pointer text-center w-full"
-                      onClick={() => navigate("/user-profile")}
+                      onClick={() => navigate("/edit-profile")}
                     >
                       Edit Profile
                     </div>
