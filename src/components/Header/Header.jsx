@@ -3,7 +3,7 @@ import { Link, useNavigate } from "react-router-dom";
 import { AuthContext } from "../../contexts/AuthContext";
 import { logo } from "../../assets/logos";
 import { IoMenu } from "react-icons/io5";
-import { FaCaretDown } from "react-icons/fa";
+import { FaCaretDown, FaTimes } from "react-icons/fa";
 
 const Header = () => {
   const { authState, setAuthState, logout, getUserDetails } =
@@ -81,9 +81,15 @@ const Header = () => {
                 aria-label="close sidebar"
                 className="drawer-overlay"
               ></label>
-              <div className="menu bg-base-200 text-base-content flex flex-col items-center w-[85%] h-full p-10">
+              <div className="menu bg-base-200 text-base-content flex flex-col items-center w-[95%] h-full">
+                <button
+                  className="btn btn-primary bg-inherit text-white ml-4 mt-4 self-start"
+                  onClick={() => document.getElementById('my-drawer-4').checked = false}
+                >
+                  <FaTimes size={20} />
+                </button>
                 {user?.username ? (
-                  <>
+                  <div className="flex flex-col items-center p-10">
                     {user.image ? (
                       <img
                         src={user.image}
@@ -93,13 +99,17 @@ const Header = () => {
                     ) : (
                       <div className="w-24 h-24 bg-gray-700 flex justify-center items-center rounded-full text-white text-sm" />
                     )}
+                    
                     <div className="flex flex-col w-full text-center space-y-5 mb-5">
                       <span className="font-medium text-2xl font-mono decoration-neutral whitespace-nowrap text-yellow-400">
                         {user.first_name} {user.last_name}
                       </span>
                       <button
                         className="text-white bg-green-500 px-4 py-2 my-2 rounded-full w-full"
-                        onClick={() => navigate("/edit-profile")}
+                        onClick={() => {
+                          navigate("/edit-profile");
+                          document.getElementById('my-drawer-4').checked = false;
+                        }}
                       >
                         View Profile
                       </button>
@@ -108,6 +118,7 @@ const Header = () => {
                         onClick={() => {
                           logout();
                           navigate("/");
+                          document.getElementById('my-drawer-4').checked = false;
                         }}
                       >
                         Logout
@@ -116,33 +127,35 @@ const Header = () => {
                     <hr className="w-full" />
                     <ul className="w-full space-y-2">
                       <li className="border-b border-gray-300 font-medium p-0.5">
-                        <Link to="/events">Events</Link>
+                        <Link to="/events" onClick={() => document.getElementById('my-drawer-4').checked = false}>Events</Link>
                       </li>
                       <li className="border-b border-gray-300 font-medium p-0.5">
-                        <Link to="/blogs">Blogs</Link>
+                        <Link to="/blogs" onClick={() => document.getElementById('my-drawer-4').checked = false}>Blogs</Link>
                       </li>
                       <li className="border-b border-gray-300 font-medium p-0.5">
-                        <Link to="/faqs">FAQs</Link>
+                        <Link to="/faqs" onClick={() => document.getElementById('my-drawer-4').checked = false}>FAQs</Link>
                       </li>
                       <li className="border-b border-gray-300 font-medium p-0.5">
-                        <Link to="/chat">Chat</Link>
+                        <Link to="/chat" onClick={() => document.getElementById('my-drawer-4').checked = false}>Chat</Link>
                       </li>
                       <li className="border-b border-gray-300 font-medium p-0.5">
-                        <Link to="/contact">Support</Link>
+                        <Link to="/contact" onClick={() => document.getElementById('my-drawer-4').checked = false}>Support</Link>
                       </li>
                     </ul>
-                  </>
+                  </div>
                 ) : (
                   <div className="flex flex-col w-full text-center">
                     <Link
                       to="/login"
                       className="bg-green-500 text-white px-4 py-2 my-2 rounded w-full"
+                      onClick={() => document.getElementById('my-drawer-4').checked = false}
                     >
                       Login
                     </Link>
                     <Link
                       to="/contact"
                       className="bg-yellow-500 text-white px-4 py-2 my-2 rounded w-full"
+                      onClick={() => document.getElementById('my-drawer-4').checked = false}
                     >
                       Contact Us
                     </Link>
