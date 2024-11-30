@@ -21,11 +21,11 @@ const Events = () => {
         backgroundSize: "cover",
         backgroundPosition: "center",
       }}
-      className="w-full bg-fixed max-w-screen-xl mx-auto rounded-md"
+      className="w-full bg-fixed rounded-md"
     >
       {/* <div className="absolute inset-0 bg-black bg-opacity-30 rounded-md"></div> */}
-      <div className="max-w-7xl w-full mx-auto px-2 md:px-5 lg:px-0 py-24">
-        <div className="px-4 space-y-5">
+      <div className="py-24  max-w-7xl mx-auto px-3 md:px-5">
+        <div className="space-y-5">
           {/* Title */}
           <h1 className="lg:text-xl font-semibold text-[#C3E92D]">
             RUNNING EVENTS

@@ -13,7 +13,7 @@ const Alumni = () => {
 
   return (
     <div className="w-full">
-      <div className="py-8 max-w-screen-xl mx-auto">
+      <div className="py-8 max-w-7xl mx-auto px-3 md:px-5">
         <h2 className="lg:text-4xl text-2xl  font-bold mb-6 text-white text-center">
           Alumni Directory
         </h2>

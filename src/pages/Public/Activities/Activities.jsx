@@ -35,7 +35,7 @@ const Activities = () => {
   }
 
   return (
-    <div className="max-w-screen-xl mx-auto px-3 md:px-5 lg:px-0 overflow-x-auto">
+    <div className="max-w-screen-xl mx-auto px-3 md:px-5 overflow-x-auto">
       <h1 className="text-2xl font-bold text-center my-5">Activities</h1>
       <table className="min-w-full border-collapse shadow-lg rounded-lg overflow-hidden bg-gray-800">
         <thead className="bg-gray-900 text-white">

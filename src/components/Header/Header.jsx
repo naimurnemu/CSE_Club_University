@@ -50,7 +50,7 @@ const Header = () => {
       className="bg-gray-900 text-white py-5 sticky top-0 left-0 w-full z-50"
       onClick={handleMenuClose}
     >
-      <div className="flex justify-between items-center max-w-7xl w-full px-3 md:px-5 lg:px-0 mx-auto">
+      <div className="flex justify-between items-center max-w-7xl w-full px-3 md:px-5 mx-auto">
         <Link to="/">
           <div className="flex items-center gap-2">
             <img className="w-10 h-10" src={logo} alt="Zunzo" />
@@ -64,7 +64,7 @@ const Header = () => {
             </div>
           </div>
         </Link>
-        <div className="md:hidden z-50">
+        <div className="md:hidden z-50 bg-[#1d232a]">
           <div className="drawer drawer-end">
             <input id="my-drawer-4" type="checkbox" className="drawer-toggle" />
             <div className="drawer-content">
@@ -75,13 +75,13 @@ const Header = () => {
                 <IoMenu size={20} />
               </label>
             </div>
-            <div className="drawer-side">
+            <div className="drawer-side ">
               <label
                 htmlFor="my-drawer-4"
                 aria-label="close sidebar"
                 className="drawer-overlay"
               ></label>
-              <div className="menu bg-base-200 text-base-content flex flex-col items-center w-[95%] h-full">
+              <div className="menu flex flex-col items-center w-[95%] h-full bg-[#1d232a] text-white">
                 <button
                   className="btn btn-primary bg-inherit text-white ml-4 mt-4 self-start"
                   onClick={() =>

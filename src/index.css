@@ -2,14 +2,24 @@
 @tailwind components;
 @tailwind utilities;
 
-body {
+:root {
   background-color: #1d232a;
   color: #fff;
 }
 
+input {
+  background-color: transparent;
+  color: #fff;
+}
+
+/* body, div, span, h1, h2, h3, h4, h5, h6, p, a, img, ul, li, form, label, input, textarea, button {
+  background-color: #1d232a;
+  color: #fff;
+} */
 * {
-  scrollbar-width: thin;
-  scrollbar-color: #C3E92D #242424;
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
 }
 
 ::-webkit-scrollbar {

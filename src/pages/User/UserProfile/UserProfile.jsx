@@ -305,7 +305,7 @@ const UserProfile = () => {
               onChange={handleInputChange}
               placeholder="First Name"
               required
-              className="border border-gray-300 p-2 rounded mb-6 w-full"
+              className="border bg-transparent text-white border-gray-300 p-2 rounded mb-6 w-full"
             />
             <input
               type="text"
@@ -314,7 +314,7 @@ const UserProfile = () => {
               onChange={handleInputChange}
               placeholder="Last Name"
               required
-              className="border border-gray-300 p-2 rounded mb-6 w-full"
+              className="border bg-transparent text-white border-gray-300 p-2 rounded mb-6 w-full"
             />
             <input
               disabled
@@ -324,7 +324,7 @@ const UserProfile = () => {
               onChange={handleInputChange}
               placeholder="Email"
               required
-              className="border border-gray-300 p-2 rounded mb-6 w-full"
+              className="border bg-transparent text-white border-gray-300 p-2 rounded mb-6 w-full"
             />
             <input
               disabled
@@ -334,7 +334,7 @@ const UserProfile = () => {
               onChange={handleInputChange}
               placeholder="Username"
               required
-              className="border border-gray-300 p-2 rounded mb-6 w-full"
+              className="border bg-transparent text-white border-gray-300 p-2 rounded mb-6 w-full"
             />
             <input
               type="text"
@@ -342,7 +342,7 @@ const UserProfile = () => {
               value={formData.student_id}
               onChange={handleInputChange}
               placeholder="Student ID"
-              className="border border-gray-300 p-2 rounded mb-6 w-full"
+              className="border bg-transparent text-white border-gray-300 p-2 rounded mb-6 w-full"
             />
             <input
               type="text"
@@ -350,7 +350,7 @@ const UserProfile = () => {
               value={formData.batch}
               onChange={handleInputChange}
               placeholder="Batch"
-              className="border border-gray-300 p-2 rounded mb-6 w-full"
+              className="border bg-transparent text-white border-gray-300 p-2 rounded mb-6 w-full"
             />
             <div className="flex justify-between gap-2">
               <button

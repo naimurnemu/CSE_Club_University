@@ -201,7 +201,7 @@ const Vote = () => {
   return (
     <div className="bg-gray-900 min-h-screen py-8">
       <ToastContainer />
-      <div className="max-w-6xl mx-auto px-4">
+      <div className="max-w-7xl mx-auto px-3 md:px-5">
         {isOpenVote ? (
           <div>
             <div>

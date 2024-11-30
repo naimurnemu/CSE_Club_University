@@ -13,7 +13,7 @@ const Tutorial = () => {
 
   return (
     <div className="bg-gray-900">
-      <div className="max-w-7xl w-full mx-auto px-2 md:px-5 lg:px-0">
+      <div className="max-w-7xl w-full mx-auto px-3 md:px-5">
         <div className="text-center space-y-4">
         <h1 className="text-white text-opacity-80 text-xl font-semibold">
           TUTORIAL

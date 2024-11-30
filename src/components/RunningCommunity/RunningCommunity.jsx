@@ -5,7 +5,7 @@ const RunningCommunity = () => {
   return (
     <div className="w-full bg-gray-900">
       <div className="">
-      <div className="max-w-7xl w-full mx-auto px-2 md:px-5 lg:px-0 flex flex-col lg:flex-row py-24">
+      <div className="max-w-7xl w-full mx-auto px-3 md:px-5 flex flex-col lg:flex-row py-24">
         <div className="flex-1 flex gap-3">
           <img
             src={blogImg}

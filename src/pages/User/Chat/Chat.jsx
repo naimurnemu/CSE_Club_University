@@ -120,7 +120,7 @@ const Chat = () => {
 
   return (
     <div className="bg-gray-900 text-gray-200">
-      <div className="max-w-7xl mx-auto grid grid-cols-1 lg:grid-cols-4 h-screen ">
+      <div className="max-w-7xl px-3 md:px-5 mx-auto grid grid-cols-1 lg:grid-cols-4 h-screen ">
         {/* User List */}
         <div className="hidden lg:block col-span-1 bg-gray-800 p-4">
           <h2 className="text-center text-3xl font-bold mb-4 text-gray-100 py-3">

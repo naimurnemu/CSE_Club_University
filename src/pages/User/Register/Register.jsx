@@ -84,7 +84,7 @@ const Register = () => {
 
   return (
     <div className="flex justify-center items-center bg-gray-900">
-      <div className="min-h-[calc(100vh-150px)] max-w-7xl w-full px-3 md:px-5 lg:px-0 flex flex-col md:flex-row">
+      <div className="min-h-[calc(100vh-150px)] max-w-7xl w-full px-3 md:px-5 flex flex-col md:flex-row">
         <div className="md:w-1/2 w-full h-full">
           <div className="w-full bg-gray-700 shadow-lg rounded-lg h-full flex flex-col justify-center items-center px-10 py-14">
             <h1 className="text-xl font-bold text-center mb-6 text-yellow-400">

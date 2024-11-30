@@ -7,11 +7,11 @@ const JoinClub = () => {
     <div className="bg-gray-900">
      
       <div
-        className="text-white  bg-fixed bg-center bg-cover flex items-center pb-8 max-w-screen-xl rounded-md mx-auto"
+        className="text-white  bg-fixed bg-center bg-cover flex items-center pb-8 max-w-screen-7 rounded-md mx-auto"
         style={{ backgroundImage: `url(${blogImg})` }}
       >
         
-        <div className="max-w-7xl w-full mx-auto px-2 md:px-5 lg:px-0 lg:py-40 py-20 space-y-3 lg:pl-20 pl-10">
+        <div className="max-w-7xl w-full mx-auto px-3 md:px-5 lg:py-40 py-20 space-y-3 ">
           <h1 className="text-2xl lg:text-4xl font-bold text-white">
             Join Our Running Club Now{" "}
           </h1>

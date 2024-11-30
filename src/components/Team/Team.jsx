@@ -13,7 +13,7 @@ const Team = () => {
 
   return (
     <div className="w-full bg-gray-900 text-opacity-45">
-      <div className="max-w-7xl w-full mx-auto px-2 md:px-5 lg:px-0 py-24">
+      <div className="max-w-7xl w-full mx-auto px-3 md:px-5  py-24">
         <div className="text-center space-y-4 pb-8">
           <h1 className="lg:text-5xl text-2xl text-white font-bold lg:w-3/4 mx-auto">
             OUR MENTORS
@@ -47,9 +47,9 @@ const Team = () => {
               {/* View Details Button */}
               <div className="absolute inset-0 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity duration-300">
                 <Link to={`/membership/${item.id}`}>
-                <button className="px-6 lg:py-3 py-2 bg-[#C3E92D] text-black font-bold rounded-md hover:bg-black hover:text-white transition-colors duration-300">
-                  View Details
-                </button>
+                  <button className="px-6 lg:py-3 py-2 bg-[#C3E92D] text-black font-bold rounded-md hover:bg-black hover:text-white transition-colors duration-300">
+                    View Details
+                  </button>
                 </Link>
               </div>
             </div>

@@ -2,13 +2,13 @@ import React from "react";
 
 const AboutUsPage = () => {
   return (
-    <div className="bg-gray-900 px-3 lg:px-0 text-opacity-50">
-      <div className="max-w-7xl mx-auto bg-gray-800 rounded-lg shadow-lg overflow-hidden  lg:px-0">
-        <div className="bg-[#EAB308] text-white text-center py-6">
+    <div className="py-10 text-opacity-50 px-3 md:px-5 max-w-7xl mx-auto">
+      <div className="bg-gray-900 rounded-lg shadow-lg overflow-hidden">
+        <div className="bg-[#2a5d98] px-3 md:px-5 w-full text-white text-center py-6">
           <h1 className="text-3xl font-bold">City University Computer Club</h1>
           <p className="mt-2 text-lg">Empowering Innovation and Learning</p>
         </div>
-        <div className="px-2 py-4">
+        <div className="py-4 px-5 md:px-5">
           <section className="mb-8">
             <h2 className="text-2xl font-semibold text-white">Who We Are</h2>
             <p className="mt-4 text-white leading-relaxed">

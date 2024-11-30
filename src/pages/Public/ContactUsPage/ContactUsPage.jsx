@@ -89,12 +89,14 @@ const ContactUsPage = () => {
   };
 
   return (
+    
     <div className="pb-20 bg-gray-900 text-gray-200 p-4">
       <ToastContainer />
       <h1 className="text-4xl font-extrabold text-center mb-8 text-gradient-to-r from-green-400 to-blue-500">
         Contact Us
       </h1>
-      <div className="grid grid-cols-1 md:grid-cols-2 gap-8 max-w-6xl mx-auto">
+
+      <div className="grid grid-cols-1 md:grid-cols-2 gap-8 max-w-7xl mx-auto px-3 md:px-5">
         {/* Left Side: Contact Information */}
         <div className="space-y-6 bg-gray-800 p-6 rounded-xl shadow-lg">
           <h2 className="text-2xl font-bold text-green-400">Get in Touch</h2>

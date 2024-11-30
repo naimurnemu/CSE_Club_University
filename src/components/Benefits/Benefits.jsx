@@ -5,7 +5,7 @@ const Benefits = () => {
    <div className="bg-gray-900 relative">
     <div className="absolute inset-0 bg-black bg-opacity-20 rounded-md"></div>
      <div className="max-w-screen-xl mx-auto">
-      <div className="max-w-7xl w-full mx-auto px-2 md:px-5 lg:px-0 py-24">
+      <div className="max-w-7xl w-full mx-auto px-3 md:px-5 py-24">
         <div className="text-center space-y-4">
           <h1 className="text-[#C3E92D] text-xl font-semibold">
             PROGRAMMING BENEFITS

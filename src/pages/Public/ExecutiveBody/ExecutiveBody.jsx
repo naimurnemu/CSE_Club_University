@@ -51,11 +51,11 @@ const ExecutiveBody = () => {
     );
 
     return (
-      <div key={designation} className="mb-10 mt-10">
+      <div key={designation} className="my-10 w-full">
         <h2 className="text-center font-bold text-2xl md:text-3xl text-teal-400 mb-6">
           {designation}
         </h2>
-        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8">
+        <div className="max-w-7xl mx-auto px-3 md:px-5 w-full">
           {designationParticipants.map((participant, index) => (
             <div
               key={`${participant.name}-${index}`}
@@ -117,7 +117,7 @@ const ExecutiveBody = () => {
 
   return (
     <div className="bg-gray-900 min-h-screen py-10 px-4">
-      <div className="max-w-6xl mx-auto">
+      <div className="mx-auto max-w-screen-sm">
         {location.pathname === "/executives" && (
           <h1 className="text-center text-4xl font-bold text-teal-400 mb-12">
             Meet Our Executive Body
