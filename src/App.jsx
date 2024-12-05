@@ -1,9 +1,10 @@
-import { Outlet } from "react-router-dom";
+import { Outlet, useLocation } from "react-router-dom";
 import "./App.css";
 import { Footer, Header } from "./components";
 
 function App() {
-  let pathname = window.location.pathname;
+  const location = useLocation();
+  let pathname = location?.pathname;
 
   return (
     <div className="mx-auto">

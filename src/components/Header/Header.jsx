@@ -118,6 +118,17 @@ const Header = () => {
                         View Profile
                       </button>
                       <button
+                        className="text-white bg-green-500 px-4 py-2 my-2 rounded-full w-full"
+                        onClick={() => {
+                          navigate("/announcements");
+                          document.getElementById(
+                            "my-drawer-4"
+                          ).checked = false;
+                        }}
+                      >
+                        Announcements
+                      </button>
+                      <button
                         className="text-white bg-red-500 px-4 py-2 my-2 rounded-full w-full"
                         onClick={() => {
                           logout();
@@ -390,6 +401,14 @@ const Header = () => {
                       onClick={() => navigate("/edit-profile")}
                     >
                       Edit Profile
+                    </div>
+                  </li>
+                  <li className="w-full">
+                    <div
+                      className="px-4 py-3 hover:bg-gray-700 cursor-pointer text-center w-full"
+                      onClick={() => navigate("/announcements")}
+                    >
+                      Announcements
                     </div>
                   </li>
                   <li className="w-full">

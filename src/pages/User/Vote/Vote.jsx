@@ -14,7 +14,7 @@ const Vote = () => {
   const API_URL = "https://computer-club.onrender.com/vote/votes/";
   const WINNER_API =
     "https://computer-club.onrender.com/vote/candidates/winners/";
-  const endDate = new Date("2024-12-01T23:59:59");
+  const endDate = new Date("2024-12-10T23:59:59");
   const [timeLeft, setTimeLeft] = useState({
     days: "00",
     hours: "00",

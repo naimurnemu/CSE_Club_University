@@ -4,6 +4,7 @@ export const AuthContext = createContext(null);
 
 export const AuthProvider = ({ children }) => {
   const [authState, setAuthState] = useState(null);
+  const [isLoading, setIsLoading] = useState(false);
 
   const handleResponse = async (response) => {
     const data = await response.json();
@@ -22,6 +23,7 @@ export const AuthProvider = ({ children }) => {
   }
 
   const login = async (username, password, navigate = () => {}) => {
+    setIsLoading(true);
     try {
       const response = await fetch("https://computer-club.onrender.com/users/login/", {
         method: "POST",
@@ -38,9 +40,11 @@ export const AuthProvider = ({ children }) => {
 
       if (userData.username) {
         navigate("/announcements");
+        setIsLoading(false);
       } 
     } catch (error) {
       alert(error.message);
+      setIsLoading(false);
     }
   };
 
@@ -63,7 +67,7 @@ export const AuthProvider = ({ children }) => {
   };
 
   return (
-    <AuthContext.Provider value={{ authState, setAuthState, login, logout, getUserDetails }}>
+    <AuthContext.Provider value={{ authState, setAuthState, login, logout, getUserDetails, isLoading, setIsLoading }}>
       {children}
     </AuthContext.Provider>
   );
