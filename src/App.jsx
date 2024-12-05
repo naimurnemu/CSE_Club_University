@@ -11,7 +11,7 @@ function App() {
       <div className="min-h-[calc(100vh-100px)]">
         <Outlet />
       </div>
-      {pathname == "/chat" ? "" : <Footer />}
+      {pathname == "/chat" ? null : <Footer />}
     </div>
   );
 }

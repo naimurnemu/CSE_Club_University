@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from "react";
-import { useNavigate } from "react-router-dom";
+import { Navigate, useNavigate } from "react-router-dom";
 import { toast, ToastContainer } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
 import { VotingTimerBreaker } from "../../../components/VotingTimerBreaker";
@@ -198,57 +198,65 @@ const Vote = () => {
     );
   };
 
-  return (
-    <div className="bg-gray-900 min-h-screen py-8">
-      <ToastContainer />
-      <div className="max-w-7xl mx-auto px-3 md:px-5">
-        {isOpenVote ? (
-          <div>
+  if (token) {
+    return (
+      <div className="bg-gray-900 min-h-screen py-8">
+        <ToastContainer />
+        <div className="max-w-7xl mx-auto px-3 md:px-5">
+          {isOpenVote ? (
             <div>
-              <p className="pt-[20px] md:pt-[30px] text-center text-[#FFF] font-['Poppins'] text-[24px] md:text-[40px] font-normal mb-[29px] md:mb-10">
-                Vote ends in ...
-              </p>
-              <div className="md:px-[120px] mb-[30px] md:mb-[60px]">
-                <div className="z-0 flex flex-col md:flex-row items-center justify-center gap-8 ">
-                  {["days", "hours", "minutes", "seconds"].map((unit, idx) => (
-                    <div className="z-0 relative" key={idx}>
-                      <div className="bg-[#F95050] rounded-[13px] w-[214px] h-[90px] "></div>
-                      <div className="ml-[-12px] mt-[-8px] z-40">
-                        <VotingTimerBreaker />
-                      </div>
-                      <div className="bg-[#F95050] rounded-[13px] w-[214px] h-[90px] mt-[-8px]"></div>
-                      <div className="z-1 absolute top-[-62px] left-2 text-[#F2F2F2] text-[182px] font-normal text-center font-['Share Tech']">
-                        {timeLeft[unit]}
-                      </div>
-                      <p className="text-[23px] font-normal font-['Poppins'] text-[#FFF] text-center pt-[13px]">
-                        {unit.charAt(0).toUpperCase() + unit.slice(1)}
-                      </p>
-                    </div>
-                  ))}
+              <div>
+                <p className="pt-[20px] md:pt-[30px] text-center text-[#FFF] font-['Poppins'] text-[24px] md:text-[40px] font-normal mb-[29px] md:mb-10">
+                  Vote ends in ...
+                </p>
+                <div className="md:px-[120px] mb-[30px] md:mb-[60px]">
+                  <div className="z-0 flex flex-col md:flex-row items-center justify-center gap-8 ">
+                    {["days", "hours", "minutes", "seconds"].map(
+                      (unit, idx) => (
+                        <div className="z-0 relative" key={idx}>
+                          <div className="bg-[#15803D] rounded-[13px] w-[214px] h-[90px] "></div>
+                          <div className="ml-[-12px] mt-[-8px] z-40">
+                            <VotingTimerBreaker />
+                          </div>
+                          <div className="bg-[#15803D] rounded-[13px] w-[214px] h-[90px] mt-[-8px]"></div>
+                          <div className="z-1 absolute top-[-62px] left-2 text-[#F2F2F2] text-[182px] font-normal text-center font-['Share Tech']">
+                            {timeLeft[unit]}
+                          </div>
+                          <p className="text-[23px] font-normal font-['Poppins'] text-[#FFF] text-center pt-[13px]">
+                            {unit.charAt(0).toUpperCase() + unit.slice(1)}
+                          </p>
+                        </div>
+                      )
+                    )}
+                  </div>
                 </div>
               </div>
+              {Object.keys(participants).map((position) =>
+                renderCards(position)
+              )}
             </div>
-            {Object.keys(participants).map((position) => renderCards(position))}
-          </div>
-        ) : (
-          <div>
-            <p className="text-2xl text-center text-white mt-10">
-              Voting has ended!
-            </p>
-          </div>
-        )}
+          ) : (
+            <div>
+              <p className="text-2xl text-center text-white mt-10">
+                Voting has ended!
+              </p>
+            </div>
+          )}
+        </div>
+        <div className="text-center mt-8">
+          <button
+            onClick={handleCloseVoting}
+            disabled={!isOpenVote}
+            className="bg-red-500 text-white font-bold py-3 px-6 rounded hover:bg-red-700 disabled:opacity-50"
+          >
+            Close Voting
+          </button>
+        </div>
       </div>
-      <div className="text-center mt-8">
-        <button
-          onClick={handleCloseVoting}
-          disabled={!isOpenVote}
-          className="bg-red-500 text-white font-bold py-3 px-6 rounded hover:bg-red-700 disabled:opacity-50"
-        >
-          Close Voting
-        </button>
-      </div>
-    </div>
-  );
+    );
+  } else {
+    return <Navigate to="/login" />;
+  }
 };
 
 export default Vote;

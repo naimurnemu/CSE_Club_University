@@ -14,14 +14,14 @@ const VotingTimerBreaker = () => {
           cx="11.9191"
           cy="12.3129"
           r="11.5753"
-          fill="#F95050"
+          fill="#15803D"
           fill-opacity="0.2"
         />
         <circle
           cx="226.06"
           cy="12.3129"
           r="11.5753"
-          fill="#F95050"
+          fill="#15803D"
           fill-opacity="0.2"
         />
         <rect
@@ -29,7 +29,7 @@ const VotingTimerBreaker = () => {
           y="9.41907"
           width="202.568"
           height="5.78766"
-          fill="#F95050"
+          fill="#15803D"
           fill-opacity="0.2"
         />
       </svg>
