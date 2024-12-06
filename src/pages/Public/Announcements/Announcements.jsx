@@ -10,7 +10,7 @@ const Announcements = () => {
   }, []);
 
   return (
-    <div className="py-8 px-3 md:px-5 max-w-7xl mx-auto bg-[#111827] z-10">
+    <div className="py-8 px-3 md:px-5 max-w-7xl mx-auto">
       <h2 className="text-2xl font-bold mb-6">Department Announcements</h2>
       <ul className="space-y-4">
         {announcements.map((item) => (
@@ -22,7 +22,7 @@ const Announcements = () => {
             <a
               href={item.pdf_file}
               target="_blank"
-              download
+              download={`${item.title}.pdf`}
               className="mt-2 inline-block bg-blue-500 text-white py-2 px-4 rounded"
             >
               Download PDF
