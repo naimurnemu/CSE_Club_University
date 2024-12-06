@@ -43,7 +43,6 @@ const Login = () => {
       setIsLoading(false);
     } else {
       login(formData.username, formData.password, navigate);
-      setIsLoading(false);
     }
   };
   console.log("loding ", isLoading);

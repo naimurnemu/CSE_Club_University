@@ -39,17 +39,6 @@ const users = [
     role: "Software Engineer(Backend-Lead)",
   },
   {
-    name: "Md Alif",
-    phone: "01646195393",
-    email: "alifseoexpert@gmail.com",
-    expertise:
-      "SEO Expert,Problem solving,Programming Language(C,C++,Java(OOP))",
-    github: "https://github.com/AlifSEOpro",
-    linkedin: "https://www.linkedin.com/in/alifseopro/",
-    image: "https://i.ibb.co.com/HFLd6K9/Alif-Proefe-mnjkwerf.jpg",
-    role: "Quality Assurance Engineer(Lead)",
-  },
-  {
     name: "ZEAUR RAHMAN",
     phone: "01984753024",
     email: "rahmanzea31@gmail.com",
@@ -70,6 +59,17 @@ const users = [
     linkedin: "https://www.linkedin.com/in/rashed83",
     image: "https://i.postimg.cc/QtgYPjBN/Rashed.jpg",
     role: "Software Engineer(Frontend)",
+  },
+  {
+    name: "Md Alif",
+    phone: "01646195393",
+    email: "alifseoexpert@gmail.com",
+    expertise:
+      "SEO Expert,Problem solving,Programming Language(C,C++,Java(OOP))",
+    github: "https://github.com/AlifSEOpro",
+    linkedin: "https://www.linkedin.com/in/alifseopro/",
+    image: "https://i.ibb.co.com/HFLd6K9/Alif-Proefe-mnjkwerf.jpg",
+    role: "Quality Assurance Engineer(Lead)",
   },
   {
     name: " MD. Nurujjaman Shipat",

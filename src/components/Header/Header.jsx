@@ -47,7 +47,7 @@ const Header = () => {
 
   return (
     <div
-      className="bg-gray-900 text-white py-5 sticky top-0 left-0 w-full z-50"
+      className="bg-gray-900 text-white py-5 sticky top-0 left-0 w-full z-40"
       onClick={handleMenuClose}
     >
       <div className="flex justify-between items-center max-w-7xl w-full px-3 md:px-5 mx-auto">
@@ -177,6 +177,18 @@ const Header = () => {
                           }
                         >
                           Activities
+                        </Link>
+                      </li>
+                      <li className="border-b border-gray-300 font-medium p-0.5">
+                        <Link
+                          to="/vote"
+                          onClick={() =>
+                            (document.getElementById(
+                              "my-drawer-4"
+                            ).checked = false)
+                          }
+                        >
+                          Vote
                         </Link>
                       </li>
                       <li className="border-b border-gray-300 font-medium p-0.5">
